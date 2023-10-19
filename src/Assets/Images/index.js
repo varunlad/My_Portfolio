@@ -42,4 +42,4 @@ export const fourth = { src: require('./Gift-1-01.svg').default };
 export const second = { src: require('./Coupon-01.svg').default };
 export const third = { src: require('./Milestone-01.svg').default };
 export const fifth = { src: require('./Flexible-01.svg').default };
-
+export const laptop = { src: require('./laptop.jpg').default };
