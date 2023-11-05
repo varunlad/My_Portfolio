@@ -7,6 +7,7 @@ function HTML() {
   const user = useContext(UserContext);
   console.log("Myuser==", user)
   return (
+    <div className='container'>
     <div className='row box_shadow'>
       <h3>✨ Iframe tag {user.myUser?.stack} </h3>
       {/* <iframe src="https://www.javatpoint.com/html-interview-questions" height="400" width="100%"></iframe> */}
@@ -21,6 +22,7 @@ function HTML() {
         <area shape="rect" coords="290,172,333,250" alt="Phone" href="https://www.javatpoint.com/html-interview-questions" />
         <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="https://www.javatpoint.com/html-interview-questions" />
       </map> */}
+    </div>
     </div>
   )
 }

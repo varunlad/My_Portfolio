@@ -30,7 +30,7 @@
         width: 16px;
         height: 16px;
         border-radius: 5px;
-        accent-color: #984498;
+        accent-color: #1ed760;
         margin-right: 10px;
         cursor: pointer;
     }
@@ -88,7 +88,7 @@
         display: flex;
         justify-content: space-between;
         border: 1px solid #F1F1F1;
-        background-color: #F8F8F8;
+        background-color: #000000;
         border-radius: 4px;
         width: 210px;
         min-height: 35.33px;
@@ -108,7 +108,7 @@
             font-size: 12px;
             position: absolute;
             top: -10px;
-            background: white;
+            background: black;
             padding: 0;
         }
 
@@ -121,7 +121,7 @@
             li {
                 font-size: 14px;
                 height: fit-content;
-                background: #EBEFFC;
+                border: 1px solid #1ed760;
                 border-radius: 5px;
                 padding: 3px 10px;
                 margin: 3px;
@@ -131,7 +131,7 @@
         span {
             font-size: 14px;
             height: fit-content;
-            background: #EBEFFC;
+            border: 1px solid #1ed760;
             border-radius: 5px;
             padding: 3px 10px;
             margin: 3px;
@@ -156,7 +156,7 @@
         display: flex;
         flex-direction: column;
         border: 1px solid #F1F1F1;
-        background-color: #fff;
+        background-color: #000;
         // position: absolute;
         // top: 35px;
         z-index: 9;
@@ -176,13 +176,13 @@
             display: flex;
             align-items: center;
             position: sticky;
-            top: 0;
-            background-color: #fff;
+            top: -8;
+           
             padding: 5px;
             //border-bottom: 1px solid #EAEAEA;
 
             .dropbtn {
-                background-color: #FFFFFF;
+                background-color: #000000;
                 border: 1px solid #EAEAEA;
                 border-radius: 3px;
                 outline: none;
@@ -223,7 +223,7 @@
                 width: 16px;
                 height: 16px;
                 border-radius: 5px;
-                accent-color: #984498;
+                accent-color: #1ed760;
                 margin-right: 10px;
                 cursor: pointer;
             }
@@ -237,7 +237,7 @@
         cursor: pointer;
 
         label {
-            color: #4A4A4A;
+            color: #fff;
             font-weight: 400;
             font-size: 14px;
             cursor: pointer;
@@ -250,7 +250,7 @@
             width: 18px;
             height: 18px;
             border-radius: 5px;
-            accent-color: #984498;
+            accent-color: #1ed760;
             margin-right: 10px;
             cursor: pointer;
         }
@@ -259,15 +259,11 @@
             width: 18px;
             height: 18px;
             border-radius: 5px;
-            accent-color: #984498;
+            accent-color: #1ed760;
             margin-right: 10px;
             cursor: pointer;
         }
     }
 
-    .check_with_label:hover {
-        background-color: #F6F6F6;
-        border-radius: 5px;
-    }
 
 }

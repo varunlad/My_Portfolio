@@ -8,6 +8,7 @@ import UserContext from "./UserContext";
 function Css() {
     const user = useContext(UserContext)
     return (
+        <div className='container'>
         <div className='row box_shadow'>
             <div className='col-md-4'>
                 <div className=' my_card'>
@@ -48,6 +49,7 @@ function Css() {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

@@ -25,40 +25,42 @@ function ReactJS() {
         setNum(e.target.value);
     }
     return (
-        <div className='row box_shadow'>
-            <div className='col-md-4'>
-                <div className='my_card'>
-                    <h5>Single Select Component</h5>
-                    <MultiFunctionalDropdown label={"Single Select"} type={"SingleSelect"} options={option} />
+        <div className="container">
+            <div className='row box_shadow'>
+                <div className='col-md-4'>
+                    <div className='my_card'>
+                        <h5>Single Select Component</h5>
+                        <MultiFunctionalDropdown label={"Single Select"} type={"SingleSelect"} options={option} />
+                    </div>
                 </div>
-            </div>
-            <div className='col-md-4'>
-                <div className='my_card'>
-                    <h5>Multi Select Component</h5>
-                    <MultiFunctionalDropdown label={"Multi Select"} type={"MultiSelect"} options={option} />
+                <div className='col-md-4'>
+                    <div className='my_card'>
+                        <h5>Multi Select Component</h5>
+                        <MultiFunctionalDropdown label={"Multi Select"} type={"MultiSelect"} options={option} />
+                    </div>
                 </div>
-            </div>
-            <div className='col-md-4'>
-                <div className='my_card'>
-                    <h5>Increment / Decrement</h5>
-                    <div className="input-group" style={{ justifyContent: "center" }}>
-                        <div className="input-group-prepend mx-1">
-                            <button className="btn btn-outline-primary" type="button" onClick={decNum}>-</button>
-                        </div>
-                        <input type="text" className="form-control" style={{ maxWidth: "60px", borderRadius: "5px" }} value={num} onChange={handleChange} />
-                        <div className="input-group-prepend mx-1">
-                            <button className="btn btn-outline-primary" type="button" onClick={incNum}>+</button>
+                <div className='col-md-4'>
+                    <div className='my_card'>
+                        <h5>Increment / Decrement</h5>
+                        <div className="input-group" style={{ justifyContent: "center" }}>
+                            <div className="input-group-prepend mx-1">
+                                <button className="btn btn-outline-primary" type="button" onClick={decNum}>-</button>
+                            </div>
+                            <input type="text" className="form-control" style={{ maxWidth: "60px", borderRadius: "5px" }} value={num} onChange={handleChange} />
+                            <div className="input-group-prepend mx-1">
+                                <button className="btn btn-outline-primary" type="button" onClick={incNum}>+</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="col-md-4">
-                <div className='my_card'>
+                <div className="col-md-4">
+                    <div className='my_card'>
                         <h5>Use Contex Hook</h5>
                         <UserProfile />
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     )
 }

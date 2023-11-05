@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import profilePic from "../../Assets/Images/MicrosoftTeams-image.png"
+import mountains from "../../Assets/Images/flat-mountains.svg"
+import sun from "../../Assets/Images/sun-tornado.svg"
 import laptop from "../../Assets/Images/laptop.jpg"
 import * as icon from "../../Assets/Images/index";
 import "./Common.scss"
@@ -41,28 +43,29 @@ function HomePage() {
         <>
             <div className="row ">
                 <div className="col-md-12">
-                    <div className="portfolio_bg">
-                        {/* <div className="typing-demo">
-                            Welcome to my Portfolio.
-                        </div> */}
-                        <div class="slider-thumb"></div>
-                        <div class="wrap">
+                    <div className=" d-flex portfolio_bg">
+                        
+                        <div className="slider-thumb"></div>
+                        <div className="wrap">
                             <p className="m-0"> Welcome to my</p>
-                            <p class="flip"><span>Portfolio</span>
+                            <p className="flip"><span>Portfolio</span>
                                 <span>Website</span>
                                 <span>Story</span>
                             </p>
                         </div>
+                        {/* <div className="typing-demo">
+                            Welcome to my Portfolio.
+                        </div> */}
                         <div className="my_laptop">
                             {/* <div className="laptop_new"></div>
                             
                             <div  className="laptop"></div>
                             <div  className="laptop"></div>
                             <div  className="laptop"></div> */}
-                            <div class="photo" style={{ transitionDelay: "200ms" }}>
+                            <div className="photo" style={{ transitionDelay: "200ms" }}>
                                 <img src={laptop} />
                                 <h1 className="headding">Skills</h1>
-                                <div class="photo-overlay">
+                                <div className="photo-overlay">
                                     <p>My Skills</p>
                                     <p>React JS</p>
                                     <p>HTML5</p>
@@ -71,10 +74,10 @@ function HomePage() {
                                     <p>CSS & Animations</p>
                                 </div>
                             </div>
-                            <div class="photo">
+                            <div className="photo">
                                 <img src={laptop} />
                                 <h1 className="headding">Projects</h1>
-                                <div class="photo-overlay">
+                                <div className="photo-overlay">
                                     <p>My Projects</p>
                                     <p>Atlantis (Data Analysis)</p>
                                     <p>Credit Monitoring (Data Analysis)</p>
@@ -82,17 +85,17 @@ function HomePage() {
                                     <p>J&K Bank (Banking)</p>
                                 </div>
                             </div>
-                            <div class="photo">
+                            <div className="photo">
                                 <img src={laptop} />
                                 <h1 className="headding">Hobby</h1>
-                                <div class="photo-overlay">
+                                <div className="photo-overlay">
                                     <p>This is just some dummy text</p>
                                 </div>
                             </div>
-                            <div class="photo">
+                            <div className="photo">
                                 <img src={laptop} />
                                 <h1 className="headding">Hobby</h1>
-                                <div class="photo-overlay">
+                                <div className="photo-overlay">
                                     <p>This is just some dummy text</p>
                                 </div>
                             </div>
@@ -109,8 +112,30 @@ function HomePage() {
                     </div>
                 </div> */}
             </div>
+            <div className="row ">
+                <div className="col-md-12">
+                    <div className="sun">
+                        <div className="container">
+                            <div className="row mt-5">
+                                {myPortfolio?.map((ele, ind) => {
+                                    return (
+                                        <div className="col-md-3">
+                                            <div className={ind % 2 === 0 ? "box_shadow p-3 my_section" : "box_shadow p-3 mt-5 my_section"} key={ind}>
+                                                <div className="movingRadius"></div>
+                                                <h1>{ele.name}</h1>
+                                                <p>{ele.description}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div className="container">
-                <div className="row mt-5">
+                {/* <div className="row mt-5">
                     {myPortfolio?.map((ele, ind) => {
                         return (
                             <div className="col-md-3">
@@ -122,8 +147,7 @@ function HomePage() {
                             </div>
                         )
                     })}
-
-                </div>
+                </div> */}
                 <div className="row   mb-3 p-3">
                     <div className="col-md-12">
                         <div className=' align-items-start '>
@@ -139,7 +163,7 @@ function HomePage() {
                     {show_Me ?
                         <>
                             <div className="col-md-3  ">
-                                <div className="d-flex mt-3 my_card align-items-center flex-column ">
+                                <div className="d-flex mt-3 my_card align-items-center flex-column  ">
                                     <img className="img_cover zoom_me" src={profilePic} alt="pic" />
                                     <h5 className="m-2"><strong>Varun Hemant Lad</strong></h5>
                                     <h6 style={{ fontSize: "14px" }} className="text-secondary">Panvel | Maharashtra 📌</h6>
@@ -154,7 +178,7 @@ function HomePage() {
                                 </div>
                             </div>
                             <div className=" col-md-9 flex-column ">
-                                <div className="d-flex mt-3  about_section p-3 align-items-center flex-column ">
+                                <div className="d-flex mt-3  about_section p-3 align-items-center flex-column box_shadow ">
                                     <strong>About</strong>
                                     <p className="">
                                         <br />
@@ -173,7 +197,7 @@ function HomePage() {
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <h3 className="text-center">Tech Stack</h3>
+                        <h3 className="text-center mt-5">Tech Stack</h3>
                         <div className='my_card noShadow'>
                             <div className="main_tabs">
                                 <ul>

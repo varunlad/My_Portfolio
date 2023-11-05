@@ -2,6 +2,9 @@ body ::selection {
   color: #fff;
   background: #9aa2a9;
 }
+body{
+  background-color: #000000;
+}
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
@@ -9,7 +12,7 @@ body ::selection {
 
  /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #9aa2a9;
+  background: #1ed760;
   width: 12px;
 }
 
