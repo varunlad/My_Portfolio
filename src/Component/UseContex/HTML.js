@@ -9,7 +9,7 @@ function HTML() {
   return (
     <div className='container'>
     <div className='row box_shadow'>
-      <h3>✨ Iframe tag {user.myUser?.stack} </h3>
+      <h3>✨ Iframe tag {user.myUser?.username} </h3>
       {/* <iframe src="https://www.javatpoint.com/html-interview-questions" height="400" width="100%"></iframe> */}
       <h3 className='mt-3'>✨ Anchor tag </h3>
       <a className='mb-3' href='https://www.javatpoint.com/html-interview-questions' target="_blank" > Visit JavaTPoint</a>

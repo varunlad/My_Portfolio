@@ -4,7 +4,11 @@ import UserContext from './UserContext';
 
 const UserProvider = ({children}) => {
   
-  const [myUser, setMyUser] = useState({ username: 'Varun Lad', stack : " React" })
+  const [myUser, setMyUser] = useState({ username: 'Varun Lad', stack : " React" });
+  const [techStack, setTechStack] = useState(false);
+  const updateTechStack = (val) =>{
+    setTechStack(val)
+  }
   const update = (a1, a2) =>{
     setTimeout(()=>{
         setMyUser({username:a1 , stack : a2 })
@@ -12,7 +16,7 @@ const UserProvider = ({children}) => {
   }
 
   return (
-    <UserContext.Provider value={{myUser , update}}>
+    <UserContext.Provider value={{myUser,techStack, update, updateTechStack}}>
       {children}
     </UserContext.Provider>
   );
