@@ -15,6 +15,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
 import TechStack from "./TechStack";
+import Footer from "../../Common/Footer";
 
 
 
@@ -90,12 +91,13 @@ function HomePage() {
                                             <h6 style={{ fontSize: "14px" }} className="text-secondary">Panvel | Maharashtra </h6>
                                             <h6 style={{ fontSize: "14px" }} className="text-secondary"> varunlad5@gmail.com</h6>
                                             <h6 style={{ fontSize: "14px" }} className="text-secondary"> +91 9834978189</h6>
-                                            <h6 style={{ fontSize: "14px" }} className="text-secondary">
+                                            <h6 style={{ fontSize: "14px" }} className="text-secondary d-flex">
                                                 Known more on &nbsp;
-                                                <a target="_blank" href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos" style={{ fontSize: "14px" }} className="text-secondary">
-                                                    Linkedin
-                                                </a>
+                                                <a target="_blank" href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos" style={{ fontSize: "14px" }} className="text-secondary d-flex">
+                                                    Linkedin   <i class=" mx-1 bi bi-linkedin"></i> 
+                                                </a>  
                                             </h6>
+                                           
                                         </div>
                                     </div>
                                     <div className=" col-md-9 flex-column ">
@@ -115,31 +117,31 @@ function HomePage() {
                                             >
                                                 <SwiperSlide className="mySwiper">
                                                     <h1 className="myColor">Forever a Learner</h1>
-                                                    <p className="p-3">
+                                                    <p className="p-3 w-75">
                                                         I thrive on knowledge and believe that learning never stops. Whether it's mastering a new programming language or delving into the mysteries of the cosmos, I'm always up for the challenge.
                                                     </p>
                                                 </SwiperSlide>
                                                 <SwiperSlide className="mySwiper">
                                                     <h1 className="myColor">Dedicated and Hardworking</h1>
-                                                    <p className="p-3">
+                                                    <p className="p-3 w-75">
                                                         My commitment and work ethic are the driving forces behind my success. I believe that dedication and perseverance can turn dreams into reality.I'm passionate about life and always on the lookout for new horizons to explore.
                                                     </p>
                                                 </SwiperSlide>
                                                 <SwiperSlide className="mySwiper">
                                                     <h1 className="myColor">Engineer by Day</h1>
-                                                    <p className="p-3">
+                                                    <p className="p-3 w-75">
                                                         I wear the hat of an engineer, crafting solutions to real-world challenges. My work as a software developer allows me to blend my love for technology with my analytical mindset.
                                                     </p>
                                                 </SwiperSlide>
                                                 <SwiperSlide className="mySwiper">
                                                     <h1 className="myColor">Sports Enthusiast</h1>
-                                                    <p>
+                                                    <p className="w-75">
                                                         You'll often find me cheering for my favorite teams on the football pitch and cricket ground. I can talk for hours about that last-minute goal or a thrilling last-over finish!
                                                     </p>
                                                 </SwiperSlide>
                                                 <SwiperSlide className="mySwiper">
                                                     <h1 className="myColor">Starry-Eyed Explorer</h1>
-                                                    <p className="p-3">
+                                                    <p className="p-3 w-75">
                                                         Beyond the Earthly bounds, I've got a deep fascination for astronomy. Gazing at the night sky, learning about constellations and distant galaxies is my idea of relaxation.
                                                     </p>
                                                 </SwiperSlide>
@@ -239,8 +241,7 @@ function HomePage() {
                 :
                 <TechStack />
             }
-
-
+            <Footer />
         </>
     )
 }

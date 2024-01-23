@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import UserProvider from './Contex/UserProvider';
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
