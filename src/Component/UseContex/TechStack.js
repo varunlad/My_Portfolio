@@ -5,7 +5,7 @@ import ReactJS from "./ReactJS";
 import Css from "./Css";
 import HTML from "./HTML";
 import JavaScript from "./JavaScript";
-import UserContext from "./UserContext";
+import UserContext from "../../Contex/UserContext";
 
 function TechStack() {
     const user = useContext(UserContext);
@@ -22,7 +22,7 @@ function TechStack() {
             <div className="row">
                 <div className="col-md-12">
                     <div className="d-flex justify-content-center align-items-center">
-                        <img className="mx-2" style={{transform:"rotate(90deg)"}} onClick={() => { handelTechStack(!user.techStack) }} src={icon.new_white_down_icon.src}/>
+                        <img className="mx-2 p-2" style={{transform:"rotate(90deg)", cursor:"pointer", border:"1px solid #fff", borderRadius:"3px"}} onClick={() => { handelTechStack(!user.techStack) }} src={icon.new_white_down_icon.src}/>
                         <h3 className="text-center m-0">Tech Stack</h3>
                     </div>
                     <div className='my_card noShadow'>

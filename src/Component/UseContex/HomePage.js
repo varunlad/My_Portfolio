@@ -10,7 +10,7 @@ import ReactJS from "./ReactJS";
 import Css from "./Css";
 import HTML from "./HTML";
 import JavaScript from "./JavaScript";
-import UserContext from "./UserContext";
+import UserContext from "../../Contex/UserContext";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
@@ -21,7 +21,6 @@ import TechStack from "./TechStack";
 
 function HomePage() {
     const user = useContext(UserContext);
-    const [mode, setMode] = useState(true);
     const [show_Me, setShow_Me] = useState(true);
     const [myPortfolio, setMyPortFolio] = useState([
         { name: "Crafting Excellence", description: "As an engineer, I am dedicated to the pursuit of excellence. My work is a testament to my unwavering commitment to quality and innovation. Whether it's developing cutting-edge software solutions or mastering the intricacies of technology, I approach every challenge with passion and precision." },
@@ -238,7 +237,6 @@ function HomePage() {
                     </div>
                 </>
                 :
-
                 <TechStack />
             }
 

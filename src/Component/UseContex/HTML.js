@@ -1,15 +1,15 @@
 import React, { useContext } from 'react'
 import * as icon from "../../Assets/Images/index";
 import Slider from "../../Assets/Images/Slider-1.png"
-import UserContext from './UserContext';
+import UserContext from '../../Contex/UserContext';
 
 function HTML() {
   const user = useContext(UserContext);
-  console.log("Myuser==", user)
   return (
     <div className='container'>
     <div className='row box_shadow'>
-      <h3>✨ Iframe tag {user.myUser?.username} </h3>
+      <h3>✨ I am {user.myUser?.username} </h3>
+      <h3>✨ I study {user.myUser?.stack}</h3>
       {/* <iframe src="https://www.javatpoint.com/html-interview-questions" height="400" width="100%"></iframe> */}
       <h3 className='mt-3'>✨ Anchor tag </h3>
       <a className='mb-3' href='https://www.javatpoint.com/html-interview-questions' target="_blank" > Visit JavaTPoint</a>

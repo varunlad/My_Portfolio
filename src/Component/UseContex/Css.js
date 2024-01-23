@@ -3,7 +3,7 @@ import * as icon from "../../Assets/Images/index";
 import men from "../../Assets/Images/men_removebg.png"
 import men_bg from "../../Assets/Images/men.png"
 import "./Common.scss"
-import UserContext from "./UserContext";
+import UserContext from "../../Contex/UserContext";
 
 function Css() {
     const user = useContext(UserContext)

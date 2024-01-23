@@ -1,15 +1,15 @@
 import React, { useState,useContext } from 'react';
-import UserContext from './UserContext';
+import UserContext from '../../Contex/UserContext';
 
-function MyLogin(props) {
-    const user  = useContext(UserContext);
-    const [newUpdateStudy, setNewUpdateStudy] = useState(user.myUser.stack);
-    // const handelUpdateStudy = (e) =>{
-    //   setNewUpdateStudy(e.target.value)
-    // }
+function MyLogin({newUpdateStudy,handelUpdateStudy}) {
+ 
+    const handelUpdateStudyChange = (e) =>{
+      handelUpdateStudy(e.target.value)
+    }
   return (
-    // <p>I study  <input onChange={(e) => handelUpdateStudy(e)}  value = {newUpdateStudy} type='text' /></p>
-    <p>I study {newUpdateStudy}</p>
+    <div>I study
+     <input onChange={(e) => handelUpdateStudyChange(e)}  value={newUpdateStudy} type='text' />
+    </div>
 
   )
 }
