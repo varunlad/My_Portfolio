@@ -63,7 +63,7 @@ function HomePage() {
                                 <div className="wrap flex-column">
                                 </div>
                                 {user.windownView === 0 &&
-                                <button onClick={() => { handelTechStack(!user.techStack) }} className="myTech">Tech Stack <img src={icon.new_white_down_icon.src} /></button> }
+                                <button onClick={() => { handelTechStack(!user.techStack) }} className="myTech" style={{whiteSpace:"nowrap"}}>Tech Stack <img src={icon.new_white_down_icon.src} /></button> }
                             </div>
                         </div>
                         <div className="col-md-7 ">
@@ -76,7 +76,7 @@ function HomePage() {
                                     </p>
                                 </div>
                                 {user.windownView === 1 &&
-                                <button onClick={() => { handelTechStack(!user.techStack) }} className="myTech">Tech Stack <img src={icon.new_white_down_icon.src} /></button> }
+                                <button onClick={() => { handelTechStack(!user.techStack) }} className="myTech" style={{whiteSpace:"nowrap"}}>Tech Stack <img src={icon.new_white_down_icon.src} /></button> }
                             </div>
                             <h1 className="developer_headding">  <br /><span style={{whiteSpace:"nowrap"}}>  I'm a Web</span>  <strong className="gradient_headdng">Developer</strong></h1>
                             <p className="developer_description "> As web development expert I possesses in-depth knowledge and experience in creating and maintaining websites and web applications. My expertise extends to various web technologies such as HTML, CSS, JavaScript, Jquery, Typescript, React Js. I excel in designing user-friendly, responsive, and secure web solutions, ensuring optimal performance and user experience.</p>
