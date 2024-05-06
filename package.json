@@ -20,10 +20,11 @@
     "redux-thunk": "^2.4.1",
     "sass": "^1.53.0",
     "swiper": "^10.3.1",
+    "vercel": "^34.1.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev":"react-scripts dev",
+    "dev": "react-scripts dev",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
