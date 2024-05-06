@@ -35,6 +35,7 @@ function HomePage() {
     ]);
     
     useEffect(()=>{
+        
         let currentDate = new Date(); 
         let currentYear = currentDate.getFullYear();
         setMyExperience(currentYear - 2022);
