@@ -18,7 +18,7 @@ function Projects() {
         {
             name: "Credit Monitoring (Financial analysis)",
             description: "Credit Monitoring is a comprehensive project designed to provide detailed financial insights into various brands, encompassing critical aspects such as sales, profits, losses, credit amounts, and more. Leveraging advanced data analysis techniques, the system offers daily monitoring and reporting capabilities, allowing stakeholders to make informed decisions based on accurate financial data. Through intuitive dashboards and customizable reports, Credit Monitoring empowers users to gain a deeper understanding of brand performance, identify potential risks, and optimize financial strategies for sustainable growth.",
-            icon: icon.atlantis.src,
+            icon: icon.Growth_white.src,
             technologyUsed: "React JS , Apex charts,  Bootstrap"
         },
         {
@@ -50,14 +50,13 @@ function Projects() {
                         <div className='col-md-12' key={ind}>
                             <div className={user.windownView === 0 && ind === 0 ? 'my_projects_section mt-4' : 'my_projects_section'}>
                                 <div className='my_project_heading' onClick={() => { handelActiveProject(ind) }}>
-                                    <h4 className={activeProject === ind ? "font_big w-100 d-flex" : "d-flex w-100"}>{ele.name} {ele.icon === null ? <i class="bi bi-receipt mx-2"></i> : <img className={activeProject === ind ? 'mx-2 selected_project' : 'mx-2'} style={{ maxWidth: "80px" }} src={ele.icon} alt='project' />}</h4>
+                                    <h4 className={activeProject === ind ? "font_big w-100 d-flex" : "d-flex w-100"}>{ele.name} {ele.icon === null ? <i class="bi bi-receipt mx-2"></i> : <img className={activeProject === ind ? 'mx-2 selected_project' : 'mx-2'} style={{ maxWidth: "60px",maxHeight:"40px" }} src={ele.icon} alt='project' />}</h4>
                                     <img src={icon.new_white_down_icon.src} className={activeProject === ind && "rotate_me"} />
                                 </div>
                                 {activeProject === ind ?
                                     <div className='my_project_para grows_left flex-column'>
                                         <p>{ele.description}</p>
                                         <p className='d-flex'> <span className="mx-2"> &#187;</span> {ele.technologyUsed}</p>
-
                                     </div> : null}
                             </div>
                         </div>

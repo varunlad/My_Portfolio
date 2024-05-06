@@ -31,7 +31,7 @@ function Css() {
                 <div className='col-md-12'>
                     <div className='my_card p-4 '>
                         <div className="d-flex">
-                            <h5 className="mb-4 mx-3">Clip-path</h5>
+                            <h5 className="mb-4 mx-3" style={{whiteSpace:"nowrap"}}>Clip-path</h5>
                             <i onClick={() => { handelShapeClick("square") }} className={myShape === "square" ? "bi bi-square-fill my_color mx-2" : "bi bi-square-fill mx-2"} style={{cursor:"pointer"}}></i>
                             <i onClick={() => { handelShapeClick("triangle") }} className={myShape === "triangle" ? "bi bi-triangle-fill my_color mx-2" : "bi bi-triangle-fill mx-2"} style={{cursor:"pointer"}}></i>
                             <i onClick={() => { handelShapeClick("pentagon") }} className={myShape === "pentagon" ? "bi bi-pentagon-fill my_color mx-2" : "bi bi-pentagon-fill mx-2"} style={{cursor:"pointer"}}></i>
