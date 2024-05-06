@@ -579,6 +579,27 @@
     margin-bottom: 20px;
     overflow: hidden;
     color: #ffffff;
+    position: relative;
+
+    .fade_me {
+      animation: fadeIn_opacity 500ms ease-in-out;
+    }
+
+    .my_profile_toggle {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      cursor: pointer;
+    }
+
+    .my_profile_toggle_bg {
+      color: #80D0C7;
+      transition: 0.5s;
+    }
+
+    .bi-toggles2::before {
+      font-size: 24px;
+    }
 
     .img_cover {
       width: 150px;
@@ -781,13 +802,14 @@
     }
 
     .font_big {
-      transition: .2s ease-in-out ;
+      transition: .2s ease-in-out;
       font-size: 30px;
       color: #1ed760;
     }
-    .font_normal{
+
+    .font_normal {
       font-size: 24px;
-      transition: .2s ease-in-out ;
+      transition: .2s ease-in-out;
     }
 
     h4 {
@@ -803,7 +825,8 @@
     .rotate_me {
       transform: translate(180deg);
     }
-    .rotate_me_none{
+
+    .rotate_me_none {
       transition: .5s;
       transform: translate(0deg);
     }
@@ -817,9 +840,10 @@
       margin: 0;
     }
   }
+
   .project {
-    transition:  0.3s ease;
-}
+    transition: 0.3s ease;
+  }
 
 
   .selected_project {
@@ -869,6 +893,7 @@
 .grows_left {
   animation: growsubLeftSide 300ms ease-in-out;
 }
+
 .closed {
   animation: shrinksubLeftSide 0.3s ease forwards;
 }
@@ -884,6 +909,7 @@
     transform: translateX(0)
   }
 }
+
 @keyframes shrinksubLeftSide {
   0% {
     opacity: 1;
@@ -923,6 +949,18 @@
   100% {
     //opacity: 1;
     transform: translateY(0px);
+  }
+}
+
+@keyframes fadeIn_opacity {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+
   }
 }
 
@@ -1146,7 +1184,11 @@
 
   .main_tabs ul li {
     white-space: nowrap;
-    border-bottom: 2px solid #1ed760 !important;
+    border-bottom: 0px solid #1ed760 !important;
+  }
+
+  .main_tabs ul li {
+    box-shadow: 0 0 0px 0 #1ed760 !important;
   }
 
   .my_icons {

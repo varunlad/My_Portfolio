@@ -109,16 +109,16 @@ function HTML() {
         {showVideo &&
           <>
             <h5 className='mb-4' style={{ color: "#1ed760", whiteSpace: "nowrap" }}> Photo capture via camera
-              {!stream && <button className='mx-2 zoom_me ' onClick={startCamera}>Start <i class="bi bi-camera-video"></i></button>}
-              {stream && <button className='mx-2 mt-3 stop_camera zoom_me' onClick={stopCamera}>Stop <i class="bi bi-camera-video-off"></i></button>}
+              {!stream && <button className='mx-2 zoom_me ' onClick={startCamera}>Start <i className="bi bi-camera-video"></i></button>}
+              {stream && <button className='mx-2 mt-3 stop_camera zoom_me' onClick={stopCamera}>Stop <i className="bi bi-camera-video-off"></i></button>}
             </h5>
             <div style={{ position: 'relative', width: '100%' }}>
               {!stream && <img src={thumbnailImage} alt="Thumbnail" className='thumbnail zoom_me' />}
               <video className='my_video' ref={videoRef} autoPlay  />
-              {stream && <button className={photo ? 'mt-3 capture_btn re_take zoom_me' : 'mt-3 capture_btn zoom_me'} onClick={capturePhoto}> {photo ? "Retake " : "Capture "} <i class="bi bi-camera"></i></button>}
+              {stream && <button className={photo ? 'mt-3 capture_btn re_take zoom_me' : 'mt-3 capture_btn zoom_me'} onClick={capturePhoto}> {photo ? "Retake " : "Capture "} <i className="bi bi-camera"></i></button>}
               {photo &&
                 <div className='w-100 capture_img_div' id="capturePhoto">
-                  {photo && <button className='mt-3 download_capture_img' onClick={downloadPhoto}>Download <i class="bi bi-cloud-arrow-down"></i></button>}
+                  {photo && <button className='mt-3 download_capture_img' onClick={downloadPhoto}>Download <i className="bi bi-cloud-arrow-down"></i></button>}
                   <img className=' capture_img zoom_me' src={photo} alt="Captured Photo" />
                 </div>
               }

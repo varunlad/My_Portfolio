@@ -13,9 +13,17 @@ function TechStack() {
     const user = useContext(UserContext);
     const [tabs, setTabs] = useState(0);
     const [tabsOption, setTabsOption] = useState([{ tabName: "React JS" }, { tabName: "Projects" }, { tabName: "HTML" }, { tabName: "CSS & Animations" }, { tabName: "Java Script" },]);
-    const handelTabs = (e) => {
-        setTabs(e);
+    const handelTabs = (index) => {
+        setTabs(index);
+        if(user.windownView === 0 ){
+        // Get the DOM element of the clicked tab
+        const tabElement = document.getElementById(`tab_${index}`);
+        // Scroll to the beginning of the tab
+        tabElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     }
+    } 
+    
+    
     const handelTechStack = (techVal) => {
         user.updateTechStack(techVal)
     }
@@ -31,7 +39,7 @@ function TechStack() {
                             Tech Stack
                         </button>
                         <div className="d-flex">
-                            <h4 className="m-0">{user.myUser.username}   <i class="bi bi-person-check"></i> ({user.myUser.stack})</h4>
+                            <h4 className="m-0">{user.myUser.username}   <i className="bi bi-person-check"></i> ({user.myUser.stack})</h4>
                         </div>
                     </div>
                     <div className='my_card noShadow'>
@@ -39,7 +47,7 @@ function TechStack() {
                             <ul>
                                 {tabsOption?.map((ele, ind) => {
                                     return (
-                                        <li className={tabs === ind ? "active tab" : "tab"} onClick={() => { handelTabs(ind) }} key={ind}>{ele.tabName}</li>
+                                        <li id={`tab_${ind}`} className={tabs === ind ? "active tab" : "tab"} onClick={() => { handelTabs(ind) }} key={ind}>{ele.tabName}</li>
                                     )
                                 })}
 

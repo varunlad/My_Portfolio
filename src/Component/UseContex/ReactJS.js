@@ -170,7 +170,7 @@ function ReactJS() {
                                 </div>
 
                             </form>}
-                        {isCustom && <p style={{ color: "#1ed760" }} className="m-0 mb-2">Live Chages <i class="bi bi-arrow-down-up"></i></p>}
+                        {isCustom && <p style={{ color: "#1ed760" }} className="m-0 mb-2">Live Chages <i className="bi bi-arrow-down-up"></i></p>}
                         <ErReactMultiSelect width={'250px'} height={'200px'} primaryColor={primaryColor} ismultiselect={dropdownType === 'single' ? false : true} isSelectAll={isSelectAllEnabled} isSearch={isSearchEnabled} options={arrOptions} attrLabel={dropdownName} />
                     </div>
                 </div>
