@@ -106,7 +106,7 @@ function HTML() {
           <p className="d-flex"><span className="mx-2">&#187;</span>
             Knowledge of HTML best practices, including writing clean, well-formatted code, adhering to web standards, and optimizing for performance and compatibility across different browsers and devices.          </p>
         </div>
-        {showVideo &&
+        {!showVideo &&
           <>
             <h5 className='mb-4' style={{ color: "#1ed760", whiteSpace: "nowrap" }}> Photo capture via camera
               {!stream && <button className='mx-2 zoom_me ' onClick={startCamera}>Start <i className="bi bi-camera-video"></i></button>}
