@@ -23,14 +23,15 @@
   }
 
   .myColor {
-    background: -webkit-linear-gradient(rgb(21, 38, 82), rgb(57, 255, 186));
+    background: -webkit-linear-gradient(rgb(57, 255, 186), rgb(21, 38, 82));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 22px;
   }
 
   // }
   input[type=text] {
-    background-color: #000000;
+    background-color: transparent;
     border: 1px solid #ffffff;
     padding: 5px;
     outline: none;
@@ -52,7 +53,7 @@
     //background: linear-gradient(90deg, #e52e71, #ff8a00);
     background-position: center;
     background-attachment: fixed;
-    background-color: #000000;
+    //background-color: #000000;
 
 
   }
@@ -71,10 +72,9 @@
   }
 
   .developer_description {
-    font-size: 16px;
+    font-size: 18px;
     margin: 30px 50px 0px 0px;
     animation: fadeIn 1500ms ease-in-out;
-
   }
 
   .wrap {
@@ -190,7 +190,7 @@
   }
 
   .portfolio_bg {
-    background-color: #000000;
+    //background-color: #000000;
     //background: linear-gradient(90deg, #e52e71, #ff8a00);
     //background-image: url(../../Assets/Images/flat-mountains.svg);
     background-size: cover;
@@ -257,6 +257,76 @@
     border-radius: 12px;
     padding: 30px 15px;
 
+  }
+
+  .my_smooth_animation {
+    animation: fadeIn 500ms ease-in-out;
+
+    .my_video {
+      border: 1px solid #1ed760;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      width: 100%;
+      height: 500px;
+    }
+
+    .download_capture_img {
+      position: absolute;
+      right: 22px;
+      top: 5px;
+    }
+
+    .thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 90%;
+      object-fit: scale-down
+    }
+
+    .capture_btn {
+      color: #fff;
+      position: absolute;
+      right: 33px;
+      top: 5px;
+    }
+
+    .capture_img_div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid #1ed760;
+      position: relative;
+    }
+
+    .capture_img {
+      height: 500px;
+      border-radius: 4px;
+    }
+
+    .stop_camera {
+      border: 1px solid #d24816;
+      color: #d24816;
+    }
+
+    .re_take {
+      border: 1px solid #dbe610;
+      color: #dbe610;
+    }
+
+    button {
+      text-align: center;
+      width: fit-content;
+      border: 1px solid #1ed760;
+      background-color: transparent;
+      color: #1ed760;
+      box-shadow: 0 0 2px 0 #1ed760;
+      padding: 5px;
+      border-radius: 2px;
+    }
   }
 
   .my_laptop {
@@ -369,7 +439,7 @@
     .photo .photo-overlay {
       transform: translateY(-100%);
       transition: transform .6s;
-      border-bottom: 1px solid #fff;
+      //border-bottom: 1px solid #fff;
     }
 
     .photo:hover .photo-overlay {
@@ -389,7 +459,7 @@
   }
 
   .my_section {
-    background-color: #0900004f;
+    //background-color: #0900004f;
     color: #fff;
     height: 370px;
     // h1{
@@ -422,18 +492,54 @@
   //   scale: 1.05;
   //   transform: translateY(-20px);
   // }
+  /* Square */
+  .square {
+    clip-path: inset(0 0 0 0);
+  }
+
+  /* Triangle */
+  .triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  /* Pentagon */
+  .pentagon {
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  }
+
+  /* Hexagon */
+  .hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  }
+
+  /* Circle */
+  .circle {
+    clip-path: circle(40% at 50% 50%);
+  }
+
+  .my_color {
+    color: #1ed760;
+    scale: 1.3;
+    transition: 0.1s;
+  }
 
   .about_section {
     position: relative;
     padding: 30px 0px;
     border-radius: 12px;
-    background: #000000;
-    height: 310px;
+    //background: #000000;
+    height: 338px;
 
     .mySwiper {
       display: flex;
       flex-direction: column;
       align-items: center;
+      //background-image: url("../../Assets/Images/sport_pitch.jpg");
+      border-radius: 3px;
+      padding: 10px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
 
       h1 {
         font-weight: 900;
@@ -466,7 +572,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #000000;
+    //background-color: #000000;
     box-shadow: 0 0 6px 0 #80D0C7;
     border-radius: 12px;
     padding: 10px;
@@ -480,8 +586,15 @@
       border-radius: 50%;
       object-fit: cover;
       object-position: center right;
-      border: 1px solid #80D0C7;
+      border: 2px solid #80D0C7;
       padding: 3px;
+    }
+
+    .img_cover:hover {
+      scale: 1.05;
+      transition: .2s ease-in;
+      object-fit: cover;
+      overflow: hidden;
     }
 
 
@@ -512,7 +625,7 @@
           transition: .2s ease-in-out;
           color: #1ed760;
           border-bottom: 5px solid #1ed760;
-          background-color: #000000;
+          //background-color: #000000;
           box-shadow: 0 0 7px 0 #1ed760;
         }
       }
@@ -521,7 +634,7 @@
     .flip-card {
       background-color: transparent;
       width: 100%;
-      height: 410px;
+      height: 360px;
       perspective: 1000px;
     }
 
@@ -619,7 +732,7 @@
 
 //Dark Mode
 .darkThem {
-  background-color: #1F1430;
+  //background-color: #1F1430;
   //transition: 1s ease-in;
 
   div,
@@ -627,14 +740,80 @@
   p,
   h6 {
     color: #fff !important;
-    background-color: #1F1430 !important;
+    //background-color: #1F1430 !important;
 
   }
 }
 
 .outer_dark {
-  background-color: #000000;
+  //background-color: #000000;
 
+}
+
+.vanish_msg {
+  margin-top: 10px;
+  color: #fff;
+  transition: 5s ease-in-out;
+}
+
+.my_projects_section {
+  display: flex;
+  flex-direction: column;
+  border-left: 3px solid #1ed760;
+  padding-left: 10px;
+  margin-bottom: 15px;
+
+  .my_project_heading {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    h4::before {
+      content: "-";
+      width: 10px;
+      height: 15px;
+      color: #1ed760;
+      position: absolute;
+      left: -12px;
+      top: -3px;
+      font-size: 30px;
+
+    }
+
+    .font_big {
+      //transition: .2s ;
+      font-size: 30px;
+      color: #1ed760;
+    }
+
+    h4 {
+      margin-left: 5px;
+    }
+
+    h4,
+    img {
+      cursor: pointer;
+      margin-right: 20px;
+    }
+
+    .rotate_me {
+      transform: translate(180deg);
+    }
+
+  }
+
+  .my_project_para {
+    display: flex;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .selected_project {
+    transition: .3s ease-out;
+    filter: drop-shadow(5px 5px 10px #1ed760);
+  }
 }
 
 //Animatiom KeyFrame
@@ -830,5 +1009,150 @@
 
   50% {
     opacity: 1
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .developer_description {
+    font-size: 28px !important;
+  }
+
+  .main_poins_container .portfolio_bg .slider-thumb::before {
+    width: 710px;
+    height: 650px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .main_poins_container .myTech {
+    position: absolute;
+    right: 0;
+    top: 5%;
+  }
+
+  .new_Tech {
+    position: static !important;
+    margin: 10px 0px !important;
+  }
+
+  .portfolio_bg {
+    height: 30vh !important;
+  }
+
+  .main_poins_container .flip span {
+    font-size: 25px;
+  }
+
+  .flip {
+    margin-bottom: 0px !important;
+    margin-left: 15px !important;
+    margin-right: 0px !important;
+  }
+
+  .wrap h1 {
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+
+  .wrap {
+    flex-direction: column;
+    align-items: normal;
+    padding: 25px;
+  }
+
+  .main_poins_container .portfolio_bg .slider-thumb::before {
+    width: 320px;
+    height: 270px;
+  }
+
+  .developer_headding {
+    display: flex;
+    font-size: 30px !important;
+    padding: 0px 25px;
+
+    br {
+      display: none;
+    }
+
+    .gradient_headdng {
+      margin-left: 10px;
+    }
+  }
+
+  .developer_description {
+    margin: 0px !important;
+    padding: 25px;
+  }
+
+  .main_poins_container .about_section .mySwiper h1 {
+    font-size: 18px;
+  }
+
+  .main_poins_container .about_section .mySwiper {
+    align-items: baseline !important;
+  }
+
+  .main_poins_container .about_section .mySwiper p {
+    padding: 0px 20px 0px 0px !important;
+    margin-top: 20px !important;
+    width: 100% !important;
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  .main_poins_container .my_section {
+    height: fit-content !important;
+    margin-top: 20px !important;
+  }
+
+  .my_mobile_movingRadius .movingRadius {
+    top: -20px;
+    left: 20px;
+  }
+
+  .main_tabs ul {
+    width: 340px;
+    overflow-x: auto;
+    padding: 10px 5px !important;
+  }
+
+  .main_tabs ul li {
+    white-space: nowrap;
+    border-bottom: 2px solid #1ed760 !important;
+  }
+
+  .my_icons {
+    max-width: 40px;
+  }
+
+  .my_projects_section .my_project_heading h4 {
+    font-size: 14px;
+    align-items: center;
+  }
+
+  .my_projects_section .my_project_heading h4::before {
+    top: -8px !important;
+  }
+
+  .font_big {
+    font-size: 14px !important;
+  }
+
+  .my_smooth_animation {
+
+    .my_video {
+      height: fit-content !important;
+      padding-bottom: 30px !important;
+    }
+
+    .capture_img {
+      height: fit-content !important;
+      width: 100%;
+    }
+
+    .thumbnail {
+      scale: 0.8;
+    }
   }
 }

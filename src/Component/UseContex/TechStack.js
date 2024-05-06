@@ -6,11 +6,13 @@ import Css from "./Css";
 import HTML from "./HTML";
 import JavaScript from "./JavaScript";
 import UserContext from "../../Contex/UserContext";
+import Projects from "./Projects";
+import myprofileGIF from "../../Assets/Images"
 
 function TechStack() {
     const user = useContext(UserContext);
     const [tabs, setTabs] = useState(0);
-    const [tabsOption, setTabsOption] = useState([{ tabName: "React" }, { tabName: "Java Script" }, { tabName: "HTML" }, { tabName: "CSS & Animations" }]);
+    const [tabsOption, setTabsOption] = useState([{ tabName: "React JS" }, { tabName: "Projects" }, { tabName: "HTML" }, { tabName: "CSS & Animations" }, { tabName: "Java Script" },]);
     const handelTabs = (e) => {
         setTabs(e);
     }
@@ -18,12 +20,19 @@ function TechStack() {
         user.updateTechStack(techVal)
     }
     return (
-        <div className="container p-5">
+        <div className={user.windownView === 0 ? "container-fluid p-4" : "container-fluid p-5"}>
             <div className="row">
                 <div className="col-md-12">
-                    <div className="d-flex justify-content-center align-items-center">
-                        <img className="mx-2 p-2" style={{transform:"rotate(90deg)", cursor:"pointer", border:"1px solid #fff", borderRadius:"3px"}} onClick={() => { handelTechStack(!user.techStack) }} src={icon.new_white_down_icon.src}/>
-                        <h3 className="text-center m-0">Tech Stack</h3>
+                    <div className={user.windownView === 0 ? "d-flex align-items-center flex-column" : "d-flex justify-content-between align-items-center"}>
+                        <button onClick={() => { handelTechStack(!user.techStack) }}
+                            style={{ paddingLeft: "0px" }}
+                            className={user.windownView === 0 ? "myTech new_Tech" : "myTech"}>
+                            <img src={icon.new_white_down_icon.src} className="mx-2" style={{ transform: "rotate(90deg)" }} />
+                            Tech Stack
+                        </button>
+                        <div className="d-flex">
+                            <h4 className="m-0">{user.myUser.username}   <i class="bi bi-person-check"></i> ({user.myUser.stack})</h4>
+                        </div>
                     </div>
                     <div className='my_card noShadow'>
                         <div className="main_tabs">
@@ -42,9 +51,11 @@ function TechStack() {
                     tabs === 0 ?
                         <ReactJS /> :
                         tabs === 1 ?
-                            <JavaScript /> :
+                            <Projects /> :
                             tabs === 2 ?
-                                <HTML /> : <Css />
+                                <HTML /> :
+                                tabs === 3 ? <Css /> : <JavaScript />
+
                 }
             </div>
         </div>

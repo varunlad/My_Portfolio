@@ -9,6 +9,7 @@ export const Circle = { src: require('./Circle.svg').default };
 export const Arrow = { src: require('./Arrow-01.svg').default };
 export const send = { src: require('./white_send.svg').default };
 export const popinsLogo = { src: require('./popinlogo.svg').default };
+export const atlantis = { src: require('./logo_white.svg').default };
 export const facebook = { src: require('./facebook-f.svg').default };
 export const twitter = { src: require('./twitter.svg').default };
 export const insta = { src: require('./square-instagram.svg').default };
@@ -35,6 +36,10 @@ export const mobile_menu = { src: require('./menu-01.svg').default };
 export const html = { src: require('./html.svg').default };
 export const photoshop = { src: require('./photoshop.svg').default };
 export const react = { src: require('./react.svg').default };
+export const javascripticon = { src: require('./javascripticon.svg').default };
+
+export const projecticon = { src: require('./projecticon.png').default };
+
 export const css = { src: require('./css.svg').default };
 export const angular = { src: require('./angular.svg').default };
 export const first = { src: require('./points-01.svg').default };

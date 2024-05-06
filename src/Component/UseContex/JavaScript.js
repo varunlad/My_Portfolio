@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import * as icon from "../../Assets/Images/index";
+import UserContext from '../../Contex/UserContext';
 
 function JavaScript() {
+    const user = useContext(UserContext);
+
     return (
-        <div className='container'>
+        <div className='container my_smooth_animation'>
             <div className='row box_shadow'>
-                <div className='col-md-6'>
+                <div className='col-md-12'>
+                    <h3 style={{ color: "#1ed760" }}>Technical Javascript Skills<img className={user.windownView === 0 && 'my_icons'} src={icon.javascripticon.src} alt="js"/> </h3>
+                    <p className="d-flex"><span className="mx-2">&#187;</span>
+                        Proficient in modern JavaScript (ES6+) features and syntax, including arrow functions, template literals, destructuring, spread/rest operators, and async/await for handling asynchronous operations.</p>
+                    <p className="d-flex"><span className="mx-2">&#187;</span>
+                        Strong understanding of fundamental concepts such as variables, data types, operators, control structures, and functions.</p>
+                    <p className="d-flex"><span className="mx-2">&#187;</span>
+                        Skilled in working with JSON (JavaScript Object Notation) for data interchange between the server and client-side applications.
+                    </p>
+                    <p className="d-flex"><span className="mx-2">&#187;</span>
+                        Familiarity with client-side storage options like localStorage and sessionStorage for storing data persistently in web applications.</p>
+                </div>
+                {/* <div className='col-md-6'>
                     <div className='my_card' style={{ height: "410px", justifyContent: "start", overflow: "auto" }}>
                         <p>
                             <h4> ✨ Difference between Rest and Spread operator ?</h4>
@@ -44,7 +60,7 @@ function JavaScript() {
                     //note : closures is a function inside another function that has access to the outer function veriable.
                         </p>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )
