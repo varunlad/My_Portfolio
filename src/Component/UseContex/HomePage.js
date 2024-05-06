@@ -69,7 +69,7 @@ function HomePage() {
                         <div className="col-md-7 ">
                             <div className=" wrap ">
                                 <div className="d-flex">
-                                    <p className="m-0 pt-3"><h1>Welcome to mys</h1></p>
+                                    <p className="m-0 pt-3"><h1>Welcome to my</h1></p>
                                     <p className="flip"><span>Portfolio</span>
                                         <span>Profile</span>
                                         <span>Story</span>
