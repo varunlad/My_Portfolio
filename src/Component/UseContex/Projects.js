@@ -36,7 +36,7 @@ function Projects() {
     ]);
     const [activeProject, setActiveProject] = useState(0);
     const handelActiveProject = (e) => {
-        setActiveProject(e);
+        setActiveProject(e === activeProject ? -1 : e);
     }
     return (
         <div className='container my_smooth_animation'>
@@ -50,14 +50,15 @@ function Projects() {
                         <div className='col-md-12' key={ind}>
                             <div className={user.windownView === 0 && ind === 0 ? 'my_projects_section mt-4' : 'my_projects_section'}>
                                 <div className='my_project_heading' onClick={() => { handelActiveProject(ind) }}>
-                                    <h4 className={activeProject === ind ? "font_big w-100 d-flex" : "d-flex w-100"}>{ele.name} {ele.icon === null ? <i class="bi bi-receipt mx-2"></i> : <img className={activeProject === ind ? 'mx-2 selected_project' : 'mx-2'} style={{ maxWidth: "60px",maxHeight:"40px" }} src={ele.icon} alt='project' />}</h4>
-                                    <img src={icon.new_white_down_icon.src} className={activeProject === ind && "rotate_me"} />
+                                    <h4 className={activeProject === ind ? "font_big w-100 d-flex" : " font_normal d-flex w-100"}>{ele.name} {ele.icon === null ? <i class="bi bi-receipt mx-2"></i> : <img className={activeProject === ind ? 'mx-2 selected_project' : 'mx-2'} style={{ maxWidth: "60px",maxHeight:"40px" }} src={ele.icon} alt='project' />}</h4>
+                                    <img src={icon.new_white_down_icon.src} className={activeProject === ind ? "rotate_me" : "rotate_me_none"} />
                                 </div>
                                 {activeProject === ind ?
                                     <div className='my_project_para grows_left flex-column'>
                                         <p>{ele.description}</p>
                                         <p className='d-flex'> <span className="mx-2"> &#187;</span> {ele.technologyUsed}</p>
-                                    </div> : null}
+                                    </div> : 
+                                     null }
                             </div>
                         </div>
                     )

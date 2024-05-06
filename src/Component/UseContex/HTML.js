@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import * as icon from "../../Assets/Images/index";
 import thumbnailImage from "../../Assets/Images/Support-White.svg"; // Import the thumbnail image
 import UserContext from '../../Contex/UserContext';
@@ -10,6 +10,7 @@ function HTML() {
   const audioRef = useRef(null); // Reference to the audio element
   const [stream, setStream] = useState(null); // Use state to manage stream
   const [photo, setPhoto] = useState(null); // Use state to manage captured photo
+  const [showVideo, setShowVideo] = useState(false);
 
   const startCamera = () => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -41,7 +42,7 @@ function HTML() {
   }
 
   const capturePhoto = () => {
-    
+
     if (videoRef.current) {
       const canvas = document.createElement('canvas');
       canvas.width = videoRef.current.videoWidth;
@@ -74,7 +75,18 @@ function HTML() {
       top: 1200,
       behavior: 'smooth'
     });
-}
+  }
+
+  useEffect(() => {
+    isIOS();
+    if (isIOS()) {
+      setShowVideo(true);
+    }
+  }, []);
+  const isIOS = () => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod/.test(userAgent);
+  }
 
   return (
     <div className='container my_smooth_animation'>
@@ -94,22 +106,25 @@ function HTML() {
           <p className="d-flex"><span className="mx-2">&#187;</span>
             Knowledge of HTML best practices, including writing clean, well-formatted code, adhering to web standards, and optimizing for performance and compatibility across different browsers and devices.          </p>
         </div>
-
-        <h5 className='mb-4' style={{ color: "#1ed760",whiteSpace:"nowrap" }}> Photo capture via camera
-          {!stream && <button className='mx-2 zoom_me ' onClick={startCamera}>Start <i class="bi bi-camera-video"></i></button>}
-          {stream && <button className='mx-2 mt-3 stop_camera zoom_me' onClick={stopCamera}>Stop <i class="bi bi-camera-video-off"></i></button>}
-        </h5>
-        <div style={{ position: 'relative', width: '100%' }}>
-          {!stream &&  <img src={thumbnailImage} alt="Thumbnail" className='thumbnail zoom_me' />}
-          <video className='my_video' ref={videoRef} autoPlay />
-          {stream && <button className={photo ? 'mt-3 capture_btn re_take zoom_me':'mt-3 capture_btn zoom_me'} onClick={capturePhoto}> {photo ? "Retake " : "Capture "} <i class="bi bi-camera"></i></button>}
-          {photo &&
-            <div className='w-100 capture_img_div' id="capturePhoto">
-              {photo && <button className='mt-3 download_capture_img' onClick={downloadPhoto}>Download <i class="bi bi-cloud-arrow-down"></i></button>}
-              <img className=' capture_img zoom_me' src={photo} alt="Captured Photo" />
+        {showVideo &&
+          <>
+            <h5 className='mb-4' style={{ color: "#1ed760", whiteSpace: "nowrap" }}> Photo capture via camera
+              {!stream && <button className='mx-2 zoom_me ' onClick={startCamera}>Start <i class="bi bi-camera-video"></i></button>}
+              {stream && <button className='mx-2 mt-3 stop_camera zoom_me' onClick={stopCamera}>Stop <i class="bi bi-camera-video-off"></i></button>}
+            </h5>
+            <div style={{ position: 'relative', width: '100%' }}>
+              {!stream && <img src={thumbnailImage} alt="Thumbnail" className='thumbnail zoom_me' />}
+              <video className='my_video' ref={videoRef} autoPlay  />
+              {stream && <button className={photo ? 'mt-3 capture_btn re_take zoom_me' : 'mt-3 capture_btn zoom_me'} onClick={capturePhoto}> {photo ? "Retake " : "Capture "} <i class="bi bi-camera"></i></button>}
+              {photo &&
+                <div className='w-100 capture_img_div' id="capturePhoto">
+                  {photo && <button className='mt-3 download_capture_img' onClick={downloadPhoto}>Download <i class="bi bi-cloud-arrow-down"></i></button>}
+                  <img className=' capture_img zoom_me' src={photo} alt="Captured Photo" />
+                </div>
+              }
             </div>
-          }
-        </div>
+          </>
+        }
         {/* Add audio element for click sound */}
         <audio ref={audioRef} src={clickSound} />
       </div>

@@ -781,9 +781,13 @@
     }
 
     .font_big {
-      //transition: .2s ;
+      transition: .2s ease-in-out ;
       font-size: 30px;
       color: #1ed760;
+    }
+    .font_normal{
+      font-size: 24px;
+      transition: .2s ease-in-out ;
     }
 
     h4 {
@@ -799,6 +803,10 @@
     .rotate_me {
       transform: translate(180deg);
     }
+    .rotate_me_none{
+      transition: .5s;
+      transform: translate(0deg);
+    }
 
   }
 
@@ -809,6 +817,10 @@
       margin: 0;
     }
   }
+  .project {
+    transition:  0.3s ease;
+}
+
 
   .selected_project {
     transition: .3s ease-out;
@@ -857,6 +869,9 @@
 .grows_left {
   animation: growsubLeftSide 300ms ease-in-out;
 }
+.closed {
+  animation: shrinksubLeftSide 0.3s ease forwards;
+}
 
 @keyframes growsubLeftSide {
   0% {
@@ -869,6 +884,18 @@
     transform: translateX(0)
   }
 }
+@keyframes shrinksubLeftSide {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
+
 
 .zoom_me {
   animation: growout 300ms ease-in-out;
