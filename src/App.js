@@ -7,7 +7,7 @@ function App() {
     
       <BrowserRouter>
         <Routes>
-          <Route path="/My_Portfolio" exact element={
+          <Route path="/" exact element={
             <div className='container-fluid main_poins_container'>
               <HomePage />
             </div>} />
