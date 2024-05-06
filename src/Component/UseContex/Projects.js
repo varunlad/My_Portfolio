@@ -23,7 +23,7 @@ function Projects() {
         },
         {
             name: "Popins Website (Marketing)",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            description: "Popin is more than just a loyalty platform – it's a complete solution designed to make customer engagement easier and help businesses grow. It's especially helpful for small retailers, giving them useful insights to analyze and improve their operations. With Popin, businesses can better connect with customers and boost their profits for the long run.",
             icon: icon.popinsLogo.src,
             technologyUsed: "React JS, Bootstrap, Css animations "
         },
