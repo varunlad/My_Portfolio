@@ -237,7 +237,7 @@ function HomePage() {
                                             <div className="col-md-3" key={ind}>
                                                 <div className={ind % 2 === 0 ? "box_shadow p-3 my_section" : "box_shadow p-3 mt-5 my_section"} key={ind}>
                                                     {/* <div className="movingRadius"></div> */}
-                                                    <h1 >{ele.name}</h1>
+                                                    <h1 className="gradient_headdng" >{ele.name}</h1>
                                                     <p>{ele.description}</p>
                                                 </div>
                                             </div>

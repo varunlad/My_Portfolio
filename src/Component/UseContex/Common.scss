@@ -5,6 +5,7 @@
   padding: 0px;
   overflow-x: hidden;
   font-family: "Poppins_Font_Family", sans-serif;
+  //font-family: 'Dancing Script', cursive;
   //background-color: #dfdfdf21;
 
   // :is(h1, h2, h3, h4, h5, h6) {
@@ -462,18 +463,11 @@
     //background-color: #0900004f;
     color: #fff;
     height: 370px;
-    // h1{
-    //   margin: 0;
-    //   color: #fff;
-    //   //color: rgba(225,225,225, .01);
-    //   // background-image: url("../../Assets/Images/abstract-background.jpg");
-    //   // background-repeat: repeat;
-    //   // -webkit-background-clip:text;
-    //   // animation: animate 15s ease-in-out infinite;
-    //   text-align: center;
-    //   text-transform: uppercase;
-    //   font-weight: 900;
-    //   font-size: 34px;
+    // .gradient_headdng {
+    //   transition-delay: 1s ease-in-out;
+    //   background: -webkit-linear-gradient(rgb(21, 38, 82), rgb(57, 255, 186));
+    //   -webkit-background-clip: text;
+    //   -webkit-text-fill-color: transparent;
     // }
 
 
@@ -615,6 +609,10 @@
         border-radius: 50%;
         object-fit: cover;
       }
+      img:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+      }
     }
 
     .img_cover:after {
@@ -622,7 +620,8 @@
       width: 100%;
       height: 100%;
       position: absolute;
-      border: 1px solid #80D0C7;
+      // border: 1px solid #80D0C7;
+      box-shadow: 0 0 3px 0 #80D0C7;
       left: 0;
       top: 0;
       box-sizing: border-box;
@@ -665,7 +664,8 @@
           border-top-right-radius: 10px;
           //border: 1px solid #1ed760;
           margin-right: 10px;
-          border-bottom: 5px solid #1ed760;
+          border-bottom: 5px solid #78bf92;
+          color: #78bf92;
           cursor: pointer;
         }
 
@@ -674,7 +674,7 @@
           color: #1ed760;
           border-bottom: 5px solid #1ed760;
           //background-color: #000000;
-          box-shadow: 0 0 7px 0 #1ed760;
+          //box-shadow: 0 0 7px 0 #1ed760;
         }
       }
     }
