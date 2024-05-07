@@ -123,8 +123,8 @@ function HomePage() {
                                                     <div><h6 style={{ fontSize: "14px" }} className="text-secondary">Currently working at</h6></div>
                                                     <div><h6 style={{ fontSize: "14px" }} className="text-secondary d-flex fade_me"><span className="mx-1 myColor" style={{ fontSize: "12px", fontWeight: 700 }}>EasyRewardz Software Services</span></h6></div>
                                                     <div> <h6 style={{ fontSize: "14px" }} className="text-secondary">Designation </h6></div>
-                                                    <div><h6 style={{ fontSize: "14px" }} className="text-secondary d-flex fade_me"><span className="mx-1 myColor" style={{ fontSize: "12px", fontWeight: 700 }}> Software Engineer</span></h6></div>
-                                                    <div><h6 style={{ fontSize: "14px" }} className="text-secondary d-flex mb-3">
+                                                    <div><h6 style={{ fontSize: "14px" }} className="text-secondary d-flex fade_me mb-3"><span className="mx-1 myColor" style={{ fontSize: "12px", fontWeight: 700 }}> Software Engineer</span></h6></div>
+                                                    <div><h6 style={{ fontSize: "14px" }} className="text-secondary d-flex ">
                                                         Known more on &nbsp;
                                                         <a target="_blank" href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos" style={{ fontSize: "14px" }} className="text-secondary d-flex">
                                                             Linkedin   <i className=" mx-1 bi bi-linkedin"></i>

@@ -50,7 +50,7 @@ function Projects() {
                         <div className='col-md-12' key={ind}>
                             <div className={user.windownView === 0 && ind === 0 ? 'my_projects_section mt-4' : 'my_projects_section'}>
                                 <div className='my_project_heading' onClick={() => { handelActiveProject(ind) }}>
-                                    <h4 className={activeProject === ind ? "font_big w-100 d-flex" : " font_normal d-flex w-100"}>{ele.name} {ele.icon === null ? <i className="bi bi-receipt mx-2"></i> : <img className={activeProject === ind ? 'mx-2 selected_project' : 'mx-2'} style={{ maxWidth: "60px",maxHeight:"40px" }} src={ele.icon} alt='project' />}</h4>
+                                    <h4 className={activeProject === ind ? "font_big w-100 d-flex" : "  d-flex w-100"}>{ele.name} {ele.icon === null ? <i className="bi bi-receipt mx-2"></i> : <img className={activeProject === ind ? 'mx-2 selected_project' : 'mx-2'} style={{ maxWidth: "60px",maxHeight:"40px" }} src={ele.icon} alt='project' />}</h4>
                                     <img src={icon.new_white_down_icon.src} className={activeProject === ind ? "rotate_me" : "rotate_me_none"} />
                                 </div>
                                 {activeProject === ind ?
