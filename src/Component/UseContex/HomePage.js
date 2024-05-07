@@ -104,7 +104,8 @@ function HomePage() {
                                             <div onClick={handelToggle} className="my_profile_toggle">
                                                 <i style={{width:"30px"}} className={!profileToggel ? "my_profile_toggle_bg bi bi-toggles2" : "bi bi-toggles2"}></i>
                                             </div>
-                                            <img className="img_cover zoom_me" src={profilePic} alt="pic" />
+                                            <div className="img_cover"><img className="" src={profilePic} alt="pic" /></div>
+                                            
                                             <h5 className="m-2"><strong className="myColor">{user.myUser.username}</strong></h5>
                                             {profileToggel ?
                                                 <div className="d-flex flex-column justify-content-center align-items-center fade_me">
