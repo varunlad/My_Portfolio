@@ -252,7 +252,6 @@ function HomePage() {
                 :
                 <TechStack />
             }
-            <Footer />
         </>
     )
 }

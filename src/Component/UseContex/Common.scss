@@ -12,6 +12,95 @@
   //   //font-family: monospace;
   color: #ffffff;
 
+  .footer {
+    width: 100%;
+    position: relative;
+
+    .gradient_bg {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 15px 10px;
+      background: linear-gradient(-45deg, #9df1cc, #91f18c, rgb(151, 186, 236), rgb(134, 231, 214));
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      margin-top: 20px;
+
+      .footer_left {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+
+        h6 {
+          //font-weight: 700;
+        }
+
+        
+      }
+
+      .footer_right {
+        display: flex;
+        align-items: center;
+        p {
+          white-space: nowrap;
+
+          h6 {
+            margin: 0;
+            //font-weight: 700;
+          }
+        }
+
+
+      }
+    }
+
+    .connect_me_footer {
+      position: absolute;
+      top: -10%;
+      left: 25%;
+      display: flex;
+      //flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      padding: 15px;
+      box-shadow: 0 0 20px 0 #222323;
+      border-radius: 8px;
+      background: linear-gradient(-45deg, #9df1cc, #91f18c, rgb(151, 186, 236), rgb(134, 231, 214));
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      color: #fff;
+      //font-weight: 600;
+
+      a {
+        color: #fff !important;
+      }
+
+      //background: linear-gradient(90deg, rgb(77, 168, 193) 0%, rgb(175, 237, 60) 0%, rgba(0,255,218,1) 100%); 
+    }
+
+    .connect_me_footer_mobile {
+      width: 80% !important;
+      left: 10% !important;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  }
+
   .movingRadius {
     position: absolute;
     width: 70px;
@@ -183,7 +272,6 @@
     background-size: cover;
     height: 100vh;
     display: flex;
-
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -205,11 +293,6 @@
       //z-index: -1;
       -webkit-animation: sliderShape 5s linear infinite;
     }
-
-
-
-
-
 
     .typing-demo {
       text-align: center;
@@ -1250,6 +1333,7 @@
     }
   }
 }
+
 @media screen and (min-width: 990px) and (max-width: 1200px) {
 
   .main_poins_container .portfolio_bg .slider-thumb::before {
