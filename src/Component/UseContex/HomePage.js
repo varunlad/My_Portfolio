@@ -12,6 +12,7 @@ import 'swiper/css';
 import { Pagination, Autoplay } from "swiper/modules";
 import TechStack from "./TechStack";
 import Footer from "../../Common/Footer";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 
 
@@ -252,6 +253,7 @@ function HomePage() {
                 :
                 <TechStack />
             }
+            <ScrollToTopButton/>
         </>
     )
 }
