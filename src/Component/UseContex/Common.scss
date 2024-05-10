@@ -1196,6 +1196,15 @@
     height: 650px;
   }
 }
+@media only screen and (min-width: 1800px) {
+  .portfolio_bg {
+   height: 70vh !important;
+  }
+  .container{
+    max-width: 1450px;
+  } 
+}
+
 
 
 

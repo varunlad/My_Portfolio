@@ -13,6 +13,8 @@ import { Pagination, Autoplay } from "swiper/modules";
 import TechStack from "./TechStack";
 import Footer from "../../Common/Footer";
 import ScrollToTopButton from "./ScrollToTopButton";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
@@ -42,6 +44,15 @@ function HomePage() {
         let currentYear = currentDate.getFullYear();
         setMyExperience(currentYear - 2022);
         scrollTop();
+        ///AOS///
+        AOS.init({
+            offset: 10,
+            duration: 500,
+            easing: 'ease-in-sine',
+            delay: 100,
+            //disable: 'mobile',
+            once: true
+        });
     }, []);
     const scrollTop = () => {
         //let myheight = document.documentElement.scrollHeight  
@@ -100,13 +111,13 @@ function HomePage() {
                             </div>
                             {show_Me ?
                                 <>
-                                    <div className="col-md-3  ">
+                                    <div className="col-md-3" >
                                         <div className="d-flex mt-3 my_card align-items-center flex-column">
                                             <div onClick={handelToggle} className="my_profile_toggle">
-                                                <i style={{width:"30px"}} className={profileToggel === false ? "my_profile_toggle_bg bi bi-toggles2" : "bi bi-toggles2"}></i>
+                                                <i style={{ width: "30px" }} className={profileToggel === false ? "my_profile_toggle_bg bi bi-toggles2" : "bi bi-toggles2"}></i>
                                             </div>
-                                            <div className="img_cover"><img className="" src={profilePic} alt="pic" /></div>
-                                            
+                                            <div data-aos="zoom-in" className="img_cover"><img className="" src={profilePic} alt="pic" /></div>
+
                                             <h5 className="m-2"><strong className="myColor">{user.myUser.username}</strong></h5>
                                             {profileToggel ?
                                                 <div className="d-flex flex-column justify-content-center align-items-center fade_me">
@@ -116,8 +127,8 @@ function HomePage() {
                                                     <div><h6 style={{ fontSize: "14px" }} className="text-secondary"> +91 9834978189 <i className="bi bi-phone"></i></h6></div>
                                                     <div><h6 style={{ fontSize: "14px" }} className="text-secondary d-flex">
                                                         Known more on &nbsp;
-                                                        <a  target="_blank" href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos" 
-                                                        style={{ fontSize: "14px" }} className="text-secondary d-flex">
+                                                        <a target="_blank" href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos"
+                                                            style={{ fontSize: "14px" }} className="text-secondary d-flex">
                                                             Linkedin   <i className=" mx-1 bi bi-linkedin"></i>
                                                         </a>
                                                     </h6></div>
@@ -129,8 +140,8 @@ function HomePage() {
                                                     <div><h6 style={{ fontSize: "14px" }} className="text-secondary d-flex fade_me mb-3"><span className="mx-1 myColor" style={{ fontSize: "12px", fontWeight: 700 }}> Software Engineer</span></h6></div>
                                                     <div><h6 style={{ fontSize: "14px" }} className="text-secondary d-flex ">
                                                         Known more on &nbsp;
-                                                        <a target="_blank" href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos" 
-                                                        style={{ fontSize: "14px" }} className="text-secondary d-flex">
+                                                        <a target="_blank" href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos"
+                                                            style={{ fontSize: "14px" }} className="text-secondary d-flex">
                                                             Linkedin   <i className=" mx-1 bi bi-linkedin"></i>
                                                         </a>
                                                     </h6></div>
@@ -154,7 +165,7 @@ function HomePage() {
                                             >
                                                 {aboutMe?.map((ele, ind) => {
                                                     return (
-                                                        <SwiperSlide key={ind} style={{ backgroundImage: `url(${currentURl + "/" + ele.backgrounImg})` }} className="mySwiper">
+                                                        <SwiperSlide  key={ind} style={{ backgroundImage: `url(${currentURl + "/" + ele.backgrounImg})` }} className="mySwiper">
                                                             <h1 className="myColor">{ele.heading}</h1>
                                                             <p className="p-3 w-75">{ele.description}</p>
                                                         </SwiperSlide>
@@ -170,7 +181,7 @@ function HomePage() {
                     </div>
                     <div className="container mt-5 mb-5">
                         <div className="my_laptop row">
-                            <div className="col-md-3">
+                            <div className="col-md-3" data-aos="fade-right">
                                 <div className="photo  " style={{ transitionDelay: "200ms" }}>
                                     <img src={laptop} />
                                     <h1 className="headding">Skills</h1>
@@ -185,7 +196,7 @@ function HomePage() {
                                 </div>
                             </div>
 
-                            <div className="col-md-3">
+                            <div className="col-md-3" data-aos="fade-left">
                                 <div className="photo ">
                                     <img src={project} />
                                     <h1 className="headding">Projects</h1>
@@ -199,7 +210,7 @@ function HomePage() {
                                 </div>
                             </div>
 
-                            <div className="col-md-3">
+                            <div className="col-md-3" data-aos="fade-right">
                                 <div className="photo ">
                                     <img src={vision} />
                                     <h1 className="headding">Vision</h1>
@@ -213,7 +224,7 @@ function HomePage() {
                                 </div>
                             </div>
 
-                            <div className="col-md-3">
+                            <div className="col-md-3" data-aos="fade-left">
                                 <div className="photo ">
                                     <img src={hobby} />
                                     <h1 className="headding">Hobby</h1>
@@ -255,7 +266,7 @@ function HomePage() {
                 :
                 <TechStack />
             }
-            <ScrollToTopButton/>
+            <ScrollToTopButton />
         </>
     )
 }

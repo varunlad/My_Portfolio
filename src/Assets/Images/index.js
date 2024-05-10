@@ -37,6 +37,10 @@ export const html = { src: require('./html.svg').default };
 export const photoshop = { src: require('./photoshop.svg').default };
 export const react = { src: require('./react.svg').default };
 export const javascripticon = { src: require('./javascripticon.svg').default };
+export const jquery = { src: require('./jquery.svg').default };
+export const typescript = { src: require('./typescript.svg').default };
+
+
 
 export const projecticon = { src: require('./projecticon.png').default };
 
