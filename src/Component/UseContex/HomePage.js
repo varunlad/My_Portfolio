@@ -118,7 +118,7 @@ function HomePage() {
             setSelectedStack("HTML");
             setSelectedSeries([40, 20, 10, 10, 20]);
             handleSelectedOptions(['Semantic Tags', 'Forms', 'Data Attributes', 'Hyperlinks', 'Inline vs. Block Elements']);
-            setSelected(['Semantic Tags (40%))', 'Forms (20%)', 'Data Attributes (10%)', 'Hyperlinks (10%)', 'Inline vs. Block Elements (20%)']);
+            setSelected(['Semantic Tags (40%)', 'Forms (20%)', 'Data Attributes (10%)', 'Hyperlinks (10%)', 'Inline vs. Block Elements (20%)']);
 
         }
         else if (index === 2) {
