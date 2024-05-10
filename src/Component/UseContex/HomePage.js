@@ -103,7 +103,7 @@ function HomePage() {
                                     <div className="col-md-3  ">
                                         <div className="d-flex mt-3 my_card align-items-center flex-column">
                                             <div onClick={handelToggle} className="my_profile_toggle">
-                                                <i style={{width:"30px"}} className={!profileToggel ? "my_profile_toggle_bg bi bi-toggles2" : "bi bi-toggles2"}></i>
+                                                <i style={{width:"30px"}} className={profileToggel === false ? "my_profile_toggle_bg bi bi-toggles2" : "bi bi-toggles2"}></i>
                                             </div>
                                             <div className="img_cover"><img className="" src={profilePic} alt="pic" /></div>
                                             
@@ -116,7 +116,8 @@ function HomePage() {
                                                     <div><h6 style={{ fontSize: "14px" }} className="text-secondary"> +91 9834978189 <i className="bi bi-phone"></i></h6></div>
                                                     <div><h6 style={{ fontSize: "14px" }} className="text-secondary d-flex">
                                                         Known more on &nbsp;
-                                                        <a target="_blank" href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos" style={{ fontSize: "14px" }} className="text-secondary d-flex">
+                                                        <a  target="_blank" href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos" 
+                                                        style={{ fontSize: "14px" }} className="text-secondary d-flex">
                                                             Linkedin   <i className=" mx-1 bi bi-linkedin"></i>
                                                         </a>
                                                     </h6></div>
@@ -128,7 +129,8 @@ function HomePage() {
                                                     <div><h6 style={{ fontSize: "14px" }} className="text-secondary d-flex fade_me mb-3"><span className="mx-1 myColor" style={{ fontSize: "12px", fontWeight: 700 }}> Software Engineer</span></h6></div>
                                                     <div><h6 style={{ fontSize: "14px" }} className="text-secondary d-flex ">
                                                         Known more on &nbsp;
-                                                        <a target="_blank" href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos" style={{ fontSize: "14px" }} className="text-secondary d-flex">
+                                                        <a target="_blank" href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos" 
+                                                        style={{ fontSize: "14px" }} className="text-secondary d-flex">
                                                             Linkedin   <i className=" mx-1 bi bi-linkedin"></i>
                                                         </a>
                                                     </h6></div>
