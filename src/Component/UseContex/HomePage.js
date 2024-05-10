@@ -118,7 +118,7 @@ function HomePage() {
             setSelectedStack("HTML");
             setSelectedSeries([40, 20, 10, 10, 20]);
             handleSelectedOptions(['Semantic Tags', 'Forms', 'Data Attributes', 'Hyperlinks', 'Inline vs. Block Elements']);
-            setSelected(['Semantic Tags', 'Forms', 'Data Attributes', 'Hyperlinks', 'Inline vs. Block Elements']);
+            setSelected(['Semantic Tags (40%))', 'Forms (20%)', 'Data Attributes (10%)', 'Hyperlinks (10%)', 'Inline vs. Block Elements (20%)']);
 
         }
         else if (index === 2) {
@@ -131,35 +131,35 @@ function HomePage() {
                 'Applying CSS Animations to Block Elements for Dynamic Layout Transitions'
             ]);
             setSelected([
-                'Animating Semantic Tags for Smooth Transitions',
-                'Styling Form Elements with CSS for Enhanced Appearance',
-                'Controlling Layout and Appearance of Inline Elements with CSS',
-                'Applying CSS Animations to Block Elements for Dynamic Layout Transitions'
+                'Animating Semantic Tags for Smooth Transitions (30%)',
+                'Styling Form Elements with CSS for Enhanced Appearance (20%)',
+                'Controlling Layout and Appearance of Inline Elements with CSS (30%)',
+                'Applying CSS Animations to Block Elements for Dynamic Layout Transitions (20%)'
             ]);
         }
         else if (index === 3) {
             setSelectedStack("JavaScript");
             setSelectedSeries([20, 10, 40, 10, 20]);
             handleSelectedOptions(['Arrow Functions', 'Promises', 'Async/Await', 'Template Literals', 'Spread Syntax']);
-            setSelected(['Arrow Functions', 'Promises', 'Async/Await', 'Template Literals', 'Spread Syntax']);
+            setSelected(['Arrow Functions (20%)', 'Promises (10%)', 'Async/Await (40%)', 'Template Literals (10%)', 'Spread Syntax (20%)']);
         }
         else if (index === 4) {
             setSelectedStack("JQuery");
             setSelectedSeries([40, 10, 10, 20, 20]);
             handleSelectedOptions(['DOM Manipulation', 'Event Handling', 'AJAX Requests', 'Animations', 'Effects']);
-            setSelected(['DOM Manipulation', 'Event Handling', 'AJAX Requests', 'Animations', 'Effects']);
+            setSelected(['DOM Manipulation (40%)', 'Event Handling (10%)', 'AJAX Requests (10%)', 'Animations (20%)', 'Effects (20%)']);
         }
         else if (index === 5) {
             setSelectedStack("TypeScript");
             setSelectedSeries([30, 30, 10, 10, 20]);
             handleSelectedOptions(['Type Annotations', 'Interfaces', 'Enums', 'Generics', 'Decorators']);
-            setSelected(['Type Annotations', 'Interfaces', 'Enums', 'Generics', 'Decorators']);
+            setSelected(['Type Annotations (30%)', 'Interfaces (30%)', 'Enums (10%)', 'Generics (10%)', 'Decorators (20%)']);
         }
         else if (index === 6) {
             setSelectedStack("React JS");
             setSelectedSeries([10, 30, 20, 20, 20]);
             handleSelectedOptions(['JSX', 'Components', 'State and Props', 'Lifecycle Methods', 'Hooks']);
-            setSelected(['JSX', 'Components', 'State and Props', 'Lifecycle Methods', 'Hooks']);
+            setSelected(['JSX (10%)', 'Components (30%)', 'State and Props (20%)', 'Lifecycle Methods (20%)', 'Hooks (20%)']);
         }
     }
     const handleSelectedOptions = (options) => {
@@ -403,12 +403,12 @@ function HomePage() {
                                     </div>
                                 </div>
                             </div>
-                            <div data-aos={selectedSeries.length > 0 ? "zoom-in" : "fade-left"} className={selectedSeries.length > 0 ? "col-md-6" : "col-md-12"}>
-                                <div className=' align-items-start '>
+                            <div data-aos={selectedSeries.length > 0 ? "zoom-in" : "fade-left"} className={selectedSeries.length > 0 ? "col-md-6  " : "col-md-12"}>
+                                <div className=' align-items-start'>
                                     <div onClick={() => { handelTechStack(!user.techStack) }} className="d-flex align-items-baseline w-100 px-2">
                                         <div className="movingRadius"></div>
                                         <h1 className="mb-4 mt-2 position-relative fw-bold">My Tech Stack</h1>
-                                        <i class="bi bi-skip-forward ms-2"></i>
+                                        <i class="bi bi-skip-forward ms-2 mb-2" style={{maxWidth:"30px"}}></i>
                                     </div>
                                 </div>
                                 <Chart
@@ -419,7 +419,7 @@ function HomePage() {
                                 />
                             </div>
                             {selectedSeries.length > 0 &&
-                                <div data-aos="zoom-in" className="col-md-6">
+                                <div className="col-md-6" data-aos="fade-right">
                                     <div className=' align-items-start '>
                                         <div className="d-flex w-100 px-2">
                                             <div className="movingRadius"></div>
@@ -447,7 +447,7 @@ function HomePage() {
                     </div>
 
 
-                    <div className="row  ">
+                    <div className="row">
                         <div className="sun">
                             <div className="container">
                                 <div className={user.windownView === 0 ? "row my_mobile_movingRadius " : "row mt-5 mb-5"}>
