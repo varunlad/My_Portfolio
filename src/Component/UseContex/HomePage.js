@@ -15,9 +15,8 @@ import Footer from "../../Common/Footer";
 import ScrollToTopButton from "./ScrollToTopButton";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-
-
+import Chart from 'react-apexcharts'
+import './chart.css';
 
 function HomePage() {
     const user = useContext(UserContext);
@@ -37,7 +36,175 @@ function HomePage() {
         { heading: "Sports Enthusiast", description: "You'll often find me fully engaged in the vibrant atmosphere of the football pitch or the competitive spirit of the cricket ground, passionately cheering for my favorite teams. With every match, I'm captivated by the excitement of a last minute goal or the tension of a thrilling last-over finish. From analyzing tactics to debating player performances, I can effortlessly engage in discussions, sharing insights that reveal my deep love for the game.", backgrounImg: "../../Assets/Images/sport_pitch.jpg" },
         { heading: "Starry-Eyed Explorer", description: "Beyond the confines of Earth, I'm captivated by the vastness of the cosmos. With each glimpse into the night sky, constellations and distant galaxies beckon me on an endless journey of discovery. Astronomy isn't just a hobby it's a profound exploration of the unknown, a quest to unravel the mysteries of existence and find my place within the cosmic tapestry.", backgrounImg: "../../Assets/Images/sport_pitch.jpg" },
     ]);
+    const [series, setSeries] = useState([
+        {
+            name: 'HTML',
+            data: [
+                { x: 'HTML', y: 20 },
+            ]
+        },
+        {
+            name: 'CSS & Animation',
+            data: [
+                { x: 'CSS & Animation', y: 10 },
+            ]
+        },
+        {
+            name: 'JavaScript',
+            data: [
+                { x: 'JavaScript', y: 20 },
+            ]
+        },
+        {
+            name: 'jQuery',
+            data: [
+                { x: 'jQuery', y: 10 },
+            ]
+        },
+        {
+            name: 'TypeScript',
+            data: [
+                { x: 'TypeScript', y: 10 },
+            ]
+        },
+        {
+            name: 'React JavaScript',
+            data: [
+                { x: 'React JS', y: 30 }
+            ]
+        }
+    ]);
+    const [options, setOptions] = useState({
+        legend: {
+            show: false
+        },
+        chart: {
+            height: 350,
+            type: 'treemap',
+            toolbar: {
+                show: false
+            },
+            events: {
+                dataPointSelection: (event, chartContext, config) => {
+                    var index = config.selectedDataPoints.length;
+                    handleStrock(index)
+                }
+            }
+        },
+        tooltip: {
+            shared: false,
+            x: {
+                formatter: function (val) {
+                    return val;
+                },
+            },
+            y: {
+                formatter: function (val) {
+                    return Math.abs(val) + "%";
+                },
+            },
+        },
+        title: {
+            text: '',
+            align: 'center'
+        }
+    });
+    const [selected, setSelected] = useState([]);
+    const [selectedSeries, setSelectedSeries] = useState([]);
+    const [selectedOptions, setSelectedOptions] = useState();
+    const [selectedStack, setSelectedStack] = useState("");
+    const handleStrock = (index) => {
+        if (index === 1) {
+            setSelectedStack("HTML");
+            setSelectedSeries([40, 20, 10, 10, 20]);
+            handleSelectedOptions(['Semantic Tags', 'Forms', 'Data Attributes', 'Hyperlinks', 'Inline vs. Block Elements']);
+            setSelected(['Semantic Tags', 'Forms', 'Data Attributes', 'Hyperlinks', 'Inline vs. Block Elements']);
 
+        }
+        else if (index === 2) {
+            setSelectedStack("CSS & Animation");
+            setSelectedSeries([30, 20, 30, 20]);
+            handleSelectedOptions([
+                'Animating Semantic Tags for Smooth Transitions',
+                'Styling Form Elements with CSS for Enhanced Appearance',
+                'Controlling Layout and Appearance of Inline Elements with CSS',
+                'Applying CSS Animations to Block Elements for Dynamic Layout Transitions'
+            ]);
+            setSelected([
+                'Animating Semantic Tags for Smooth Transitions',
+                'Styling Form Elements with CSS for Enhanced Appearance',
+                'Controlling Layout and Appearance of Inline Elements with CSS',
+                'Applying CSS Animations to Block Elements for Dynamic Layout Transitions'
+            ]);
+        }
+        else if (index === 3) {
+            setSelectedStack("JavaScript");
+            setSelectedSeries([20, 10, 40, 10, 20]);
+            handleSelectedOptions(['Arrow Functions', 'Promises', 'Async/Await', 'Template Literals', 'Spread Syntax']);
+            setSelected(['Arrow Functions', 'Promises', 'Async/Await', 'Template Literals', 'Spread Syntax']);
+        }
+        else if (index === 4) {
+            setSelectedStack("JQuery");
+            setSelectedSeries([40, 10, 10, 20, 20]);
+            handleSelectedOptions(['DOM Manipulation', 'Event Handling', 'AJAX Requests', 'Animations', 'Effects']);
+            setSelected(['DOM Manipulation', 'Event Handling', 'AJAX Requests', 'Animations', 'Effects']);
+        }
+        else if (index === 5) {
+            setSelectedStack("TypeScript");
+            setSelectedSeries([30, 30, 10, 10, 20]);
+            handleSelectedOptions(['Type Annotations', 'Interfaces', 'Enums', 'Generics', 'Decorators']);
+            setSelected(['Type Annotations', 'Interfaces', 'Enums', 'Generics', 'Decorators']);
+        }
+        else if (index === 6) {
+            setSelectedStack("React JS");
+            setSelectedSeries([10, 30, 20, 20, 20]);
+            handleSelectedOptions(['JSX', 'Components', 'State and Props', 'Lifecycle Methods', 'Hooks']);
+            setSelected(['JSX', 'Components', 'State and Props', 'Lifecycle Methods', 'Hooks']);
+        }
+    }
+    const handleSelectedOptions = (options) => {
+        setSelectedOptions({
+            legend: {
+                show: false,
+                color: '#fff'
+            },
+            chart: {
+                type: 'polarArea',
+            },
+            tooltip: {
+                shared: false,
+                x: {
+                    formatter: function (val) {
+                        return val;
+                    },
+                },
+                y: {
+                    formatter: function (val) {
+                        return Math.abs(val) + "%";
+                    },
+                },
+            },
+
+            labels: options,
+            stroke: {
+                colors: ['#fff']
+            },
+            fill: {
+                opacity: .9
+            },
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: "100%"
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }]
+        })
+    }
     useEffect(() => {
 
         let currentDate = new Date();
@@ -165,7 +332,7 @@ function HomePage() {
                                             >
                                                 {aboutMe?.map((ele, ind) => {
                                                     return (
-                                                        <SwiperSlide  key={ind} style={{ backgroundImage: `url(${currentURl + "/" + ele.backgrounImg})` }} className="mySwiper">
+                                                        <SwiperSlide key={ind} style={{ backgroundImage: `url(${currentURl + "/" + ele.backgrounImg})` }} className="mySwiper">
                                                             <h1 className="myColor">{ele.heading}</h1>
                                                             <p className="p-3 w-75">{ele.description}</p>
                                                         </SwiperSlide>
@@ -236,10 +403,50 @@ function HomePage() {
                                     </div>
                                 </div>
                             </div>
-
+                            <div data-aos={selectedSeries.length > 0 ? "zoom-in" : "fade-left"} className={selectedSeries.length > 0 ? "col-md-6" : "col-md-12"}>
+                                <div className=' align-items-start '>
+                                    <div onClick={() => { handelTechStack(!user.techStack) }} className="d-flex align-items-baseline w-100 px-2">
+                                        <div className="movingRadius"></div>
+                                        <h1 className="mb-4 mt-2 position-relative fw-bold">My Tech Stack</h1>
+                                        <i class="bi bi-skip-forward ms-2"></i>
+                                    </div>
+                                </div>
+                                <Chart
+                                    options={options}
+                                    series={series}
+                                    type="treemap"
+                                    height={350}
+                                />
+                            </div>
+                            {selectedSeries.length > 0 &&
+                                <div data-aos="zoom-in" className="col-md-6">
+                                    <div className=' align-items-start '>
+                                        <div className="d-flex w-100 px-2">
+                                            <div className="movingRadius"></div>
+                                            <h1 className="mb-4 mt-2 position-relative fw-bold">{selectedStack}</h1>
+                                        </div>
+                                    </div>                                      
+                                        <Chart
+                                            options={selectedOptions}
+                                            series={selectedSeries}
+                                            type="polarArea"
+                                            height={350}
+                                        />
+                                         {user.windownView === 0 &&
+                                          <ul >
+                                            {selected.map((ele, ind) => {
+                                                return (
+                                                    <li className="px-4" key={ind}>{ele}</li>
+                                                )
+                                            })}
+                                        </ul> }
+                                    </div>
+                                }
 
                         </div>
                     </div>
+
+
                     <div className="row  ">
                         <div className="sun">
                             <div className="container">

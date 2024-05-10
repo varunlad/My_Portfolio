@@ -6,6 +6,7 @@ import UserProfile from "./UserProfile";
 import ErReactMultiSelect from "../../Common/SingleDropdown";
 import UserContext from "../../Contex/UserContext";
 
+
 function ReactJS() {
     const user = useContext(UserContext);
     const [arrOptions, setArrOptions] = useState([
@@ -25,6 +26,7 @@ function ReactJS() {
     const [dropdownName, setDropdownName] = useState('Varun Custom Dropdown');
     const [primaryColor, setPrimaryColor] = useState('#1ed760');
     const [isCustom, setIsCustom] = useState(true);
+   
 
     const handelIsCustom = () => {
         setIsCustom(!isCustom)
@@ -67,6 +69,7 @@ function ReactJS() {
                     <p className="d-flex"><span className="mx-2">&#187;</span>
                         Knowledge of modern JavaScript(ES6+)  features and syntax, including arrow functions, destructuring, spread/rest operators, and template literals, to write concise and efficient code.</p>
                 </div>
+               
                 <div className='col-md-12'>
                     <div className='my_card'>
                         <div onClick={handelIsCustom} style={{ cursor: "pointer" }} className="d-flex justify-content-between w-100">

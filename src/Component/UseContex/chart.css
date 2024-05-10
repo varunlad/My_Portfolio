@@ -1,0 +1,51 @@
+/* Tooltip */
+.apexcharts-tooltip {
+    background-color: rgba(0, 0, 0, 0.8) !important; /* Set the tooltip background color */
+    color: #ffffff !important; /* Set the tooltip text color */
+  }
+  
+  /* X-axis labels */
+  .apexcharts-xaxis-labels {
+    color: #ffffff !important; /* Set the label text color */
+  }
+  
+  /* Y-axis labels */
+  .apexcharts-yaxis-labels {
+    color: #ffffff !important; /* Set the label text color */
+  }
+  
+  /* Data labels */
+  .apexcharts-datalabels {
+    color: #ffffff !important; /* Set the label text color */
+  }
+  
+  /* Legend */
+  .apexcharts-legend {
+    color: #ffffff !important; /* Set the legend text color */
+  }
+  
+  /* Title */
+  .apexcharts-title {
+    color: #ffffff !important; /* Set the title text color */
+  }
+  
+  /* Subtitle */
+  .apexcharts-subtitle {
+    color: #ffffff !important; /* Set the subtitle text color */
+  }
+  
+  /* Data points */
+  .apexcharts-data-point {
+    fill: #ffffff !important; /* Set the data point fill color */
+  }
+  
+  /* Grid lines */
+  .apexcharts-grid-lines {
+    stroke: rgba(255, 255, 255, 0.2) !important; /* Set the grid line color */
+  }
+  
+  /* Background */
+  .apexcharts-background {
+    fill: #1a1a1a !important; /* Set the chart background color */
+  }
+  

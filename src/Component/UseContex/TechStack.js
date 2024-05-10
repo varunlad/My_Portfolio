@@ -22,7 +22,16 @@ function TechStack() {
         tabElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     }
     } 
-    
+    useEffect(() => {
+        scrollTop();
+    }, []);
+    const scrollTop = () => {
+        //let myheight = document.documentElement.scrollHeight  
+        window.scrollTo({
+            top: 1,
+            behavior: 'smooth'
+        });
+    }
     
     const handelTechStack = (techVal) => {
         user.updateTechStack(techVal)
