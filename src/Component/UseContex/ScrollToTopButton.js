@@ -28,7 +28,7 @@ function ScrollToTopButton() {
   return (
     <div>
       {showButton && (
-        <button className='top_me' onClick={scrollToTop} style={{ borderRadius:"50%", position: 'fixed', bottom: '70px', right: '20px', zIndex: '999',backgroundColor:"transparent",outline:"none",color:"#ffffff" }}>
+        <button className='top_me' onClick={scrollToTop} style={{ borderRadius:"50%", position: 'fixed', bottom: '75px', right: '20px', zIndex: '999',backgroundColor:"transparent",outline:"none",color:"#ffffff" }}>
        <i class="bi bi-arrow-up-circle"></i>
         </button>
       )}

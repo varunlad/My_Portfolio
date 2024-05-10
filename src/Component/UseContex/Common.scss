@@ -15,11 +15,12 @@
   .top_me {
     cursor: pointer;
     box-shadow: 0 0 10px 0 #15dddd;
-    animation: fadeIn 1000ms  ease-in-out;
+    animation: fadeIn 1000ms ease-in-out;
   }
 
   .footer {
     width: 100%;
+    flex-direction: column;
     position: relative;
 
     .gradient_bg {
@@ -28,34 +29,35 @@
       align-items: center;
       width: 100%;
       padding: 15px 10px;
-      background-color: #22232382;
-      box-shadow: 0 0 20px 0 #222323;
+      //background-color: #22232382;
+      //box-shadow: 0 0 5px 0 #80D0C7;
+      border-top: 1px solid #80D0C7;
       //background: linear-gradient(-45deg, #9df1cc, #91f18c, rgb(151, 186, 236), rgb(134, 231, 214));
       background-size: 400% 400%;
       animation: gradient 10s ease infinite;
-      border-top-right-radius: 5px;
-      border-top-left-radius: 5px;
       margin-top: 20px;
+      padding-bottom: 0;
+      // background-image: url(../../Assets/Images/abstract-background.jpg);
+      // background-size: cover;
+      // background-position: center;
 
       .footer_left {
         display: flex;
         align-items: center;
         white-space: nowrap;
-
-        h6 {
-          //font-weight: 700;
-        }
-
-
       }
 
       .footer_right {
         display: flex;
         align-items: center;
+          .mySwiper_text{
+            display: flex;
+            justify-content: center;
+          }
 
         p {
           white-space: nowrap;
-
+         
           h6 {
             margin: 0;
             //font-weight: 700;
@@ -69,7 +71,7 @@
     .connect_me_footer {
       position: absolute;
       top: -10%;
-      left: 25%;
+      left: 26%;
       display: flex;
       //flex-direction: column;
       justify-content: center;
@@ -77,11 +79,15 @@
       padding: 15px;
       box-shadow: 0 0 20px 0 #222323;
       border-radius: 8px;
+      border: 1px solid #80D0C7;
       background-color: #222323;
       //background: linear-gradient(-45deg, #9df1cc, #91f18c, rgb(151, 186, 236), rgb(134, 231, 214));
       background-size: 400% 400%;
       animation: gradient 10s ease infinite;
       color: #fff;
+      // background-image: url(../../Assets/Images/abstract-background.jpg);
+      // background-size: cover;
+      // background-position: center;
       //font-weight: 600;
 
       a {
@@ -92,8 +98,9 @@
     }
 
     .connect_me_footer_mobile {
-      width: 80% !important;
-      left: 10% !important;
+      width: 80% ;
+      left: 10%;
+      top:-4px
     }
 
     @keyframes gradient {
