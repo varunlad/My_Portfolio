@@ -266,7 +266,7 @@ function HomePage() {
     requestAnimationFrame(loop);
     return (
         <>
-             <div id="cursor" ref={cursorRef}>
+            <div id="cursor" ref={cursorRef}>
                 <div className="cursor--inner"></div>
             </div>
             {!user.techStack ?
@@ -312,7 +312,7 @@ function HomePage() {
                                 <>
                                     <div className="col-md-3" >
                                         <div className="d-flex mt-3 my_card align-items-center flex-column">
-                                            <div data-aos="zoom-in"  onClick={handelToggle} className="my_profile_toggle">
+                                            <div data-aos="zoom-in" onClick={handelToggle} className="my_profile_toggle">
                                                 <i style={{ width: "30px" }} className={profileToggel === false ? "my_profile_toggle_bg bi bi-toggles2" : "bi bi-toggles2"}></i>
                                             </div>
                                             <div data-aos="zoom-in" className="img_cover"><img className="" src={profilePic} alt="pic" /></div>
@@ -435,12 +435,13 @@ function HomePage() {
                                     </div>
                                 </div>
                             </div>
-                            <div data-aos={selectedSeries.length > 0 ? "zoom-in" : "fade-left"} className={selectedSeries.length > 0 ? "col-md-6  " : "col-md-12"}>
+                            <div data-aos={selectedSeries.length > 0 ? "zoom-in" : "fade-left"} className={selectedSeries.length > 0 ? "col-md-6 mt-4 " : "col-md-12 mt-4"}>
                                 <div className=' align-items-start'>
-                                    <div onClick={() => { handelTechStack(!user.techStack) }} className="d-flex align-items-baseline w-100 px-2">
+                                    <div onClick={() => { handelTechStack(!user.techStack) }} className="d-flex align-items-baseline w-100 px-2 cursor-pointer">
                                         <div className="movingRadius"></div>
-                                        <h1 className="mb-4 mt-2 position-relative fw-bold">My Tech Stack</h1>
-                                        <i class="bi bi-skip-forward ms-2 mb-2" style={{ maxWidth: "30px" }}></i>
+                                        <h1 className="mb-4 mt-2 position-relative fw-bold">My Tech Stack
+                                        <i className="bi bi-arrow-right-circle-fill mx-2"></i>
+                                        </h1>
                                     </div>
                                 </div>
                                 <Chart
@@ -487,7 +488,7 @@ function HomePage() {
                                     <h1 className="mb-5 position-relative fw-bold">Career Objective</h1>
                                     {myPortfolio?.map((ele, ind) => {
                                         return (
-                                            <div data-aos={ind %2 === 0 ? "fade-up" : "fade-down"} className="col-md-3" key={ind}>
+                                            <div data-aos={ind % 2 === 0 ? "fade-up" : "fade-down"} className="col-md-3" key={ind}>
                                                 <div className={ind % 2 === 0 ? "box_shadow p-3 my_section" : "box_shadow p-3 mt-5 my_section"} key={ind}>
                                                     {/* <div className="movingRadius"></div> */}
                                                     <h1 className="gradient_headdng" >{ele.name}</h1>
