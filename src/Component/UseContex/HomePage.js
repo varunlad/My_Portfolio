@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import profilePic from "../../Assets/Images/my_dp.jpg"
 import laptop from "../../Assets/Images/laptop.jpg"
 import vision from "../../Assets/Images/vision.jpg"
@@ -113,6 +113,7 @@ function HomePage() {
     const [selectedSeries, setSelectedSeries] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState();
     const [selectedStack, setSelectedStack] = useState("");
+    const cursorRef = useRef(null);
     const handleStrock = (index) => {
         if (index === 1) {
             setSelectedStack("HTML");
@@ -220,6 +221,7 @@ function HomePage() {
             //disable: 'mobile',
             once: true
         });
+        loop(); // start the cursor animation loop        
     }, []);
     const scrollTop = () => {
         //let myheight = document.documentElement.scrollHeight  
@@ -235,8 +237,38 @@ function HomePage() {
     const handelToggle = () => {
         setProfileToggel(!profileToggel);
     }
+
+    const cursor = document.querySelector('#cursor');
+    let mouse = { x: 300, y: 300 };
+    let pos = { x: 0, y: 0 };
+    const speed = 0.1; // between 0 and 1
+
+    const updatePosition = () => {
+        pos.x += (mouse.x - pos.x) * speed;
+        pos.y += (mouse.y - pos.y) * speed;
+        if (cursorRef.current) { // check if the ref is defined before accessing its properties
+            cursorRef.current.style.transform = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+        }
+    };
+
+    const updateCoordinates = e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    }
+
+    window.addEventListener('mousemove', updateCoordinates);
+
+    function loop() {
+        updatePosition();
+        requestAnimationFrame(loop);
+    }
+
+    requestAnimationFrame(loop);
     return (
         <>
+             <div id="cursor" ref={cursorRef}>
+                <div className="cursor--inner"></div>
+            </div>
             {!user.techStack ?
                 <>
                     <div className="row ">
@@ -280,7 +312,7 @@ function HomePage() {
                                 <>
                                     <div className="col-md-3" >
                                         <div className="d-flex mt-3 my_card align-items-center flex-column">
-                                            <div onClick={handelToggle} className="my_profile_toggle">
+                                            <div data-aos="zoom-in"  onClick={handelToggle} className="my_profile_toggle">
                                                 <i style={{ width: "30px" }} className={profileToggel === false ? "my_profile_toggle_bg bi bi-toggles2" : "bi bi-toggles2"}></i>
                                             </div>
                                             <div data-aos="zoom-in" className="img_cover"><img className="" src={profilePic} alt="pic" /></div>
@@ -408,7 +440,7 @@ function HomePage() {
                                     <div onClick={() => { handelTechStack(!user.techStack) }} className="d-flex align-items-baseline w-100 px-2">
                                         <div className="movingRadius"></div>
                                         <h1 className="mb-4 mt-2 position-relative fw-bold">My Tech Stack</h1>
-                                        <i class="bi bi-skip-forward ms-2 mb-2" style={{maxWidth:"30px"}}></i>
+                                        <i class="bi bi-skip-forward ms-2 mb-2" style={{ maxWidth: "30px" }}></i>
                                     </div>
                                 </div>
                                 <Chart
@@ -425,23 +457,23 @@ function HomePage() {
                                             <div className="movingRadius"></div>
                                             <h1 className="mb-4 mt-2 position-relative fw-bold">{selectedStack}</h1>
                                         </div>
-                                    </div>                                      
-                                        <Chart
-                                            options={selectedOptions}
-                                            series={selectedSeries}
-                                            type="polarArea"
-                                            height={350}
-                                        />
-                                         {user.windownView === 0 &&
-                                          <ul >
+                                    </div>
+                                    <Chart
+                                        options={selectedOptions}
+                                        series={selectedSeries}
+                                        type="polarArea"
+                                        height={350}
+                                    />
+                                    {user.windownView === 0 &&
+                                        <ul >
                                             {selected.map((ele, ind) => {
                                                 return (
                                                     <li className="px-4" key={ind}>{ele}</li>
                                                 )
                                             })}
-                                        </ul> }
-                                    </div>
-                                }
+                                        </ul>}
+                                </div>
+                            }
 
                         </div>
                     </div>
@@ -455,7 +487,7 @@ function HomePage() {
                                     <h1 className="mb-5 position-relative fw-bold">Career Objective</h1>
                                     {myPortfolio?.map((ele, ind) => {
                                         return (
-                                            <div className="col-md-3" key={ind}>
+                                            <div data-aos={ind %2 === 0 ? "fade-up" : "fade-down"} className="col-md-3" key={ind}>
                                                 <div className={ind % 2 === 0 ? "box_shadow p-3 my_section" : "box_shadow p-3 mt-5 my_section"} key={ind}>
                                                     {/* <div className="movingRadius"></div> */}
                                                     <h1 className="gradient_headdng" >{ele.name}</h1>
