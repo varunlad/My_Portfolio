@@ -48,7 +48,7 @@ function TechStack() {
                             Tech Stack
                         </button>
                         <div className="d-flex">
-                            <h4 className="m-0">{user.myUser.username}   <i className="bi bi-person-check"></i> ({user.myUser.stack})</h4>
+                            <h4 className="m-0" style={{textAlign:"center"}}>{user.myUser.username}   <i className="bi bi-person-check"></i> ({user.myUser.stack})</h4>
                         </div>
                     </div>
                     <div className='my_card noShadow'>

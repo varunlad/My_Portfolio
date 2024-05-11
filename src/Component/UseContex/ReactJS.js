@@ -55,7 +55,7 @@ function ReactJS() {
                     <p className="d-flex"><span className="mx-2">&#187;</span>
                         In-depth knowledge of React  component lifecycle methods, including componentDidMount, componentDidUpdate, and componentWillUnmount.</p>
                     <p className="d-flex"><span className="mx-2">&#187;</span>
-                        Skilled in creating cusatom reusable components and optimizing their performance for better code maintainability and scalability.</p>
+                        Skilled in creating custom reusable components and optimizing their performance for better code maintainability and scalability.</p>
                     <p className="d-flex"><span className="mx-2">&#187;</span>
                         Experience with state management libraries like  Redux and Context API  for managing complex application states efficiently.</p>
                     <p className="d-flex"><span className="mx-2">&#187;</span>
