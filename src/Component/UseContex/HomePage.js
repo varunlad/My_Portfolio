@@ -452,7 +452,7 @@ function HomePage() {
                                 />
                             </div>
                             {selectedSeries.length > 0 &&
-                                <div className="col-md-6" data-aos="fade-right">
+                                <div className="col-md-6  mt-4" data-aos="fade-right">
                                     <div className=' align-items-start '>
                                         <div className="d-flex w-100 px-2">
                                             <div className="movingRadius"></div>

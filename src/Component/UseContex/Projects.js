@@ -63,13 +63,13 @@ function Projects() {
                         </div>
                     )
                 })}
-                <p style={{ border: "1px solid #1ed760", padding: "10px", borderRadius: "4px" }}>I played an helpful hand in the successful implementation and enhancement of projects such as :
+                <div style={{ border: "1px solid #1ed760", padding: "10px", borderRadius: "4px" }}>I played an helpful hand in the successful implementation and enhancement of projects such as :
                     <ul style={{ color: "#1ed760" ,margin:0}}>
                         <li>J&K Bank</li>
                         <li>BFL Rewards</li>
                         <li>Lpass</li>
                     </ul>
-                   It leverage my technical expertise to drive innovation, optimize performance, and deliver exceptional results. </p>
+                   It leverage my technical expertise to drive innovation, optimize performance, and deliver exceptional results. </div>
             </div>
         </div>
     )

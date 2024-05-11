@@ -29,7 +29,7 @@ function Footer() {
                     <h6 className='m-0' style={user.windownView === 0 ? {} : { fontWeight: 700 }}>{user.myUser.username}'s Portfolio</h6> <img src={profileFav} className='mx-1' alt='profile' />
                 </div>
                 <div className={user.windownView === 1 ? 'footer_right d-flex align-items-center' : 'footer_right d-flex mt-3 align-items-center'}>
-                    <p className=' d-flex ms-3 mb-0'> <h6 style={user.windownView === 0 ? {} : { fontWeight: 700 }}>Happy Coding</h6>  <i class=" mx-2 bi bi-code-square"></i></p>
+                    <div className=' d-flex ms-3 mb-0'> <h6 style={user.windownView === 0 ? {} : { fontWeight: 700 }}>Happy Coding</h6>  <i className=" mx-2 bi bi-code-square"></i></div>
                 </div>
             </div>
             <div className={user.windownView === 1 ? 'footer_right d-flex align-items-center' : 'footer_right d-flex mt-3 align-items-center'}>

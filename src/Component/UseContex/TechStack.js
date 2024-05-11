@@ -15,13 +15,17 @@ function TechStack() {
     const [tabsOption, setTabsOption] = useState([{ tabName: "React JS" }, { tabName: "Projects" }, { tabName: "HTML" }, { tabName: "CSS & Animations" }, { tabName: "Java Script" },]);
     const handelTabs = (index) => {
         setTabs(index);
-        if(user.windownView === 0 ){
+        if(user.windownView === 0 && !isIOS() ){
         // Get the DOM element of the clicked tab
         const tabElement = document.getElementById(`tab_${index}`);
         // Scroll to the beginning of the tab
         tabElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     }
     } 
+    const isIOS = () => {
+        const userAgent = window.navigator.userAgent.toLowerCase();
+        return /iphone|ipad|ipod/.test(userAgent);
+      }
     useEffect(() => {
         scrollTop();
     }, []);
