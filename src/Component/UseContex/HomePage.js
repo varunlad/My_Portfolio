@@ -266,9 +266,9 @@ function HomePage() {
     requestAnimationFrame(loop);
     return (
         <>
-            <div id="cursor" ref={cursorRef}>
+            {/* <div id="cursor" ref={cursorRef}>
                 <div className="cursor--inner"></div>
-            </div>
+            </div> */}
             {!user.techStack ?
                 <>
                     <div className="row ">

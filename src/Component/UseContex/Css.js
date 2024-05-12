@@ -47,7 +47,7 @@ function Css() {
                             <p className="bizzy-letters-B letter-O">O</p>
                             <p className="bizzy-letters-B letter-D">D</p>
                             <p className="bizzy-letters-B letter-I">I</p>
-                            <p className="bizzy-letters-B letter-N">N</p>
+                            <p style={{transitionDelay:".1s"}} className="bizzy-letters-B letter-N">N</p>
                             <p className="bizzy-letters-B letter-N">G</p>
                         </div>
                     </div>
