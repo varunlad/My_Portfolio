@@ -313,7 +313,7 @@ function HomePage() {
                                     <div className="col-md-3" >
                                         <div className="d-flex mt-3 my_card align-items-center flex-column">
                                             <div data-aos="zoom-in" onClick={handelToggle} className="my_profile_toggle">
-                                                <i style={{ width: "30px" }} className={profileToggel === false ? "my_profile_toggle_bg bi bi-toggles2" : "bi bi-toggles2"}></i>
+                                                {profileToggel === false ? <img style={{ width: "15px" }} src={icon.new_white_down_icon.src} className="  rotate_me "/> : <img style={{ width: "15px" }} src={icon.new_white_down_icon.src} />}
                                             </div>
                                             <div data-aos="zoom-in" className="img_cover"><img className="" src={profilePic} alt="pic" /></div>
 
@@ -380,7 +380,7 @@ function HomePage() {
                     </div>
                     <div className="container mt-5 mb-5">
                         <div className="my_laptop row">
-                            <div className="col-md-3" data-aos="fade-right">
+                            <div className="col-md-3" data-aos-duration="750" data-aos="fade-right">
                                 <div className="photo  " style={{ transitionDelay: "200ms" }}>
                                     <img src={laptop} />
                                     <h1 className="headding">Skills</h1>
@@ -395,7 +395,7 @@ function HomePage() {
                                 </div>
                             </div>
 
-                            <div className="col-md-3" data-aos="fade-left">
+                            <div className="col-md-3" data-aos-duration="750" data-aos="fade-left">
                                 <div className="photo ">
                                     <img src={project} />
                                     <h1 className="headding">Projects</h1>
@@ -409,7 +409,7 @@ function HomePage() {
                                 </div>
                             </div>
 
-                            <div className="col-md-3" data-aos="fade-right">
+                            <div className="col-md-3" data-aos-duration="750" data-aos="fade-right">
                                 <div className="photo ">
                                     <img src={vision} />
                                     <h1 className="headding">Vision</h1>
@@ -423,7 +423,7 @@ function HomePage() {
                                 </div>
                             </div>
 
-                            <div className="col-md-3" data-aos="fade-left">
+                            <div className="col-md-3" data-aos-duration="750" data-aos="fade-left">
                                 <div className="photo ">
                                     <img src={hobby} />
                                     <h1 className="headding">Hobby</h1>
@@ -435,12 +435,12 @@ function HomePage() {
                                     </div>
                                 </div>
                             </div>
-                            <div data-aos={selectedSeries.length > 0 ? "zoom-in" : "fade-left"} className={selectedSeries.length > 0 ? "col-md-6 mt-4 " : "col-md-12 mt-4"}>
+                            <div data-aos-duration="750" data-aos={selectedSeries.length > 0 ? "zoom-in" : "fade-left"} className={selectedSeries.length > 0 ? "col-md-6 mt-4 " : "col-md-12 mt-4"}>
                                 <div className=' align-items-start'>
                                     <div onClick={() => { handelTechStack(!user.techStack) }} className="d-flex align-items-baseline w-100 px-2 cursor-pointer">
                                         <div className="movingRadius"></div>
                                         <h1 className="mb-4 mt-2 position-relative fw-bold">My Tech Stack
-                                        <i className="bi bi-arrow-right-circle-fill mx-2"></i>
+                                            <i className="bi bi-arrow-right-circle-fill mx-2"></i>
                                         </h1>
                                     </div>
                                 </div>
@@ -488,7 +488,7 @@ function HomePage() {
                                     <h1 className="mb-5 position-relative fw-bold">Career Objective</h1>
                                     {myPortfolio?.map((ele, ind) => {
                                         return (
-                                            <div data-aos={ind % 2 === 0 ? "fade-up" : "fade-down"} className="col-md-3" key={ind}>
+                                            <div data-aos-duration="750" data-aos={ind % 2 === 0 ? "fade-up" : "fade-down"} className="col-md-3" key={ind}>
                                                 <div className={ind % 2 === 0 ? "box_shadow p-3 my_section" : "box_shadow p-3 mt-5 my_section"} key={ind}>
                                                     {/* <div className="movingRadius"></div> */}
                                                     <h1 className="gradient_headdng" >{ele.name}</h1>
