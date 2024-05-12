@@ -23,7 +23,7 @@ function ErReactMultiSelect(props) {
         }
         setDrpOption(newArr);
         setTempArr(newArr);
-       ;
+        setCheckall(false);
     }, [props]);
 
     const handleChange = (event) => {

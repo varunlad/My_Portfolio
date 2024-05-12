@@ -10,7 +10,7 @@ function Footer() {
     const [myText, setMyText] = useState([
         { text: "Crafting brilliance, one line at a time." },
         { text: "Empowering innovation through elegant code." },
-        { text: "Programming isn’t about what you know; it’s about what you can figure out." },
+        { text: "Programming isn’t about what you know, it’s about what you can figure out." },
         { text: "Code is where the real drama happens."},
         { text: "The best way to predict the future is to create it." },
     ])

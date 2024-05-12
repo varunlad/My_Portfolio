@@ -31,7 +31,7 @@ function Css() {
             </div>
             <div className='row box_shadow mt-4'>
                 <div className='col-md-12'>
-                    <div className="neon">Text animations</div>
+                    <div className="neon">Animations</div>
                 </div>
                 <div className='col-md-4'>
                     <div className=' my_card' style={{ minHeight: 250 }}>
@@ -47,7 +47,7 @@ function Css() {
                             <p className="bizzy-letters-B letter-O">O</p>
                             <p className="bizzy-letters-B letter-D">D</p>
                             <p className="bizzy-letters-B letter-I">I</p>
-                            <p style={{transitionDelay:".1s"}} className="bizzy-letters-B letter-N">N</p>
+                            <p style={{ transitionDelay: ".1s" }} className="bizzy-letters-B letter-N">N</p>
                             <p className="bizzy-letters-B letter-N">G</p>
                         </div>
                     </div>
@@ -121,6 +121,14 @@ function Css() {
                 </div>
                 <div className='col-md-8'>
                     <div className='my_card p-4 '>
+                        {/* <div className="moving_animation  css_position">
+                            <span className="square_me mb-3"></span>
+                            <span className="hexagon_me"></span>
+                        </div>
+                        <div className="moving_animation html_position ">
+                        <span className="pentagon_me mb-3"></span>
+                        <span className="triangle_me "></span>
+                        </div> */}
                         <div className="d-flex">
                             <h5 className=" mb-3 mx-3" style={{ whiteSpace: "nowrap" }}>Clip-path</h5>
                             <i onClick={() => { handelShapeClick("square") }} className={myShape === "square" ? "bi bi-square-fill my_color mx-2" : "bi bi-square-fill mx-2"} style={{ cursor: "pointer" }}></i>
