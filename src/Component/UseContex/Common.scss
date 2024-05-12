@@ -5,12 +5,25 @@
   padding: 0px;
   overflow-x: hidden;
   font-family: "Poppins_Font_Family", sans-serif;
-  //font-family: 'Dancing Script', cursive;
-  //background-color: #dfdfdf21;
-
-  // :is(h1, h2, h3, h4, h5, h6) {
-  //   //font-family: monospace;
   color: #ffffff;
+
+  .neon {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: cursive;
+    animation: glow_me 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow_me {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
 
   .top_me {
     cursor: pointer;
@@ -50,14 +63,15 @@
       .footer_right {
         display: flex;
         align-items: center;
-          .mySwiper_text{
-            display: flex;
-            justify-content: center;
-          }
+
+        .mySwiper_text {
+          display: flex;
+          justify-content: center;
+        }
 
         p {
           white-space: nowrap;
-         
+
           h6 {
             margin: 0;
             //font-weight: 700;
@@ -98,9 +112,9 @@
     }
 
     .connect_me_footer_mobile {
-      width: 80% ;
+      width: 80%;
       left: 10%;
-      top:-4px
+      top: -4px
     }
 
     @keyframes gradient {
@@ -647,6 +661,7 @@
     background-position: center;
   }
 
+
   .my_card {
     display: flex;
     flex-direction: column;
@@ -660,6 +675,291 @@
     overflow: hidden;
     color: #ffffff;
     position: relative;
+
+
+
+
+    .my_wrapper {
+      display: flex;
+      align-items: flex-start;
+
+      p {
+        font-size: 60px;
+        transform: scale(0.9, 1) rotatey(-10deg) translatey(0px);
+        animation: 2.2s scaling cubic-bezier(0.45, 0, 0.55, 1) infinite;
+        text-shadow: 0 0 #e8332e, 0 0 #fc9e05, 0 0 #891696;
+        transform-origin: 50% 100%;
+        color: #fff;
+        position: relative;
+        top: 10%;
+        transform-style: preserve-3d;
+        margin-right: 15px;
+        font-weight: 900;
+
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            animation-delay: 340ms * $i;
+          }
+        }
+      }
+    }
+
+    @keyframes scaling {
+      20% {
+        text-shadow: 0px 0 #e8332e, 0px 0 #fc9e05, 0px 0 #891696;
+        transform: scale(0.9, 1) rotatey(-10deg);
+      }
+
+      40% {
+        transform: scale(0.9, 1.2) translatey(16px);
+        text-shadow: -10px 0px #e8332e, -20px 0 #fc9e05, -30px 0 #891696;
+      }
+
+      60% {
+        transform: scale(0.9, 1) rotatey(-5deg);
+        text-shadow: 0px 0 #e8332e, 0px 0 #fc9e05, 0px 0 #891696;
+      }
+
+      80% {
+        transform: scale(0.9, 1.2) translatey(16px);
+        text-shadow: 10px 0px #e8332e, 20px 0 #fc9e05, 30px 0 #891696;
+      }
+    }
+
+    @keyframes jump {
+      20% {
+        transform: translatey(0) scale(0);
+        opacity: 0;
+      }
+
+      40% {
+        transform: translatey(-50px) scale(1);
+        opacity: 1;
+      }
+
+      60% {
+        transform: translatey(0) scale(0);
+        opacity: 0;
+      }
+
+      80% {
+        transform: translatey(-50px) scale(1);
+        opacity: 1;
+      }
+    }
+
+    // .my_loader {
+    //   perspective: 1000px;
+    //   -webkit-perspective: 1000px;
+    // }
+    .my_loader>span {
+      display: inline-block;
+      color: #fff;
+      transform-style: preserve-3d;
+      transform-origin: 0 100%;
+      animation: anim 3s infinite linear;
+      font-size: 38px;
+    }
+
+    .my_loader>span:nth-child(even) {
+      color: #00ed64;
+    }
+
+    .my_loader>span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .my_loader>span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .my_loader>span:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    .my_loader>span:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+
+    .my_loader>span:nth-child(6) {
+      animation-delay: 1s;
+    }
+
+    .my_loader>span:nth-child(7) {
+      animation-delay: 1.2s;
+    }
+
+    .my_loader>span:nth-child(8) {
+      animation-delay: 1.4s;
+    }
+
+    .my_loader>span:nth-child(9) {
+      animation-delay: 1.6s;
+    }
+
+    .my_loader>span:nth-child(10) {
+      animation-delay: 1.8s;
+    }
+
+    .my_loader>span:nth-child(11) {
+      animation-delay: 2s;
+    }
+
+    .my_loader>span:nth-child(12) {
+      animation-delay: 2.2s;
+    }
+
+    .my_loader>span:nth-child(13) {
+      animation-delay: 2.4s;
+    }
+
+    .my_loader>span:nth-child(14) {
+      animation-delay: 2.6s;
+    }
+
+    @keyframes anim {
+      35% {
+        transform: rotateX(360deg);
+      }
+
+      100% {
+        transform: rotateX(360deg);
+      }
+    }
+
+
+    .bizzy {
+      display: flex;
+      align-items: center;
+      gap: 5%;
+      justify-content: space-around;
+      max-height: 100px;
+      text-align: center;
+      width: 100%;
+
+    }
+
+    @keyframes fontGrow {
+      0% {
+        transform: scaleY(1);
+      }
+
+      50% {
+        transform: scaleY(2);
+      }
+
+      100% {
+        transform: scaleY(1);
+      }
+    }
+
+    .bizzy-letters {
+      animation-name: fontGrow;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      transform-origin: top;
+      transition-timing-function: ease-in-out;
+    }
+
+    .letter-b {
+      color: peachpuff;
+      font-weight: 600;
+      font-size: 50px;
+    }
+
+    .letter-i {
+      color: paleturquoise;
+      animation-delay: 1s;
+      font-weight: 600;
+      font-size: 50px;
+    }
+
+    .letter-z1 {
+      color: pink;
+      font-weight: 600;
+      font-size: 50px;
+    }
+
+    .letter-z2 {
+      color: maroon;
+      font-weight: 600;
+      font-size: 50px;
+      animation-delay: 1s;
+    }
+
+    .letter-y {
+      color: darkcyan;
+      font-weight: 600;
+      font-size: 50px;
+    }
+
+    .bizzy-B {
+      display: flex;
+      justify-content: space-around;
+      gap: 5%;
+      width: 100%;
+    }
+
+    @keyframes fontGrowReverse {
+      0% {
+        transform: scaleY(2);
+      }
+
+      50% {
+        transform: scaleY(1);
+      }
+
+      100% {
+        transform: scaleY(2);
+      }
+    }
+
+    .bizzy-letters-B {
+      animation-name: fontGrowReverse;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      transform-origin: bottom;
+      transition-timing-function: ease-in-out;
+
+    }
+
+    .letter-C {
+      color: #cbe69f;
+      font-weight: 600;
+      font-size: 50px;
+      margin-top: 20px;
+    }
+
+    .letter-O {
+      color: #cbe;
+      animation-delay: 1s;
+      font-weight: 600;
+      font-size: 50px;
+      font-stretch: ultra-condensed;
+      margin-top: 20px;
+    }
+
+    .letter-D {
+      color: #91d1df;
+      font-weight: 600;
+      font-size: 50px;
+      margin-top: 20px;
+    }
+
+    .letter-I {
+      color: #f7b407;
+      animation-delay: 1s;
+      font-weight: 600;
+      font-size: 50px;
+      margin-top: 20px;
+    }
+
+    .letter-N {
+      color: pink;
+      font-weight: 600;
+      font-size: 50px;
+      margin-top: 20px;
+    }
 
     .fade_me {
       animation: fadeIn_opacity 500ms ease-in-out;
@@ -1196,13 +1496,15 @@
     height: 650px;
   }
 }
+
 @media only screen and (min-width: 1800px) {
   .portfolio_bg {
-   height: 70vh !important;
+    height: 70vh !important;
   }
-  .container{
+
+  .container {
     max-width: 1450px;
-  } 
+  }
 }
 
 
@@ -1406,6 +1708,7 @@
     margin: 14px !important;
   }
 }
+
 @media (hover: hover) and (pointer: fine) {
   #cursor {
     z-index: 99;
