@@ -18,7 +18,7 @@ function Css() {
                 <div className='col-md-12'>
                     <h3 style={{ color: "#1ed760" }}>Technical CSS Skills<img className={user.windownView === 0 && 'my_icons'} src={icon.css.src} alt="css" /> </h3>
                     <p className="d-flex"><span className="mx-2">&#187;</span>
-                        Proficient in writing CSS code to style web pages and applications, including knowledge of selectors, properties, and values.</p>
+                        Proficient in writing accurate CSS code to style web pages and applications, including knowledge of selectors, properties, and values.</p>
                     <p className="d-flex"><span className="mx-2">&#187;</span>
                         Strong understanding of CSS layout techniques such as Flexbox and Grid for building responsive and flexible designs.</p>
                     <p className="d-flex"><span className="mx-2">&#187;</span>
