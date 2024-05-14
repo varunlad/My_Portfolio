@@ -129,8 +129,8 @@ function Css() {
                         <span className="pentagon_me mb-3"></span>
                         <span className="triangle_me "></span>
                         </div> */}
-                        <div className="d-flex">
-                            <h5 className=" mb-3 mx-3" style={{ whiteSpace: "nowrap" }}></h5>
+                        <div className="d-flex mb-3 ">
+                            {/* <h5 className=" mx-3" style={{ whiteSpace: "nowrap" }}></h5> */}
                             <i onClick={() => { handelShapeClick("square") }} className={myShape === "square" ? "bi bi-square-fill my_color mx-2" : "bi bi-square-fill mx-2"} style={{ cursor: "pointer" }}></i>
                             <i onClick={() => { handelShapeClick("triangle") }} className={myShape === "triangle" ? "bi bi-triangle-fill my_color mx-2" : "bi bi-triangle-fill mx-2"} style={{ cursor: "pointer" }}></i>
                             <i onClick={() => { handelShapeClick("pentagon") }} className={myShape === "pentagon" ? "bi bi-pentagon-fill my_color mx-2" : "bi bi-pentagon-fill mx-2"} style={{ cursor: "pointer" }}></i>
