@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import profilePic from "../../Assets/Images/my_dp.jpg"
+import my_profilePic from "../../Assets/Images/my_profile_pic.jpg"
 import laptop from "../../Assets/Images/laptop.jpg"
 import vision from "../../Assets/Images/vision.jpg"
 import project from "../../Assets/Images/project.jpg"
@@ -315,7 +316,7 @@ function HomePage() {
                                             <div data-aos="zoom-in" onClick={handelToggle} className="my_profile_toggle">
                                                 {profileToggel === false ? <img style={{ width: "15px" }} src={icon.new_white_down_icon.src} className="  rotate_me "/> : <img style={{ width: "15px" }} src={icon.new_white_down_icon.src} />}
                                             </div>
-                                            <div data-aos="zoom-in" className="img_cover"><img className="" src={profilePic} alt="pic" /></div>
+                                            <div data-aos="zoom-in" className="img_cover"><img className="" src={my_profilePic} alt="pic" /></div>
 
                                             <h5 className="m-2"><strong className="myColor">{user.myUser.username}</strong></h5>
                                             {profileToggel ?
