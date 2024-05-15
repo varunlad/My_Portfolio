@@ -295,7 +295,7 @@ function HomePage() {
                                     <button onClick={() => { handelTechStack(!user.techStack) }} className="myTech" style={{ whiteSpace: "nowrap" }}>Tech Stack <img src={icon.new_white_down_icon.src} /></button>}
                             </div>
                             <h1 className="developer_headding">  <br /><span style={{ whiteSpace: "nowrap" }}>  I'm a Web</span>  <strong className="gradient_headdng">Developer</strong></h1>
-                            <p className="developer_description "> As web development expert I possesses in-depth knowledge and experience in creating and maintaining websites and web applications. My expertise extends to various web technologies such as HTML, CSS, JavaScript, Jquery, Typescript, React Js. I excel in designing user-friendly, responsive, and secure web solutions, ensuring optimal performance and user experience.</p>
+                            <p className="developer_description "> As web development expert I possesses in-depth knowledge and experience in creating and maintaining websites and web applications. My expertise extends to various web technologies such as HTML, CSS & Animations, JavaScript, Jquery, Typescript, React Js. I excel in designing user-friendly, responsive, and secure web solutions, ensuring optimal performance and user experience.</p>
 
                         </div>
                     </div>
@@ -391,6 +391,7 @@ function HomePage() {
                                         <p>HTML5</p>
                                         <p>Java Script</p>
                                         <p>Jquery</p>
+                                        <p>TypeScript</p>
                                         <p>CSS & Animations</p>
                                     </div>
                                 </div>
@@ -405,7 +406,7 @@ function HomePage() {
                                         <p>Atlantis (Data Analysis)</p>
                                         <p>Credit Monitoring (Data Analysis)</p>
                                         <p>Popins Website (Business Analysis)</p>
-                                        <p>J&K Bank (Banking)</p>
+                                        <p>Digital Reciept (Billing System)</p>
                                     </div>
                                 </div>
                             </div>
