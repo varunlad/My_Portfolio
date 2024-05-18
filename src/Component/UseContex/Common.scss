@@ -1047,7 +1047,7 @@
       //border-radius: 32% 67% 37% 65%/53% 34% 70% 43%;
       border-radius: 50%;
       border: 2px solid #80D0C7;
-      padding: 8px;
+      padding: 5px;
       position: relative;
 
       img {
@@ -1059,10 +1059,10 @@
         //border-radius: 32% 67% 37% 65%/53% 34% 70% 43%;
       }
 
-      img:hover {
-        transform: scale(1.1);
-        transition: 0.2s;
-      }
+      // img:hover {
+      //   transform: scale(1.1);
+      //   transition: 0.2s;
+      // }
     }
 
     // .img_cover:after {

@@ -6,6 +6,7 @@ import vision from "../../Assets/Images/vision.jpg"
 import project from "../../Assets/Images/project.jpg"
 import hobby from "../../Assets/Images/hobby.jpg"
 import * as icon from "../../Assets/Images/index";
+import { Tilt } from 'react-tilt'
 import "./Common.scss"
 import UserContext from "../../Contex/UserContext";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -37,6 +38,17 @@ function HomePage() {
         { heading: "Sports Enthusiast", description: "You'll often find me fully engaged in the vibrant atmosphere of the football pitch or the competitive spirit of the cricket ground, passionately cheering for my favorite teams. With every match, I'm captivated by the excitement of a last minute goal or the tension of a thrilling last-over finish. From analyzing tactics to debating player performances, I can effortlessly engage in discussions, sharing insights that reveal my deep love for the game.", backgrounImg: "../../Assets/Images/sport_pitch.jpg" },
         { heading: "Starry-Eyed Explorer", description: "Beyond the confines of Earth, I'm captivated by the vastness of the cosmos. With each glimpse into the night sky, constellations and distant galaxies beckon me on an endless journey of discovery. Astronomy isn't just a hobby it's a profound exploration of the unknown, a quest to unravel the mysteries of existence and find my place within the cosmic tapestry.", backgrounImg: "../../Assets/Images/sport_pitch.jpg" },
     ]);
+    const defaultOptions = {
+        reverse:        false,  // reverse the tilt direction
+        max:            35,     // max tilt rotation (degrees)
+        perspective:    1000,   // Transform perspective, the lower the more extreme the tilt gets.
+        scale:          1.05,    // 2 = 200%, 1.5 = 150%, etc..
+        speed:          1000,   // Speed of the enter/exit transition
+        transition:     true,   // Set a transition on enter/exit.
+        axis:           null,   // What axis should be disabled. Can be X or Y.
+        reset:          true,    // If the tilt effect has to be reset on exit.
+        easing:         "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
+    }
     const [series, setSeries] = useState([
         {
             name: 'HTML',
@@ -119,8 +131,8 @@ function HomePage() {
         if (index === 1) {
             setSelectedStack("HTML");
             setSelectedSeries([40, 20, 10, 10, 20]);
-            handleSelectedOptions(['HTML Structure', 'Flex-Box', 'Forms','Semantic Tags', 'Inline & Block Elements']);
-            setSelected(['HTML Structure', 'Flex-Box', 'Forms','Semantic Tags', 'Inline & Block Elements']);
+            handleSelectedOptions(['HTML Structure', 'Flex-Box', 'Forms', 'Semantic Tags', 'Inline & Block Elements']);
+            setSelected(['HTML Structure', 'Flex-Box', 'Forms', 'Semantic Tags', 'Inline & Block Elements']);
 
         }
         else if (index === 2) {
@@ -314,9 +326,11 @@ function HomePage() {
                                     <div className="col-md-3" >
                                         <div className="d-flex mt-3 my_card align-items-center flex-column">
                                             <div data-aos="zoom-in" onClick={handelToggle} className="my_profile_toggle">
-                                                {profileToggel === false ? <img style={{ width: "15px" }} src={icon.new_white_down_icon.src} className="  rotate_me "/> : <img style={{ width: "15px" }} src={icon.new_white_down_icon.src} />}
+                                                {profileToggel === false ? <img style={{ width: "15px" }} src={icon.new_white_down_icon.src} className="  rotate_me " /> : <img style={{ width: "15px" }} src={icon.new_white_down_icon.src} />}
                                             </div>
+                                            <Tilt options={defaultOptions}>
                                             <div data-aos="zoom-in" className="img_cover"><img className="" src={my_profilePic} alt="pic" /></div>
+                                            </Tilt>
 
                                             <h5 className="m-2"><strong className="myColor">{user.myUser.username}</strong></h5>
                                             {profileToggel ?
