@@ -39,15 +39,15 @@ function HomePage() {
         { heading: "Starry-Eyed Explorer", description: "Beyond the confines of Earth, I'm captivated by the vastness of the cosmos. With each glimpse into the night sky, constellations and distant galaxies beckon me on an endless journey of discovery. Astronomy isn't just a hobby it's a profound exploration of the unknown, a quest to unravel the mysteries of existence and find my place within the cosmic tapestry.", backgrounImg: "../../Assets/Images/sport_pitch.jpg" },
     ]);
     const defaultOptions = {
-        reverse:        false,  // reverse the tilt direction
-        max:            35,     // max tilt rotation (degrees)
-        perspective:    1000,   // Transform perspective, the lower the more extreme the tilt gets.
-        scale:          1.05,    // 2 = 200%, 1.5 = 150%, etc..
-        speed:          1000,   // Speed of the enter/exit transition
-        transition:     true,   // Set a transition on enter/exit.
-        axis:           null,   // What axis should be disabled. Can be X or Y.
-        reset:          true,    // If the tilt effect has to be reset on exit.
-        easing:         "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
+        reverse: false,  // reverse the tilt direction
+        max: 35,     // max tilt rotation (degrees)
+        perspective: 1000,   // Transform perspective, the lower the more extreme the tilt gets.
+        scale: 1.05,    // 2 = 200%, 1.5 = 150%, etc..
+        speed: 1000,   // Speed of the enter/exit transition
+        transition: true,   // Set a transition on enter/exit.
+        axis: null,   // What axis should be disabled. Can be X or Y.
+        reset: true,    // If the tilt effect has to be reset on exit.
+        easing: "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
     }
     const [series, setSeries] = useState([
         {
@@ -245,7 +245,7 @@ function HomePage() {
     }
 
     const handelTechStack = (techVal) => {
-        window._paq.push(['trackEvent',  'Tech_Stack_Click','Tech_Stack_Click','Tech_Stack_Click']);
+        window._paq.push(['trackEvent', 'Tech_Stack_Click', 'Click', 'Tech_Stack_Click']);
         console.log('Tech_Stack_Click');
         user.updateTechStack(techVal)
     }
@@ -331,7 +331,7 @@ function HomePage() {
                                                 {profileToggel === false ? <img style={{ width: "15px" }} src={icon.new_white_down_icon.src} className="  rotate_me " /> : <img style={{ width: "15px" }} src={icon.new_white_down_icon.src} />}
                                             </div>
                                             <Tilt options={defaultOptions}>
-                                            <div data-aos="zoom-in" className="img_cover"><img className="" src={my_profilePic} alt="pic" /></div>
+                                                <div data-aos="zoom-in" className="img_cover"><img className="" src={my_profilePic} alt="pic" /></div>
                                             </Tilt>
 
                                             <h5 className="m-2"><strong className="myColor">{user.myUser.username}</strong></h5>
