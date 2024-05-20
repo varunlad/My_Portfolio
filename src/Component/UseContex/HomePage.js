@@ -245,6 +245,7 @@ function HomePage() {
     }
 
     const handelTechStack = (techVal) => {
+        window._paq.push(['trackEvent',  'Tech_Stack_Click']);
         user.updateTechStack(techVal)
     }
     const handelToggle = () => {
