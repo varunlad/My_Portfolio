@@ -49,6 +49,16 @@ function OngoingStudies() {
                     <i class="bi bi-github mx-2"></i>
                   </a>
                 )}
+                {ele.headdind === "Next JS" && (
+                  <a
+                    style={{ color: "#1ed760" }}
+                    target="_blank"
+                    href="https://github.com/varunlad/NextJS-FoodApp"
+                  >
+                    Github 
+                    <i class="bi bi-github mx-2"></i>
+                  </a>
+                )}
               </div>
             );
           })}
