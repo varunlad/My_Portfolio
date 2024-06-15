@@ -47,7 +47,7 @@ function ReactJS() {
         <div className="container my_smooth_animation">
             <div className='row box_shadow'>
                 <div className='col-md-12'>
-                    <h3 style={{ color: "#1ed760" }}>Technical React JS Skills<img className={user.windownView === 0 && 'my_icons'} src={icon.react.src} alt="react" /> </h3>
+                    <h3 style={{ color: "#1ed760" }}> React JS Skills<img className={user.windownView === 0 && 'my_icons'} src={icon.react.src} alt="react" /> </h3>
                     <p className="d-flex"><span className="mx-2">&#187;</span>
                         Proficient in building both Class Components and Functional Components in ReactJS.</p>
                     <p className="d-flex"><span className="mx-2">&#187;</span>

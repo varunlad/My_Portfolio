@@ -9,7 +9,7 @@ function JavaScript() {
         <div className='container my_smooth_animation'>
             <div className='row box_shadow'>
                 <div className='col-md-12'>
-                    <h3 style={{ color: "#1ed760" }}>Technical Javascript Skills<img className={user.windownView === 0 && 'my_icons'} src={icon.javascripticon.src} alt="js" /> </h3>
+                    <h3 style={{ color: "#1ed760" }}> Javascript Skills<img className={user.windownView === 0 && 'my_icons'} src={icon.javascripticon.src} alt="js" /> </h3>
                     <p className="d-flex"><span className="mx-2">&#187;</span>
                         Proficient in modern JavaScript (ES6+) features and syntax, including arrow functions, template literals, destructuring, spread/rest operators, and async/await for handling asynchronous operations.</p>
                     <p className="d-flex"><span className="mx-2">&#187;</span>
@@ -21,7 +21,7 @@ function JavaScript() {
                         Familiarity with client-side storage options like localStorage and sessionStorage for storing data persistently in web applications.</p>
                 </div>
                 <div className='col-md-12'>
-                    <h3 style={{ color: "#1ed760" }}>Technical Typescript <img className={user.windownView === 0 && 'my_icons'} src={icon.typescript.src} alt="js" /> & JQuery Skills <img className={user.windownView === 0 && 'my_icons'} src={icon.jquery.src} alt="js" /> </h3>
+                    <h3 style={{ color: "#1ed760" }}> Typescript <img className={user.windownView === 0 && 'my_icons'} src={icon.typescript.src} alt="js" /> & JQuery Skills <img className={user.windownView === 0 && 'my_icons'} src={icon.jquery.src} alt="js" /> </h3>
                     <p className="d-flex"><span className="mx-2">&#187;</span>
                         Skilled in TypeScript for writing clean and reliable code, making development smoother and less error-prone.
                     </p>

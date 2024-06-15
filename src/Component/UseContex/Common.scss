@@ -371,8 +371,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 300px;
-    height: 300px;
+    width: 80%;
+    height: 320px;
     margin: -150px;
     float: left;
     perspective: 500px;
@@ -416,7 +416,7 @@
       align-items: baseline;
       transform: rotateY(180deg);
       p{
-        width: 80%;
+        width: 70%;
       }
     }
   }

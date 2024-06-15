@@ -95,7 +95,7 @@ function HTML() {
         <h3>✨{user.myUser?.username}</h3>
         <h3>✨{user.myUser?.stack}</h3> */}
         <div className='col-md-12'>
-          <h3 style={{ color: "#1ed760" }}>Technical HTML Skills<img className={user.windownView === 0 && 'my_icons'} src={icon.html.src} alt="js" /> </h3>
+          <h3 style={{ color: "#1ed760" }}> HTML Skills<img className={user.windownView === 0 && 'my_icons'} src={icon.html.src} alt="js" /> </h3>
           <p className="d-flex"><span className="mx-2">&#187;</span>
             Proficient in creating well-structured and semantically meaningful HTML markup for web pages and applications.</p>
           <p className="d-flex"><span className="mx-2">&#187;</span>

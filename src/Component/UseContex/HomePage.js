@@ -200,14 +200,14 @@ function HomePage() {
         "API calling",
         "Async/Await",
         "Template Literals",
-        "Spread Syntax",
+        "Spread Operetor",
       ]);
       setSelected([
         "Arrow Functions",
         "API calling",
         "Async/Await",
         "Template Literals",
-        "Spread Syntax",
+        "Spread Operetor",
       ]);
     } else if (index === 4) {
       setSelectedStack("JQuery");

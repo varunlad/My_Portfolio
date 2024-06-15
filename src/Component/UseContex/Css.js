@@ -16,7 +16,7 @@ function Css() {
         <div className='container my_smooth_animation'>
             <div className='row box_shadow'>
                 <div className='col-md-12'>
-                    <h3 style={{ color: "#1ed760" }}>Technical CSS Skills<img className={user.windownView === 0 && 'my_icons'} src={icon.css.src} alt="css" /> </h3>
+                    <h3 style={{ color: "#1ed760" }}> CSS Skills<img className={user.windownView === 0 && 'my_icons'} src={icon.css.src} alt="css" /> </h3>
                     <p className="d-flex"><span className="mx-2">&#187;</span>
                         Proficient in writing accurate CSS code to style web pages and applications, including knowledge of selectors, properties, and values.</p>
                     <p className="d-flex"><span className="mx-2">&#187;</span>
