@@ -328,7 +328,7 @@ function HomePage() {
     return totalExperience.toFixed(1); // Rounded to 1 decimal place
   };
   useEffect(() => {
-    setMyExperience(myExperienceFunction())
+    setMyExperience(myExperienceFunction());
     scrollTop();
     ///AOS///
     AOS.init({
@@ -476,7 +476,7 @@ function HomePage() {
                     <div className="d-flex mt-3 my_card align-items-center flex-column">
                       <div
                         data-aos="zoom-in"
-                        onClick={handelToggle}
+                        onClick={() => handelToggle()}
                         className="my_profile_toggle"
                       >
                         {profileToggel === false ? (
@@ -611,7 +611,7 @@ function HomePage() {
                                 style={{ fontSize: "12px", fontWeight: 700 }}
                               >
                                 {" "}
-                                Software Engineer
+                                Senior Software Engineer
                               </span>
                             </h6>
                           </div>
