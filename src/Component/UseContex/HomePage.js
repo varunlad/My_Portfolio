@@ -443,12 +443,12 @@ function HomePage() {
               <h1 className="developer_headding">
                 {" "}
                 <br />
-                <span style={{ whiteSpace: "nowrap" }}> I'm a Web</span>{" "}
+                <span style={{ whiteSpace: "nowrap" }}> I'm a Software</span>{" "}
                 <strong className="gradient_headdng">Developer</strong>
               </h1>
               <p className="developer_description ">
                 {" "}
-                As web development expert I possesses in-depth knowledge and
+                As software development expert I possesses in-depth knowledge and
                 experience in creating and maintaining websites and web
                 applications. My expertise extends to various web technologies
                 such as HTML, CSS & Animations, JavaScript, Jquery, Typescript,
@@ -709,9 +709,9 @@ function HomePage() {
                   <div className="photo-overlay">
                     <p>My Projects</p>
                     <p>Atlantis (Data Analysis)</p>
-                    <p>Credit Monitoring (Data Analysis)</p>
-                    <p>Popins Website (Business Analysis)</p>
-                    <p>Digital Reciept (Billing System)</p>
+                    <p>Credit Monitoring(Finance Analysis)</p>
+                    <p>Clix (Business Analysis)</p>
+                    <p>Digital Reciept (Billing system)</p>
                   </div>
                 </div>
               </div>

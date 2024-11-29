@@ -4,7 +4,7 @@ import UserContext from './UserContext';
 
 const UserProvider = ({children}) => {
   
-  const [myUser, setMyUser] = useState({ username: 'Varun Lad', stack : "Web Developer" });
+  const [myUser, setMyUser] = useState({ username: 'Varun Lad', stack : "Software Developer" });
   const [techStack, setTechStack] = useState(false);
   const [windownView, setWindownView] = useState(1);
 
