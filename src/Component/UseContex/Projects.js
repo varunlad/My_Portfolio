@@ -38,6 +38,20 @@ function Projects() {
       technologyUsed: "JQuery,Razor pages",
     },
   ]);
+  const [personalProjects, setPersonalProjects] = useState([
+    {
+      name: "Typing Speed Test",
+      description:"Check your typing speed test measures typing speed and accuracy",
+      link: "https://varun-typing-speed-test.vercel.app",
+      github: "https://github.com/varunlad/TypingSpeedTest",
+    },
+    {
+      name: "User Data Management System",
+      description:"Allows efficient searching, editing and deleting with user information.",
+      link: "https://factwiseassignment-sage.vercel.app",
+      github: "https://github.com/varunlad/FE-Assignment/tree/main/assignment",
+    },
+  ]);
   const [activeProject, setActiveProject] = useState(0);
   const handelActiveProject = (e) => {
     setActiveProject(e === activeProject ? -1 : e);
@@ -46,7 +60,7 @@ function Projects() {
     <div className="container my_smooth_animation">
       <div className="row box_shadow">
         <h3 style={{ color: "#1ed760" }}>
-          Engaged in the execution of numerous projects
+          Highlighting my key projects
           <img
             className={user.windownView === 0 && "my_icons"}
             src={projectIcon}
@@ -129,6 +143,83 @@ function Projects() {
           </ul>
           It leverage my technical expertise to drive innovation, optimize
           performance, and deliver exceptional results.{" "}
+        </div>
+        <h3 className="mt-4 mb-4" style={{ color: "#1ed760" }}>
+          {" "}
+          My personal project portfolio{" "}
+        </h3>
+        <div className="row">
+          {personalProjects?.map((ele, ind) => {
+            return (
+              <div className="col-md-12" key={ind}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    padding: "10px 0",
+                    borderBottom: "1px solid #ccc",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <h5
+                    style={{
+                      margin: "0",
+                      fontSize: "18px",
+                      flex: "1",
+                      marginBottom:10
+                    }}
+                  >
+                    {ele.name} {" -"}
+                  </h5>
+                  <p>{ele.description}</p>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "15px",
+                      flex: "1",
+                      justifyContent: "flex-end",
+                    }}
+                  >
+                    <a
+                      href={ele.link}
+                      target="_blank"
+                      style={{
+                        textDecoration: "none",
+                        color: "#1ed760",
+                        fontWeight: "bold",
+                        padding: "5px 10px",
+                        borderRadius: "4px",
+                        border:"1px solid #1ed760",
+                        transition: "background-color 0.3s",
+                        textAlign: "center",
+                      }}
+                      
+                    >
+                      View
+                    </a>
+                    <a
+                      href={ele.github}
+                      target="_blank"
+                      style={{
+                        textDecoration: "none",
+                        color: "#1ed760",
+                        fontWeight: "bold",
+                        padding: "5px 10px",
+                        borderRadius: "4px",
+                        border:"1px solid #1ed760",
+                        transition: "background-color 0.3s",
+                        textAlign: "center",
+                      }}
+                     
+                    >
+                      Github
+                    </a>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
