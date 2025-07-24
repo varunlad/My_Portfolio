@@ -443,13 +443,16 @@ function HomePage() {
               <h1 className="developer_headding">
                 {" "}
                 <br />
-                <span style={{ whiteSpace: "nowrap" }}> I'm a Software</span>{" "}
+                <span style={{ whiteSpace: "nowrap" }}>
+                  {" "}
+                  I'm a Software
+                </span>{" "}
                 <strong className="gradient_headdng">Developer</strong>
               </h1>
               <p className="developer_description ">
                 {" "}
-                As software development expert I possesses in-depth knowledge and
-                experience in creating and maintaining websites and web
+                As software development expert I possesses in-depth knowledge
+                and experience in creating and maintaining websites and web
                 applications. My expertise extends to various web technologies
                 such as HTML, CSS & Animations, JavaScript, Jquery, Typescript,
                 React Js. I excel in designing user-friendly, responsive, and
@@ -511,7 +514,7 @@ function HomePage() {
                         <div className="d-flex flex-column justify-content-center align-items-center fade_me">
                           <div>
                             <h6
-                              style={{ fontSize: "14px" }}
+                              style={{ fontSize: "14px", color:'#6C757D' }}
                               className="text-secondary d-flex"
                             >
                               <span
@@ -537,8 +540,12 @@ function HomePage() {
                               style={{ fontSize: "14px" }}
                               className="text-secondary"
                             >
-                              {" "}
-                              varunlad5@gmail.com{" "}
+                              <a
+                                className="text-secondary"
+                                href="mailto:varunlad5@gmail.com"
+                              >
+                                varunlad5@gmail.com
+                              </a>{" "}
                               <i className="bi bi-envelope-at-fill"></i>
                             </h6>
                           </div>
@@ -588,7 +595,7 @@ function HomePage() {
                                 className="mx-1 myColor"
                                 style={{ fontSize: "12px", fontWeight: 700 }}
                               >
-                                EasyRewardz Software Services
+                                SourceMash Technologies
                               </span>
                             </h6>
                           </div>
@@ -611,7 +618,7 @@ function HomePage() {
                                 style={{ fontSize: "12px", fontWeight: 700 }}
                               >
                                 {" "}
-                                Senior Software Engineer
+                                Software Developer
                               </span>
                             </h6>
                           </div>
@@ -620,7 +627,7 @@ function HomePage() {
                               style={{ fontSize: "14px" }}
                               className="text-secondary d-flex "
                             >
-                              Known more on &nbsp;
+                              connect on &nbsp;
                               <a
                                 target="_blank"
                                 href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos"
