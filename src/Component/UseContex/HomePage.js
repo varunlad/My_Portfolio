@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import profilePic from "../../Assets/Images/my_dp.jpg";
+import  { useContext, useEffect, useRef, useState } from "react";
 import my_profilePic from "../../Assets/Images/my_profile_pic.jpg";
 import my_profilePic2 from "../../Assets/Images/my_profile_pic_2.jpg";
 
@@ -15,7 +14,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Pagination, Autoplay } from "swiper/modules";
 import TechStack from "./TechStack";
-import Footer from "../../Common/Footer";
 import ScrollToTopButton from "./ScrollToTopButton";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -24,11 +22,11 @@ import "./chart.css";
 
 function HomePage() {
   const user = useContext(UserContext);
-  const [currentURl, setCurrentURL] = useState(window.location.href);
-  const [show_Me, setShow_Me] = useState(true);
+  const [currentURl] = useState(window.location.href);
+  const [show_Me] = useState(true);
   const [profileToggel, setProfileToggel] = useState(true);
   const [myExperience, setMyExperience] = useState();
-  const [myPortfolio, setMyPortFolio] = useState([
+  const [myPortfolio] = useState([
     {
       name: "Crafting Excellence",
       description:
@@ -50,7 +48,7 @@ function HomePage() {
         "Beyond the realm of programming, my fascination with astronomy takes me on celestial journeys. Gazing at the stars, I find inspiration, wonder, and a reminder of the limitless possibilities in our universe.",
     },
   ]);
-  const [aboutMe, setAboutMe] = useState([
+  const [aboutMe] = useState([
     {
       heading: "Forever a Learner",
       description:
@@ -119,7 +117,7 @@ function HomePage() {
       data: [{ x: "React JS", y: 30 }],
     },
   ]);
-  const [options, setOptions] = useState({
+  const [options] = useState({
     legend: {
       show: false,
     },
@@ -159,8 +157,9 @@ function HomePage() {
   const [selectedOptions, setSelectedOptions] = useState();
   const [selectedStack, setSelectedStack] = useState("");
   const cursorRef = useRef(null);
-  const handleStrock = (index) => {
-    if (index === 1) {
+ const handleStrock = (index) => {
+  switch (index) {
+    case 1:
       setSelectedStack("HTML");
       setSelectedSeries([40, 20, 10, 10, 20]);
       handleSelectedOptions([
@@ -177,7 +176,9 @@ function HomePage() {
         "Semantic Tags",
         "Inline & Block Elements",
       ]);
-    } else if (index === 2) {
+      break;
+
+    case 2:
       setSelectedStack("CSS & Animation");
       setSelectedSeries([30, 20, 30, 20]);
       handleSelectedOptions([
@@ -192,7 +193,9 @@ function HomePage() {
         "Controlling Layout and Appearance of Inline Elements with CSS",
         "Applying CSS Animations to Block Elements for Dynamic Layout Transitions",
       ]);
-    } else if (index === 3) {
+      break;
+
+    case 3:
       setSelectedStack("JavaScript");
       setSelectedSeries([20, 10, 40, 10, 20]);
       handleSelectedOptions([
@@ -209,7 +212,9 @@ function HomePage() {
         "Template Literals",
         "Spread Operetor",
       ]);
-    } else if (index === 4) {
+      break;
+
+    case 4:
       setSelectedStack("JQuery");
       setSelectedSeries([40, 10, 10, 20, 20]);
       handleSelectedOptions([
@@ -224,7 +229,9 @@ function HomePage() {
         "AJAX Requests",
         "Animations & Effects",
       ]);
-    } else if (index === 5) {
+      break;
+
+    case 5:
       setSelectedStack("TypeScript");
       setSelectedSeries([30, 30, 10, 10, 20]);
       handleSelectedOptions([
@@ -241,7 +248,9 @@ function HomePage() {
         "Generics",
         "Decorators",
       ]);
-    } else if (index === 6) {
+      break;
+
+    case 6:
       setSelectedStack("React JS");
       setSelectedSeries([10, 30, 20, 20, 20]);
       handleSelectedOptions([
@@ -258,8 +267,13 @@ function HomePage() {
         "Lifecycle Methods",
         "Hooks",
       ]);
-    }
-  };
+      break;
+
+    default:
+      console.warn("Invalid index provided");
+      break;
+  }
+};
   const handleSelectedOptions = (options) => {
     setSelectedOptions({
       legend: {
@@ -514,7 +528,7 @@ function HomePage() {
                         <div className="d-flex flex-column justify-content-center align-items-center fade_me">
                           <div>
                             <h6
-                              style={{ fontSize: "14px", color:'#6C757D' }}
+                              style={{ fontSize: "14px", color: "#6C757D" }}
                               className="text-secondary d-flex"
                             >
                               <span
@@ -563,15 +577,24 @@ function HomePage() {
                               style={{ fontSize: "14px" }}
                               className="text-secondary d-flex"
                             >
-                              Known more on &nbsp;
                               <a
                                 target="_blank"
                                 href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos"
                                 style={{ fontSize: "14px" }}
                                 className="text-secondary d-flex"
+                                rel="noreferrer"
                               >
                                 Linkedin{" "}
                                 <i className=" mx-1 bi bi-linkedin"></i>
+                              </a>
+                              &
+                               <a
+                                target="_blank"
+                                href="https://github.com/varunlad"
+                                style={{ fontSize: "14px" }}
+                                className="text-secondary d-flex mx-1" rel="noreferrer"
+                              >
+                                Github <i className=" mx-1 bi bi-github"></i>
                               </a>
                             </h6>
                           </div>
@@ -622,20 +645,29 @@ function HomePage() {
                               </span>
                             </h6>
                           </div>
-                          <div>
+                           <div>
                             <h6
                               style={{ fontSize: "14px" }}
-                              className="text-secondary d-flex "
+                              className="text-secondary d-flex"
                             >
-                              connect on &nbsp;
                               <a
                                 target="_blank"
                                 href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos"
                                 style={{ fontSize: "14px" }}
                                 className="text-secondary d-flex"
+                                rel="noreferrer"
                               >
                                 Linkedin{" "}
                                 <i className=" mx-1 bi bi-linkedin"></i>
+                              </a>
+                              &
+                               <a
+                                target="_blank"
+                                href="https://github.com/varunlad"
+                                style={{ fontSize: "14px" }}
+                                className="text-secondary d-flex mx-1" rel="noreferrer"
+                              >
+                                Github <i className=" mx-1 bi bi-github"></i>
                               </a>
                             </h6>
                           </div>

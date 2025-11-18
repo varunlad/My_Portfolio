@@ -7,7 +7,6 @@ import HTML from "./HTML";
 import JavaScript from "./JavaScript";
 import UserContext from "../../Contex/UserContext";
 import Projects from "./Projects";
-import myprofileGIF from "../../Assets/Images";
 import OngoingStudies from "./OngoingStudies";
 
 function TechStack() {
@@ -21,23 +20,25 @@ function TechStack() {
     { tabName: "Java Script" },
     { tabName: "Ongoing Studies" },
   ]);
+
   const handelTabs = (index) => {
     setTabs(index);
-    if (user.windownView === 0 && !isIOS()) {
-      // Get the DOM element of the clicked tab
+    if (user.windownView === 0) {
       const tabElement = document.getElementById(`tab_${index}`);
-      // Scroll to the beginning of the tab
-      tabElement.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-        inline: "start",
-      });
+      const container = document.getElementById("tabsContainer");
+      if (tabElement && container) {
+        const scrollPosition =
+          tabElement.offsetLeft -
+          container.offsetWidth / 2 +
+          tabElement.offsetWidth / 2;
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: "smooth",
+        });
+      }
     }
   };
-  const isIOS = () => {
-    const userAgent = window.navigator.userAgent.toLowerCase();
-    return /iphone|ipad|ipod/.test(userAgent);
-  };
+
   useEffect(() => {
     scrollTop();
   }, []);
@@ -90,7 +91,7 @@ function TechStack() {
           </div>
           <div className="my_card noShadow">
             <div className="main_tabs">
-              <ul>
+              <ul id="tabsContainer">
                 {tabsOption?.map((ele, ind) => {
                   return (
                     <li

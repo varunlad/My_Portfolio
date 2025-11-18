@@ -88,7 +88,7 @@
       //flex-direction: column;
       justify-content: center;
       width: 50%;
-      padding: 15px;
+      padding: 10px;
       box-shadow: 0 0 20px 0 #222323;
       border-radius: 8px;
       border: 1px solid #80d0c7;
@@ -1639,7 +1639,7 @@
   }
 
   .main_poins_container .flip span {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .flip {
@@ -1658,6 +1658,7 @@
     flex-direction: column;
     align-items: normal;
     padding: 25px;
+    padding-top: 0px;
   }
 
   .main_poins_container .portfolio_bg .slider-thumb::before {
@@ -1667,7 +1668,7 @@
 
   .developer_headding {
     display: flex;
-    font-size: 30px !important;
+    font-size: 25px !important;
     padding: 0px 25px;
 
     br {
