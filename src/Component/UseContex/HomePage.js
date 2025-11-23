@@ -1,4 +1,4 @@
-import  { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import my_profilePic from "../../Assets/Images/my_profile_pic.jpg";
 import my_profilePic2 from "../../Assets/Images/my_profile_pic_2.jpg";
 
@@ -157,123 +157,123 @@ function HomePage() {
   const [selectedOptions, setSelectedOptions] = useState();
   const [selectedStack, setSelectedStack] = useState("");
   const cursorRef = useRef(null);
- const handleStrock = (index) => {
-  switch (index) {
-    case 1:
-      setSelectedStack("HTML");
-      setSelectedSeries([40, 20, 10, 10, 20]);
-      handleSelectedOptions([
-        "HTML Structure",
-        "Flex-Box",
-        "Forms",
-        "Semantic Tags",
-        "Inline & Block Elements",
-      ]);
-      setSelected([
-        "HTML Structure",
-        "Flex-Box",
-        "Forms",
-        "Semantic Tags",
-        "Inline & Block Elements",
-      ]);
-      break;
+  const handleStrock = (index) => {
+    switch (index) {
+      case 1:
+        setSelectedStack("HTML");
+        setSelectedSeries([40, 20, 10, 10, 20]);
+        handleSelectedOptions([
+          "HTML Structure",
+          "Flex-Box",
+          "Forms",
+          "Semantic Tags",
+          "Inline & Block Elements",
+        ]);
+        setSelected([
+          "HTML Structure",
+          "Flex-Box",
+          "Forms",
+          "Semantic Tags",
+          "Inline & Block Elements",
+        ]);
+        break;
 
-    case 2:
-      setSelectedStack("CSS & Animation");
-      setSelectedSeries([30, 20, 30, 20]);
-      handleSelectedOptions([
-        "Animating Semantic Tags for Smooth Transitions",
-        "Styling Form Elements with CSS for Enhanced Appearance",
-        "Controlling Layout and Appearance of Inline Elements with CSS",
-        "Applying CSS Animations to Block Elements for Dynamic Layout Transitions",
-      ]);
-      setSelected([
-        "Animating Semantic Tags for Smooth Transitions.",
-        "Styling Form Elements with CSS for Enhanced Appearance.",
-        "Controlling Layout and Appearance of Inline Elements with CSS",
-        "Applying CSS Animations to Block Elements for Dynamic Layout Transitions",
-      ]);
-      break;
+      case 2:
+        setSelectedStack("CSS & Animation");
+        setSelectedSeries([30, 20, 30, 20]);
+        handleSelectedOptions([
+          "Animating Semantic Tags for Smooth Transitions",
+          "Styling Form Elements with CSS for Enhanced Appearance",
+          "Controlling Layout and Appearance of Inline Elements with CSS",
+          "Applying CSS Animations to Block Elements for Dynamic Layout Transitions",
+        ]);
+        setSelected([
+          "Animating Semantic Tags for Smooth Transitions.",
+          "Styling Form Elements with CSS for Enhanced Appearance.",
+          "Controlling Layout and Appearance of Inline Elements with CSS",
+          "Applying CSS Animations to Block Elements for Dynamic Layout Transitions",
+        ]);
+        break;
 
-    case 3:
-      setSelectedStack("JavaScript");
-      setSelectedSeries([20, 10, 40, 10, 20]);
-      handleSelectedOptions([
-        "Arrow Functions",
-        "API calling",
-        "Async/Await",
-        "Template Literals",
-        "Spread Operetor",
-      ]);
-      setSelected([
-        "Arrow Functions",
-        "API calling",
-        "Async/Await",
-        "Template Literals",
-        "Spread Operetor",
-      ]);
-      break;
+      case 3:
+        setSelectedStack("JavaScript");
+        setSelectedSeries([20, 10, 40, 10, 20]);
+        handleSelectedOptions([
+          "Arrow Functions",
+          "API calling",
+          "Async/Await",
+          "Template Literals",
+          "Spread Operetor",
+        ]);
+        setSelected([
+          "Arrow Functions",
+          "API calling",
+          "Async/Await",
+          "Template Literals",
+          "Spread Operetor",
+        ]);
+        break;
 
-    case 4:
-      setSelectedStack("JQuery");
-      setSelectedSeries([40, 10, 10, 20, 20]);
-      handleSelectedOptions([
-        "DOM Manipulation",
-        "Event Handling",
-        "AJAX Requests",
-        "Animations & Effects",
-      ]);
-      setSelected([
-        "DOM Manipulation",
-        "Event Handling",
-        "AJAX Requests",
-        "Animations & Effects",
-      ]);
-      break;
+      case 4:
+        setSelectedStack("JQuery");
+        setSelectedSeries([40, 10, 10, 20, 20]);
+        handleSelectedOptions([
+          "DOM Manipulation",
+          "Event Handling",
+          "AJAX Requests",
+          "Animations & Effects",
+        ]);
+        setSelected([
+          "DOM Manipulation",
+          "Event Handling",
+          "AJAX Requests",
+          "Animations & Effects",
+        ]);
+        break;
 
-    case 5:
-      setSelectedStack("TypeScript");
-      setSelectedSeries([30, 30, 10, 10, 20]);
-      handleSelectedOptions([
-        "Type Annotations",
-        "Interfaces",
-        "Enums",
-        "Generics",
-        "Decorators",
-      ]);
-      setSelected([
-        "Type Annotations",
-        "Interfaces",
-        "Enums",
-        "Generics",
-        "Decorators",
-      ]);
-      break;
+      case 5:
+        setSelectedStack("TypeScript");
+        setSelectedSeries([30, 30, 10, 10, 20]);
+        handleSelectedOptions([
+          "Type Annotations",
+          "Interfaces",
+          "Enums",
+          "Generics",
+          "Decorators",
+        ]);
+        setSelected([
+          "Type Annotations",
+          "Interfaces",
+          "Enums",
+          "Generics",
+          "Decorators",
+        ]);
+        break;
 
-    case 6:
-      setSelectedStack("React JS");
-      setSelectedSeries([10, 30, 20, 20, 20]);
-      handleSelectedOptions([
-        "Redux",
-        "Components",
-        "State and Props",
-        "Lifecycle Methods",
-        "Hooks",
-      ]);
-      setSelected([
-        "Redux",
-        "Components",
-        "State and Props",
-        "Lifecycle Methods",
-        "Hooks",
-      ]);
-      break;
+      case 6:
+        setSelectedStack("React JS");
+        setSelectedSeries([10, 30, 20, 20, 20]);
+        handleSelectedOptions([
+          "Redux",
+          "Components",
+          "State and Props",
+          "Lifecycle Methods",
+          "Hooks",
+        ]);
+        setSelected([
+          "Redux",
+          "Components",
+          "State and Props",
+          "Lifecycle Methods",
+          "Hooks",
+        ]);
+        break;
 
-    default:
-      console.warn("Invalid index provided");
-      break;
-  }
-};
+      default:
+        console.warn("Invalid index provided");
+        break;
+    }
+  };
   const handleSelectedOptions = (options) => {
     setSelectedOptions({
       legend: {
@@ -405,6 +405,8 @@ function HomePage() {
   }
 
   requestAnimationFrame(loop);
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
   return (
     <>
       {/* <div id="cursor" ref={cursorRef}>
@@ -425,7 +427,8 @@ function HomePage() {
                     className="myTech"
                     style={{ whiteSpace: "nowrap" }}
                   >
-                    Tech Stack <img src={icon.new_white_down_icon.src} />
+                    Tech Stack{" "}
+                    <img src={icon.new_white_down_icon.src} alt="icon" />
                   </button>
                 )}
               </div>
@@ -450,7 +453,8 @@ function HomePage() {
                     className="myTech"
                     style={{ whiteSpace: "nowrap" }}
                   >
-                    Tech Stack <img src={icon.new_white_down_icon.src} />
+                    Tech Stack{" "}
+                    <img src={icon.new_white_down_icon.src} alt="icon" />
                   </button>
                 )}
               </div>
@@ -501,16 +505,22 @@ function HomePage() {
                             style={{ width: "15px" }}
                             src={icon.new_white_down_icon.src}
                             className="  rotate_me "
+                            alt="icon"
                           />
                         ) : (
                           <img
                             style={{ width: "15px" }}
                             src={icon.new_white_down_icon.src}
+                            alt="icon"
                           />
                         )}
                       </div>
-                      <Tilt options={defaultOptions}>
-                        <div data-aos="zoom-in" className="img_cover">
+                      <Tilt
+                        options={
+                          isIOS ? { max: 0, glare: false } : defaultOptions
+                        }
+                      >
+                        <div className="img_cover">
                           <img
                             className=""
                             src={profileToggel ? my_profilePic : my_profilePic2}
@@ -588,11 +598,12 @@ function HomePage() {
                                 <i className=" mx-1 bi bi-linkedin"></i>
                               </a>
                               &
-                               <a
+                              <a
                                 target="_blank"
                                 href="https://github.com/varunlad"
                                 style={{ fontSize: "14px" }}
-                                className="text-secondary d-flex mx-1" rel="noreferrer"
+                                className="text-secondary d-flex mx-1"
+                                rel="noreferrer"
                               >
                                 Github <i className=" mx-1 bi bi-github"></i>
                               </a>
@@ -645,7 +656,7 @@ function HomePage() {
                               </span>
                             </h6>
                           </div>
-                           <div>
+                          <div>
                             <h6
                               style={{ fontSize: "14px" }}
                               className="text-secondary d-flex"
@@ -661,11 +672,12 @@ function HomePage() {
                                 <i className=" mx-1 bi bi-linkedin"></i>
                               </a>
                               &
-                               <a
+                              <a
                                 target="_blank"
                                 href="https://github.com/varunlad"
                                 style={{ fontSize: "14px" }}
-                                className="text-secondary d-flex mx-1" rel="noreferrer"
+                                className="text-secondary d-flex mx-1"
+                                rel="noreferrer"
                               >
                                 Github <i className=" mx-1 bi bi-github"></i>
                               </a>
@@ -723,7 +735,7 @@ function HomePage() {
                 data-aos="fade-right"
               >
                 <div className="photo  " style={{ transitionDelay: "200ms" }}>
-                  <img src={laptop} />
+                  <img src={laptop} alt="skills" />
                   <h1 className="headding">Skills</h1>
                   <div className="photo-overlay">
                     <p>My Skills</p>
@@ -743,7 +755,7 @@ function HomePage() {
                 data-aos="fade-left"
               >
                 <div className="photo ">
-                  <img src={project} />
+                  <img src={project} alt="project" />
                   <h1 className="headding">Projects</h1>
                   <div className="photo-overlay">
                     <p>My Projects</p>
@@ -761,7 +773,7 @@ function HomePage() {
                 data-aos="fade-right"
               >
                 <div className="photo ">
-                  <img src={vision} />
+                  <img src={vision} alt="vision" />
                   <h1 className="headding">Vision</h1>
                   <div className="photo-overlay">
                     <p>My Vision</p>
@@ -779,7 +791,7 @@ function HomePage() {
                 data-aos="fade-left"
               >
                 <div className="photo ">
-                  <img src={hobby} />
+                  <img src={hobby} alt="hobby" />
                   <h1 className="headding">Hobby</h1>
                   <div className="photo-overlay">
                     <p>My Hobbies</p>
@@ -881,7 +893,6 @@ function HomePage() {
                           }
                           key={ind}
                         >
-                          {/* <div className="movingRadius"></div> */}
                           <h1 className="gradient_headdng">{ele.name}</h1>
                           <p>{ele.description}</p>
                         </div>

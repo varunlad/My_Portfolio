@@ -1,13 +1,12 @@
 import React, { useContext, useState } from "react";
 import "./Common.scss";
 import * as icon from "../../Assets/Images/index";
-import projectIcon from "../../Assets/Images/projecticon.png";
 import UserContext from "../../Contex/UserContext";
 
 function Projects() {
   const user = useContext(UserContext);
 
-  const [myProject, setMyProject] = useState([
+  const [myProject] = useState([
     {
       name: "Atlantis (Data analysis)",
       description:
@@ -38,16 +37,18 @@ function Projects() {
       technologyUsed: "JQuery,Razor pages",
     },
   ]);
-  const [personalProjects, setPersonalProjects] = useState([
+  const [personalProjects] = useState([
     {
       name: "Typing Speed Test",
-      description:"Check your typing speed test measures typing speed and accuracy",
+      description:
+        "Check your typing speed test measures typing speed and accuracy",
       link: "https://varun-typing-speed-test.vercel.app",
       github: "https://github.com/varunlad/TypingSpeedTest",
     },
     {
       name: "User Data Management System",
-      description:"Allows efficient searching, editing and deleting with user information.",
+      description:
+        "Allows efficient searching, editing and deleting with user information.",
       link: "https://factwiseassignment-sage.vercel.app",
       github: "https://github.com/varunlad/FE-Assignment/tree/main/assignment",
     },
@@ -59,14 +60,7 @@ function Projects() {
   return (
     <div className="container my_smooth_animation">
       <div className="row box_shadow">
-        <h3 style={{ color: "#1ed760" }}>
-          Highlighting my key projects
-          <img
-            className={user.windownView === 0 && "my_icons"}
-            src={projectIcon}
-            alt="project"
-          />
-        </h3>
+        <h3 style={{ color: "#1ed760" }}>Highlighting my key projects</h3>
         {myProject.map((ele, ind) => {
           return (
             <div className="col-md-12" key={ind}>
@@ -111,6 +105,7 @@ function Projects() {
                     className={
                       activeProject === ind ? "rotate_me" : "rotate_me_none"
                     }
+                    alt="icon"
                   />
                 </div>
                 {activeProject === ind ? (
@@ -167,7 +162,7 @@ function Projects() {
                       margin: "0",
                       fontSize: "18px",
                       flex: "1",
-                      marginBottom:10
+                      marginBottom: 10,
                     }}
                   >
                     {ele.name} {" -"}
@@ -190,11 +185,12 @@ function Projects() {
                         fontWeight: "bold",
                         padding: "5px 10px",
                         borderRadius: "4px",
-                        border:"1px solid #1ed760",
+                        border: "1px solid #1ed760",
                         transition: "background-color 0.3s",
                         textAlign: "center",
                       }}
-                      
+                      alt="link"
+                      rel="noreferrer"
                     >
                       View
                     </a>
@@ -207,11 +203,12 @@ function Projects() {
                         fontWeight: "bold",
                         padding: "5px 10px",
                         borderRadius: "4px",
-                        border:"1px solid #1ed760",
+                        border: "1px solid #1ed760",
                         transition: "background-color 0.3s",
                         textAlign: "center",
                       }}
-                     
+                      rel="noreferrer"
+                      alt="link"
                     >
                       Github
                     </a>
