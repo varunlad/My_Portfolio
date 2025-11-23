@@ -373,9 +373,6 @@ function HomePage() {
     console.log("Tech_Stack_Click");
     user.updateTechStack(techVal);
   };
-  const handelToggle = () => {
-    setProfileToggel(!profileToggel);
-  };
 
   const cursor = document.querySelector("#cursor");
   let mouse = { x: 300, y: 300 };
@@ -494,17 +491,21 @@ function HomePage() {
               {show_Me ? (
                 <>
                   <div className="col-md-3">
-                    <div className="d-flex mt-3 my_card align-items-center flex-column" style={{height:'340px'}}>
+                    <div
+                      className="d-flex mt-3 my_card align-items-center flex-column"
+                      style={{ height: "340px" }}
+                    >
                       <div
-                        onClick={() => handelToggle()}
+                        onClick={() => setProfileToggel(!profileToggel)}
                         className="my_profile_toggle"
                       >
-                        <img
+                        {/* <img
                           style={{ width: "15px" }}
                           src={icon.new_white_down_icon.src}
                           className={profileToggel ? "" : "rotate_me "}
                           alt="icon"
-                        />
+                        /> */}
+                        <i className={profileToggel ? "bi bi-arrow-down-up" : "rotate_me bi bi-arrow-down-up"}></i>
                       </div>
                       {isIOS ? (
                         <div className="img_cover">
