@@ -499,12 +499,13 @@ function HomePage() {
                       style={{ height: "340px" }}
                     >
                       <div onClick={handelToggle} className="my_profile_toggle">
-                        <img
-                          style={{ width: "15px" }}
-                          src={icon.new_white_down_icon.src}
-                          className={profileToggel ? "" : "rotate_me "}
-                          alt="icon"
-                        />
+                        <div className={profileToggel ? "" : "rotate_me"}>
+                          <img
+                            style={{ width: "15px" }}
+                            src={icon.new_white_down_icon.src}
+                            alt="icon"
+                          />
+                        </div>
                       </div>
                       {isIOS ? (
                         <div className="img_cover">

@@ -386,7 +386,7 @@
     }
     .front,
     .back {
-      h1{
+      h1 {
         border: 1px solid #00ed64;
         padding: 10px;
         border-radius: 4px;
@@ -407,7 +407,7 @@
 
     .back {
       padding-top: 20px;
-      background-image: url('../../Assets/Images/teachersdayelementscomposition.jpg');
+      background-image: url("../../Assets/Images/teachersdayelementscomposition.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -415,7 +415,7 @@
       justify-content: start;
       align-items: baseline;
       transform: rotateY(180deg);
-      p{
+      p {
         width: 70%;
       }
     }
@@ -1345,12 +1345,20 @@
     }
 
     .rotate_me {
-      transform: translate(180deg);
+      will-change: transform;
+      transform: rotate(180deg);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
     }
 
     .rotate_me_none {
+      will-change: transform;
       transition: 0.5s;
       transform: translate(0deg);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
     }
   }
 
