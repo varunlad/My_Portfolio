@@ -494,40 +494,37 @@ function HomePage() {
               {show_Me ? (
                 <>
                   <div className="col-md-3">
-                    <div className="d-flex mt-3 my_card align-items-center flex-column">
+                    <div className="d-flex mt-3 my_card align-items-center flex-column" style={{height:'340px'}}>
                       <div
-                        data-aos="zoom-in"
                         onClick={() => handelToggle()}
                         className="my_profile_toggle"
                       >
-                        {profileToggel === false ? (
-                          <img
-                            style={{ width: "15px" }}
-                            src={icon.new_white_down_icon.src}
-                            className="  rotate_me "
-                            alt="icon"
-                          />
-                        ) : (
-                          <img
-                            style={{ width: "15px" }}
-                            src={icon.new_white_down_icon.src}
-                            alt="icon"
-                          />
-                        )}
+                        <img
+                          style={{ width: "15px" }}
+                          src={icon.new_white_down_icon.src}
+                          className={profileToggel ? "" : "rotate_me "}
+                          alt="icon"
+                        />
                       </div>
-                      <Tilt
-                        options={
-                          isIOS ? { max: 0, glare: false } : defaultOptions
-                        }
-                      >
+                      {isIOS ? (
                         <div className="img_cover">
                           <img
-                            className=""
                             src={profileToggel ? my_profilePic : my_profilePic2}
-                            alt="pic"
+                            alt="profile"
                           />
                         </div>
-                      </Tilt>
+                      ) : (
+                        <Tilt options={defaultOptions}>
+                          <div className="img_cover">
+                            <img
+                              src={
+                                profileToggel ? my_profilePic : my_profilePic2
+                              }
+                              alt="profile"
+                            />
+                          </div>
+                        </Tilt>
+                      )}
 
                       <h5 className="m-2">
                         <strong className="myColor">
