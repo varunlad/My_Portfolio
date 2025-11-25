@@ -473,7 +473,7 @@ function HomePage() {
                 and experience in creating and maintaining websites and web
                 applications. My expertise extends to various web technologies
                 such as HTML, CSS & Animations, JavaScript, Jquery, Typescript,
-                React Js. I excel in designing user-friendly, responsive, and
+                React Js & Next JS. I excel in designing user-friendly, responsive, and
                 secure web solutions, ensuring optimal performance and user
                 experience.
               </p>
