@@ -1,5 +1,5 @@
 // UserProfile.js
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import UserContext from '../../Contex/UserContext';
 import MyLogin from './MyLogin';
 

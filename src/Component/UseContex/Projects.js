@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import  { useContext, useState } from "react";
 import "./Common.scss";
 import * as icon from "../../Assets/Images/index";
 import UserContext from "../../Contex/UserContext";

@@ -12,7 +12,7 @@ import OngoingStudies from "./OngoingStudies";
 function TechStack() {
   const user = useContext(UserContext);
   const [tabs, setTabs] = useState(0);
-  const [tabsOption, setTabsOption] = useState([
+  const [tabsOption] = useState([
     { tabName: "React JS" },
     { tabName: "Projects" },
     { tabName: "HTML" },
@@ -79,6 +79,7 @@ function TechStack() {
                 src={icon.new_white_down_icon.src}
                 className="mx-2"
                 style={{ transform: "rotate(90deg)" }}
+                alt="down_icon"
               />
               Tech Stack
             </button>
