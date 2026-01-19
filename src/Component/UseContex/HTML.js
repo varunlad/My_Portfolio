@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+/* eslint-disable jsx-a11y/img-redundant-alt */
+import  { useContext, useEffect, useRef, useState } from 'react';
 import * as icon from "../../Assets/Images/index";
 import thumbnailImage from "../../Assets/Images/Support-White.svg"; // Import the thumbnail image
 import UserContext from '../../Contex/UserContext';

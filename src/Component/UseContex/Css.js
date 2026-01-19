@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import * as icon from "../../Assets/Images/index";
 import men from "../../Assets/Images/men_removebg.png"
 import men_bg from "../../Assets/Images/men.png"

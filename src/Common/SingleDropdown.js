@@ -84,6 +84,7 @@ function ErReactMultiSelect(props) {
         let filterData = [];
         input = document.getElementById("search_drop");
         search = input.value.toUpperCase();
+        // eslint-disable-next-line array-callback-return
         filterData = tempArr.filter((item) => {
             if (item.lable.toUpperCase().indexOf(search) !== -1) {
                 return true;

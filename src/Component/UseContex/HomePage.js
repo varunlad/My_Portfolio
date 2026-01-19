@@ -91,7 +91,7 @@ function HomePage() {
     reset: true, // If the tilt effect has to be reset on exit.
     easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
   };
-  const [series, setSeries] = useState([
+  const [series] = useState([
     {
       name: "HTML",
       data: [{ x: "HTML", y: 20 }],
@@ -354,7 +354,7 @@ function HomePage() {
       once: true,
     });
     loop(); // start the cursor animation loop
-  }, []);
+  }, [loop]);
   const scrollTop = () => {
     //let myheight = document.documentElement.scrollHeight
     window.scrollTo({
@@ -377,7 +377,6 @@ function HomePage() {
     setProfileToggel(!profileToggel);
   };
 
-  const cursor = document.querySelector("#cursor");
   let mouse = { x: 300, y: 300 };
   let pos = { x: 0, y: 0 };
   const speed = 0.1; // between 0 and 1
@@ -399,6 +398,7 @@ function HomePage() {
 
   window.addEventListener("mousemove", updateCoordinates);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function loop() {
     updatePosition();
     requestAnimationFrame(loop);
