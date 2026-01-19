@@ -7,7 +7,7 @@ function OngoingStudies() {
       headdind: "Node JS",
       description:
         "  I am learning Node.js to enhance my skills in server-side development and build scalable network applications. This involves mastering asynchronous programming and creating robust back-end solutions, furthering my capabilities as a full-stack developer.",
-      link: "https://github.com/varunlad/mycontacts-backend",
+      link: "https://github.com/varunlad/Personal-Finance-Tracker-Backend",
     },
     {
       headdind: "Mongo DB",
