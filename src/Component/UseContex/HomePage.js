@@ -97,8 +97,8 @@ function HomePage() {
       data: [{ x: "HTML", y: 20 }],
     },
     {
-      name: "CSS & Animation",
-      data: [{ x: "CSS & Animation", y: 10 }],
+      name: "CSS &amp; Animation",
+      data: [{ x: "CSS &amp; Animation", y: 10 }],
     },
     {
       name: "JavaScript",
@@ -157,6 +157,7 @@ function HomePage() {
   const [selectedOptions, setSelectedOptions] = useState();
   const [selectedStack, setSelectedStack] = useState("");
   const cursorRef = useRef(null);
+
   const handleStrock = (index) => {
     switch (index) {
       case 1:
@@ -167,19 +168,19 @@ function HomePage() {
           "Flex-Box",
           "Forms",
           "Semantic Tags",
-          "Inline & Block Elements",
+          "Inline &amp; Block Elements",
         ]);
         setSelected([
           "HTML Structure",
           "Flex-Box",
           "Forms",
           "Semantic Tags",
-          "Inline & Block Elements",
+          "Inline &amp; Block Elements",
         ]);
         break;
 
       case 2:
-        setSelectedStack("CSS & Animation");
+        setSelectedStack("CSS &amp; Animation");
         setSelectedSeries([30, 20, 30, 20]);
         handleSelectedOptions([
           "Animating Semantic Tags for Smooth Transitions",
@@ -221,13 +222,13 @@ function HomePage() {
           "DOM Manipulation",
           "Event Handling",
           "AJAX Requests",
-          "Animations & Effects",
+          "Animations &amp; Effects",
         ]);
         setSelected([
           "DOM Manipulation",
           "Event Handling",
           "AJAX Requests",
-          "Animations & Effects",
+          "Animations &amp; Effects",
         ]);
         break;
 
@@ -274,6 +275,7 @@ function HomePage() {
         break;
     }
   };
+
   const handleSelectedOptions = (options) => {
     setSelectedOptions({
       legend: {
@@ -323,7 +325,7 @@ function HomePage() {
   const myExperienceFunction = () => {
     let currentDate = new Date();
     let startYear = 2021;
-    let startMonth = 11; // Assuming the start month is January (0-indexed)
+    let startMonth = 11; // Assuming the start month is December (0-indexed)
 
     let currentYear = currentDate.getFullYear();
     let currentMonth = currentDate.getMonth(); // 0-indexed month
@@ -331,8 +333,6 @@ function HomePage() {
     let years = currentYear - startYear;
     let months = currentMonth - startMonth;
 
-    // If the current month is earlier in the year than the start month,
-    // we need to subtract one year and adjust the months
     if (months < 0) {
       years--;
       months += 12;
@@ -341,30 +341,65 @@ function HomePage() {
     let totalExperience = years + months / 12;
     return totalExperience.toFixed(1); // Rounded to 1 decimal place
   };
+
+  // ✅ Run once on mount: init AOS, scrollTop (optional), set up mouse tracking & RAF loop
   useEffect(() => {
     setMyExperience(myExperienceFunction());
-    scrollTop();
-    ///AOS///
+
+    // If you don't want any auto-scroll at all, remove the next two lines
+    window.scrollTo({
+      top: 1,
+      behavior: "smooth",
+    });
+
+    // Init AOS once
     AOS.init({
       offset: 10,
       duration: 500,
       easing: "ease-in-sine",
       delay: 100,
-      //disable: 'mobile',
+      // disable: 'mobile',
       once: true,
     });
-    loop(); // start the cursor animation loop
-  }, [loop]);
-  const scrollTop = () => {
-    //let myheight = document.documentElement.scrollHeight
-    window.scrollTo({
-      top: 1,
-      behavior: "smooth",
-    });
-  };
+
+    // Cursor animation state kept in refs to persist across renders
+    const mouse = { x: 300, y: 300 };
+    const pos = { x: 0, y: 0 };
+    const speed = 0.1; // between 0 and 1
+
+    const updatePosition = () => {
+      pos.x += (mouse.x - pos.x) * speed;
+      pos.y += (mouse.y - pos.y) * speed;
+      if (cursorRef.current) {
+        cursorRef.current.style.transform =
+          "translate3d(" + pos.x + "px ," + pos.y + "px, 0)";
+      }
+    };
+
+    const onMouseMove = (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+
+    window.addEventListener("mousemove", onMouseMove);
+
+    let rafId;
+    const animate = () => {
+      updatePosition();
+      rafId = requestAnimationFrame(animate);
+    };
+    rafId = requestAnimationFrame(animate);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, []);
+
 
   const handelTechStack = (techVal) => {
-    window._paq.push([
+    window._paq?.push?.([
       "trackEvent",
       "Tech_Stack_Click",
       "Click",
@@ -373,38 +408,11 @@ function HomePage() {
     console.log("Tech_Stack_Click");
     user.updateTechStack(techVal);
   };
+
   const handelToggle = () => {
     setProfileToggel(!profileToggel);
   };
 
-  let mouse = { x: 300, y: 300 };
-  let pos = { x: 0, y: 0 };
-  const speed = 0.1; // between 0 and 1
-
-  const updatePosition = () => {
-    pos.x += (mouse.x - pos.x) * speed;
-    pos.y += (mouse.y - pos.y) * speed;
-    if (cursorRef.current) {
-      // check if the ref is defined before accessing its properties
-      cursorRef.current.style.transform =
-        "translate3d(" + pos.x + "px ," + pos.y + "px, 0)";
-    }
-  };
-
-  const updateCoordinates = (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  };
-
-  window.addEventListener("mousemove", updateCoordinates);
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  function loop() {
-    updatePosition();
-    requestAnimationFrame(loop);
-  }
-
-  requestAnimationFrame(loop);
   const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   return (
@@ -472,8 +480,8 @@ function HomePage() {
                 As software development expert I possesses in-depth knowledge
                 and experience in creating and maintaining websites and web
                 applications. My expertise extends to various web technologies
-                such as HTML, CSS & Animations, JavaScript, Jquery, Typescript,
-                React Js & Next JS. I excel in designing user-friendly, responsive, and
+                such as HTML, CSS &amp; Animations, JavaScript, Jquery, Typescript,
+                React Js &amp; Next JS. I excel in designing user-friendly, responsive, and
                 secure web solutions, ensuring optimal performance and user
                 experience.
               </p>
@@ -742,7 +750,7 @@ function HomePage() {
                     <p>Java Script</p>
                     <p>Jquery</p>
                     <p>TypeScript</p>
-                    <p>CSS & Animations</p>
+                    <p>CSS &amp; Animations</p>
                   </div>
                 </div>
               </div>
@@ -793,7 +801,7 @@ function HomePage() {
                   <h1 className="headding">Hobby</h1>
                   <div className="photo-overlay">
                     <p>My Hobbies</p>
-                    <p>Football & Cricket Enthusiast</p>
+                    <p>Football &amp; Cricket Enthusiast</p>
                     <p>Music Appreciation</p>
                     <p>Outdoor Adventurer</p>
                   </div>
