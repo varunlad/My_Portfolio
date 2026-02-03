@@ -80,107 +80,96 @@ function HomePage() {
       backgrounImg: "../../Assets/Images/sport_pitch.jpg",
     },
   ]);
+
   const defaultOptions = {
-    reverse: false, // reverse the tilt direction
-    max: 35, // max tilt rotation (degrees)
-    perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets.
-    scale: 1.05, // 2 = 200%, 1.5 = 150%, etc..
-    speed: 1000, // Speed of the enter/exit transition
-    transition: true, // Set a transition on enter/exit.
-    axis: null, // What axis should be disabled. Can be X or Y.
-    reset: true, // If the tilt effect has to be reset on exit.
-    easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
+    reverse: false,
+    max: 35,
+    perspective: 1000,
+    scale: 1.05,
+    speed: 1000,
+    transition: true,
+    axis: null,
+    reset: true,
+    easing: "cubic-bezier(.03,.98,.52,.99)",
   };
+
+  // 🧩 Treemap data (added Next JS)
   const [series] = useState([
-    {
-      name: "HTML",
-      data: [{ x: "HTML", y: 20 }],
-    },
-    {
-      name: "CSS &amp; Animation",
-      data: [{ x: "CSS &amp; Animation", y: 10 }],
-    },
-    {
-      name: "JavaScript",
-      data: [{ x: "JavaScript", y: 20 }],
-    },
-    {
-      name: "jQuery",
-      data: [{ x: "jQuery", y: 10 }],
-    },
-    {
-      name: "TypeScript",
-      data: [{ x: "TypeScript", y: 10 }],
-    },
-    {
-      name: "React JavaScript",
-      data: [{ x: "React JS", y: 30 }],
-    },
+    { name: "HTML", data: [{ x: "HTML", y: 20 }] },
+    { name: "CSS & Animation", data: [{ x: "CSS Animation", y: 10 }] },
+    { name: "JavaScript", data: [{ x: "JavaScript", y: 20 }] },
+    { name: "jQuery", data: [{ x: "jQuery", y: 10 }] },
+    { name: "TypeScript", data: [{ x: "TypeScript", y: 10 }] },
+    { name: "React JavaScript", data: [{ x: "React JS", y: 20 }] },
+    { name: "Next JS", data: [{ x: "Next JS", y: 10 }] },
   ]);
+
+  // ✅ Fix dataPointSelection signature and use clicked label instead of index
   const [options] = useState({
-    legend: {
-      show: false,
-    },
+    legend: { show: false },
     chart: {
       height: 350,
       type: "treemap",
-      toolbar: {
-        show: false,
-      },
+      toolbar: { show: false },
       events: {
         dataPointSelection: (event, chartContext, config) => {
-          var index = config.selectedDataPoints.length;
-          handleStrock(index);
+          try {
+            const { seriesIndex, dataPointIndex, w } = config || {};
+            if (
+              typeof seriesIndex !== "number" ||
+              typeof dataPointIndex !== "number" ||
+              !w?.config?.series?.[seriesIndex]?.data?.[dataPointIndex]
+            ) {
+              console.warn("Treemap click: invalid selection payload", config);
+              return;
+            }
+            const clicked = w.config.series[seriesIndex].data[dataPointIndex];
+            const label = clicked.x; 
+            handleStrock(label);
+          } catch (err) {
+            console.error("Treemap selection handler error:", err);
+          }
         },
       },
     },
     tooltip: {
       shared: false,
-      x: {
-        formatter: function (val) {
-          return val;
-        },
-      },
-      y: {
-        formatter: function (val) {
-          return Math.abs(val) + "%";
-        },
-      },
+      x: { formatter: (val) => val },
+      y: { formatter: (val) => Math.abs(val) + "%" },
     },
-    title: {
-      text: "",
-      align: "center",
-    },
+    title: { text: "", align: "center" },
   });
+
   const [selected, setSelected] = useState([]);
   const [selectedSeries, setSelectedSeries] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState();
   const [selectedStack, setSelectedStack] = useState("");
   const cursorRef = useRef(null);
 
-  const handleStrock = (index) => {
-    switch (index) {
-      case 1:
+  // 🧠 Select stack based on clicked label (more robust than index)
+  const handleStrock = (label) => {
+    switch (label) {
+      case "HTML":
         setSelectedStack("HTML");
         setSelectedSeries([40, 20, 10, 10, 20]);
         handleSelectedOptions([
           "HTML Structure",
-          "Flex-Box",
+          "Flexbox",
           "Forms",
           "Semantic Tags",
-          "Inline &amp; Block Elements",
+          "Inline & Block Elements",
         ]);
         setSelected([
           "HTML Structure",
-          "Flex-Box",
+          "Flexbox",
           "Forms",
           "Semantic Tags",
-          "Inline &amp; Block Elements",
+          "Inline & Block Elements",
         ]);
         break;
 
-      case 2:
-        setSelectedStack("CSS &amp; Animation");
+      case "CSS_Animation":
+        setSelectedStack("CSS & Animation");
         setSelectedSeries([30, 20, 30, 20]);
         handleSelectedOptions([
           "Animating Semantic Tags for Smooth Transitions",
@@ -189,50 +178,52 @@ function HomePage() {
           "Applying CSS Animations to Block Elements for Dynamic Layout Transitions",
         ]);
         setSelected([
-          "Animating Semantic Tags for Smooth Transitions.",
-          "Styling Form Elements with CSS for Enhanced Appearance.",
+          "Animating Semantic Tags for Smooth Transitions",
+          "Styling Form Elements with CSS for Enhanced Appearance",
           "Controlling Layout and Appearance of Inline Elements with CSS",
           "Applying CSS Animations to Block Elements for Dynamic Layout Transitions",
         ]);
         break;
 
-      case 3:
+      case "JavaScript":
         setSelectedStack("JavaScript");
         setSelectedSeries([20, 10, 40, 10, 20]);
         handleSelectedOptions([
           "Arrow Functions",
-          "API calling",
+          "API Calling (fetch/axios)",
           "Async/Await",
           "Template Literals",
-          "Spread Operetor",
+          "Spread Operator",
         ]);
         setSelected([
           "Arrow Functions",
-          "API calling",
+          "API Calling (fetch/axios)",
           "Async/Await",
           "Template Literals",
-          "Spread Operetor",
+          "Spread Operator",
         ]);
         break;
 
-      case 4:
-        setSelectedStack("JQuery");
+      case "jQuery":
+        setSelectedStack("jQuery");
         setSelectedSeries([40, 10, 10, 20, 20]);
         handleSelectedOptions([
           "DOM Manipulation",
           "Event Handling",
           "AJAX Requests",
-          "Animations &amp; Effects",
+          "Animations & Effects",
+          "Plugins",
         ]);
         setSelected([
           "DOM Manipulation",
           "Event Handling",
           "AJAX Requests",
-          "Animations &amp; Effects",
+          "Animations & Effects",
+          "Plugins",
         ]);
         break;
 
-      case 5:
+      case "TypeScript":
         setSelectedStack("TypeScript");
         setSelectedSeries([30, 30, 10, 10, 20]);
         handleSelectedOptions([
@@ -251,18 +242,18 @@ function HomePage() {
         ]);
         break;
 
-      case 6:
+      case "React JS":
         setSelectedStack("React JS");
         setSelectedSeries([10, 30, 20, 20, 20]);
         handleSelectedOptions([
-          "Redux",
+          "Redux (or RTK)",
           "Components",
           "State and Props",
           "Lifecycle Methods",
           "Hooks",
         ]);
         setSelected([
-          "Redux",
+          "Redux (or RTK)",
           "Components",
           "State and Props",
           "Lifecycle Methods",
@@ -270,52 +261,52 @@ function HomePage() {
         ]);
         break;
 
+      case "Next JS":
+        setSelectedStack("Next JS");
+        // You can tune these weights to reflect your comfort level
+        setSelectedSeries([25, 20, 20, 15, 10, 10]);
+        handleSelectedOptions([
+          "File-based Routing",
+          "App Router & Server Components",
+          "SSR / SSG / ISR",
+          "API Routes & Route Handlers",
+          "Image Optimization",
+          "Middleware & Edge",
+        ]);
+        setSelected([
+          "File-based Routing",
+          "App Router & Server Components",
+          "SSR / SSG / ISR",
+          "API Routes & Route Handlers",
+          "Image Optimization",
+          "Middleware & Edge",
+        ]);
+        break;
+
       default:
-        console.warn("Invalid index provided");
+        console.warn("Unmapped stack label:", label);
         break;
     }
   };
 
-  const handleSelectedOptions = (options) => {
+  const handleSelectedOptions = (labels) => {
     setSelectedOptions({
-      legend: {
-        show: false,
-        color: "#fff",
-      },
-      chart: {
-        type: "polarArea",
-      },
+      legend: { show: false, color: "#fff" },
+      chart: { type: "polarArea" },
       tooltip: {
         shared: false,
-        x: {
-          formatter: function (val) {
-            return val;
-          },
-        },
-        y: {
-          formatter: function (val) {
-            return Math.abs(val) + "%";
-          },
-        },
+        x: { formatter: (val) => val },
+        y: { formatter: (val) => Math.abs(val) + "%" },
       },
-
-      labels: options,
-      stroke: {
-        colors: ["#fff"],
-      },
-      fill: {
-        opacity: 0.9,
-      },
+      labels,
+      stroke: { colors: ["#fff"] },
+      fill: { opacity: 0.9 },
       responsive: [
         {
           breakpoint: 480,
           options: {
-            chart: {
-              width: "100%",
-            },
-            legend: {
-              position: "bottom",
-            },
+            chart: { width: "100%" },
+            legend: { position: "bottom" },
           },
         },
       ],
@@ -323,56 +314,47 @@ function HomePage() {
   };
 
   const myExperienceFunction = () => {
-    let currentDate = new Date();
-    let startYear = 2021;
-    let startMonth = 11; // Assuming the start month is December (0-indexed)
-
-    let currentYear = currentDate.getFullYear();
-    let currentMonth = currentDate.getMonth(); // 0-indexed month
+    const currentDate = new Date();
+    const startYear = 2021;
+    const startMonth = 11; // December (0-indexed)
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth();
 
     let years = currentYear - startYear;
     let months = currentMonth - startMonth;
-
     if (months < 0) {
       years--;
       months += 12;
     }
-
-    let totalExperience = years + months / 12;
-    return totalExperience.toFixed(1); // Rounded to 1 decimal place
+    const totalExperience = years + months / 12;
+    return totalExperience.toFixed(1);
   };
 
-  // ✅ Run once on mount: init AOS, scrollTop (optional), set up mouse tracking & RAF loop
+  // ✅ Run once on mount: AOS, experience, cursor-follow loop
   useEffect(() => {
     setMyExperience(myExperienceFunction());
 
-    // If you don't want any auto-scroll at all, remove the next two lines
-    window.scrollTo({
-      top: 1,
-      behavior: "smooth",
-    });
+    // Optional: scroll only once on initial load (remove if not needed)
+    window.scrollTo({ top: 1, behavior: "smooth" });
 
-    // Init AOS once
     AOS.init({
       offset: 10,
       duration: 500,
       easing: "ease-in-sine",
       delay: 100,
-      // disable: 'mobile',
       once: true,
     });
 
-    // Cursor animation state kept in refs to persist across renders
+    // Cursor animation loop
     const mouse = { x: 300, y: 300 };
     const pos = { x: 0, y: 0 };
-    const speed = 0.1; // between 0 and 1
+    const speed = 0.1;
 
     const updatePosition = () => {
       pos.x += (mouse.x - pos.x) * speed;
       pos.y += (mouse.y - pos.y) * speed;
       if (cursorRef.current) {
-        cursorRef.current.style.transform =
-          "translate3d(" + pos.x + "px ," + pos.y + "px, 0)";
+        cursorRef.current.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
       }
     };
 
@@ -390,36 +372,26 @@ function HomePage() {
     };
     rafId = requestAnimationFrame(animate);
 
-    // Cleanup
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
       if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
 
-
   const handelTechStack = (techVal) => {
-    window._paq?.push?.([
-      "trackEvent",
-      "Tech_Stack_Click",
-      "Click",
-      "Tech_Stack_Click",
-    ]);
-    console.log("Tech_Stack_Click");
+    window._paq?.push?.(["trackEvent", "Tech_Stack_Click", "Click", "Tech_Stack_Click"]);
     user.updateTechStack(techVal);
   };
 
-  const handelToggle = () => {
-    setProfileToggel(!profileToggel);
-  };
+  const handelToggle = () => setProfileToggel((s) => !s);
 
   const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   return (
     <>
       {/* <div id="cursor" ref={cursorRef}>
-                <div className="cursor--inner"></div>
-            </div> */}
+        <div className="cursor--inner" />
+      </div> */}
       {!user.techStack ? (
         <>
           <div className="row ">
@@ -467,16 +439,11 @@ function HomePage() {
                 )}
               </div>
               <h1 className="developer_headding">
-                {" "}
                 <br />
-                <span style={{ whiteSpace: "nowrap" }}>
-                  {" "}
-                  I'm a Software
-                </span>{" "}
+                <span style={{ whiteSpace: "nowrap" }}>I'm a Software</span>{" "}
                 <strong className="gradient_headdng">Developer</strong>
               </h1>
               <p className="developer_description ">
-                {" "}
                 As software development expert I possesses in-depth knowledge
                 and experience in creating and maintaining websites and web
                 applications. My expertise extends to various web technologies
@@ -487,6 +454,7 @@ function HomePage() {
               </p>
             </div>
           </div>
+
           <div className="container">
             <div className="row   mb-3 p-3">
               <div className="col-md-12 ">
@@ -499,6 +467,7 @@ function HomePage() {
                   </div>
                 </div>
               </div>
+
               {show_Me ? (
                 <>
                   <div className="col-md-3">
@@ -515,6 +484,7 @@ function HomePage() {
                           />
                         </div>
                       </div>
+
                       {isIOS ? (
                         <div className="img_cover">
                           <img
@@ -526,9 +496,7 @@ function HomePage() {
                         <Tilt options={defaultOptions}>
                           <div className="img_cover">
                             <img
-                              src={
-                                profileToggel ? my_profilePic : my_profilePic2
-                              }
+                              src={profileToggel ? my_profilePic : my_profilePic2}
                               alt="profile"
                             />
                           </div>
@@ -540,6 +508,7 @@ function HomePage() {
                           {user.myUser.username}
                         </strong>
                       </h5>
+
                       {profileToggel ? (
                         <div className="d-flex flex-column justify-content-center align-items-center fade_me">
                           <div>
@@ -553,23 +522,16 @@ function HomePage() {
                               >
                                 {myExperience}+
                               </span>{" "}
-                              years of experience{" "}
+                              years of experience
                             </h6>
                           </div>
                           <div>
-                            <h6
-                              style={{ fontSize: "14px" }}
-                              className="text-secondary"
-                            >
-                              Panvel | Maharashtra{" "}
-                              <i className="bi bi-geo-alt"></i>{" "}
+                            <h6 style={{ fontSize: "14px" }} className="text-secondary">
+                              Panvel | Maharashtra <i className="bi bi-geo-alt"></i>
                             </h6>
                           </div>
                           <div>
-                            <h6
-                              style={{ fontSize: "14px" }}
-                              className="text-secondary"
-                            >
+                            <h6 style={{ fontSize: "14px" }} className="text-secondary">
                               <a
                                 className="text-secondary"
                                 href="mailto:varunlad5@gmail.com"
@@ -580,30 +542,22 @@ function HomePage() {
                             </h6>
                           </div>
                           <div>
-                            <h6
-                              style={{ fontSize: "14px" }}
-                              className="text-secondary"
-                            >
-                              {" "}
+                            <h6 style={{ fontSize: "14px" }} className="text-secondary">
                               +91 9834978189 <i className="bi bi-phone"></i>
                             </h6>
                           </div>
                           <div>
-                            <h6
-                              style={{ fontSize: "14px" }}
-                              className="text-secondary d-flex"
-                            >
+                            <h6 style={{ fontSize: "14px" }} className="text-secondary d-flex">
                               <a
                                 target="_blank"
-                                href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos"
+                                href="https://www.linkedin.com/in/varun-lad-6b34b3215"
                                 style={{ fontSize: "14px" }}
                                 className="text-secondary d-flex"
                                 rel="noreferrer"
                               >
-                                Linkedin{" "}
-                                <i className=" mx-1 bi bi-linkedin"></i>
+                                Linkedin <i className=" mx-1 bi bi-linkedin"></i>
                               </a>
-                              &
+                              &nbsp;&amp;&nbsp;
                               <a
                                 target="_blank"
                                 href="https://github.com/varunlad"
@@ -619,10 +573,7 @@ function HomePage() {
                       ) : (
                         <div className="d-flex flex-column justify-content-center align-items-center ">
                           <div>
-                            <h6
-                              style={{ fontSize: "14px" }}
-                              className="text-secondary"
-                            >
+                            <h6 style={{ fontSize: "14px" }} className="text-secondary">
                               Currently working at
                             </h6>
                           </div>
@@ -640,12 +591,8 @@ function HomePage() {
                             </h6>
                           </div>
                           <div>
-                            {" "}
-                            <h6
-                              style={{ fontSize: "14px" }}
-                              className="text-secondary"
-                            >
-                              Designation{" "}
+                            <h6 style={{ fontSize: "14px" }} className="text-secondary">
+                              Designation
                             </h6>
                           </div>
                           <div>
@@ -657,27 +604,22 @@ function HomePage() {
                                 className="mx-1 myColor"
                                 style={{ fontSize: "12px", fontWeight: 700 }}
                               >
-                                {" "}
                                 Software Developer
                               </span>
                             </h6>
                           </div>
                           <div>
-                            <h6
-                              style={{ fontSize: "14px" }}
-                              className="text-secondary d-flex"
-                            >
+                            <h6 style={{ fontSize: "14px" }} className="text-secondary d-flex">
                               <a
                                 target="_blank"
-                                href="https://www.linkedin.com/in/varun-lad-6b34b3215?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSPG6r6a8SYyRcCfQMdhc6w%3D%3D&fbclid=PAAaa7Ogg7THiTe16HWdeYkMere4DGria0OjCrA24NY8Hz-uu2oaMYxS-KZEo_aem_ASMj_ALQTrcTENFdFAYPjBV6dxl_eMCi51FPIilhHcZt5DEw05YO3Jl49hSSEmerAos"
+                                href="https://www.linkedin.com/in/varun-lad-6b34b3215"
                                 style={{ fontSize: "14px" }}
                                 className="text-secondary d-flex"
                                 rel="noreferrer"
                               >
-                                Linkedin{" "}
-                                <i className=" mx-1 bi bi-linkedin"></i>
+                                Linkedin <i className=" mx-1 bi bi-linkedin"></i>
                               </a>
-                              &
+                              &nbsp;&amp;&nbsp;
                               <a
                                 target="_blank"
                                 href="https://github.com/varunlad"
@@ -693,15 +635,12 @@ function HomePage() {
                       )}
                     </div>
                   </div>
+
                   <div className=" col-md-9 flex-column ">
                     <div className="d-flex mt-3  about_section p-3 align-items-center flex-column box_shadow ">
                       <Swiper
-                        autoplay={{
-                          delay: 3000,
-                        }}
-                        pagination={
-                          ({ dynamicBullets: false }, { clickable: true })
-                        }
+                        autoplay={{ delay: 3000 }}
+                        pagination={({ dynamicBullets: false }, { clickable: true })}
                         navigation={false}
                         modules={[Autoplay, Pagination]}
                         spaceBetween={50}
@@ -710,22 +649,16 @@ function HomePage() {
                         className="w-100 "
                         style={{ height: "100%" }}
                       >
-                        {aboutMe?.map((ele, ind) => {
-                          return (
-                            <SwiperSlide
-                              key={ind}
-                              style={{
-                                backgroundImage: `url(${
-                                  currentURl + "/" + ele.backgrounImg
-                                })`,
-                              }}
-                              className="mySwiper"
-                            >
-                              <h1 className="myColor">{ele.heading}</h1>
-                              <p className="p-3 w-75">{ele.description}</p>
-                            </SwiperSlide>
-                          );
-                        })}
+                        {aboutMe?.map((ele, ind) => (
+                          <SwiperSlide
+                            key={ind}
+                            style={{ backgroundImage: `url(${currentURl + "/" + ele.backgrounImg})` }}
+                            className="mySwiper"
+                          >
+                            <h1 className="myColor">{ele.heading}</h1>
+                            <p className="p-3 w-75">{ele.description}</p>
+                          </SwiperSlide>
+                        ))}
                       </Swiper>
                     </div>
                   </div>
@@ -733,14 +666,11 @@ function HomePage() {
               ) : null}
             </div>
           </div>
+
           <div className="container mt-5 mb-5">
             <div className="my_laptop row">
-              <div
-                className="col-md-3"
-                data-aos-duration="750"
-                data-aos="fade-right"
-              >
-                <div className="photo  " style={{ transitionDelay: "200ms" }}>
+              <div className="col-md-3" data-aos-duration="750" data-aos="fade-right">
+                <div className="photo" style={{ transitionDelay: "200ms" }}>
                   <img src={laptop} alt="skills" />
                   <h1 className="headding">Skills</h1>
                   <div className="photo-overlay">
@@ -755,29 +685,21 @@ function HomePage() {
                 </div>
               </div>
 
-              <div
-                className="col-md-3"
-                data-aos-duration="750"
-                data-aos="fade-left"
-              >
+              <div className="col-md-3" data-aos-duration="750" data-aos="fade-left">
                 <div className="photo ">
                   <img src={project} alt="project" />
                   <h1 className="headding">Projects</h1>
                   <div className="photo-overlay">
                     <p>My Projects</p>
                     <p>Atlantis (Data Analysis)</p>
-                    <p>Credit Monitoring(Finance Analysis)</p>
+                    <p>Credit Monitoring (Finance Analysis)</p>
                     <p>Clix (Business Analysis)</p>
-                    <p>Digital Reciept (Billing system)</p>
+                    <p>Digital Receipt (Billing system)</p>
                   </div>
                 </div>
               </div>
 
-              <div
-                className="col-md-3"
-                data-aos-duration="750"
-                data-aos="fade-right"
-              >
+              <div className="col-md-3" data-aos-duration="750" data-aos="fade-right">
                 <div className="photo ">
                   <img src={vision} alt="vision" />
                   <h1 className="headding">Vision</h1>
@@ -791,11 +713,7 @@ function HomePage() {
                 </div>
               </div>
 
-              <div
-                className="col-md-3"
-                data-aos-duration="750"
-                data-aos="fade-left"
-              >
+              <div className="col-md-3" data-aos-duration="750" data-aos="fade-left">
                 <div className="photo ">
                   <img src={hobby} alt="hobby" />
                   <h1 className="headding">Hobby</h1>
@@ -807,14 +725,11 @@ function HomePage() {
                   </div>
                 </div>
               </div>
+
               <div
                 data-aos-duration="750"
                 data-aos={selectedSeries.length > 0 ? "zoom-in" : "fade-left"}
-                className={
-                  selectedSeries.length > 0
-                    ? "col-md-6 mt-4 "
-                    : "col-md-12 mt-4"
-                }
+                className={selectedSeries.length > 0 ? "col-md-6 mt-4 " : "col-md-12 mt-4"}
               >
                 <div className=" align-items-start">
                   <div
@@ -830,38 +745,25 @@ function HomePage() {
                     </h1>
                   </div>
                 </div>
-                <Chart
-                  options={options}
-                  series={series}
-                  type="treemap"
-                  height={350}
-                />
+                <Chart options={options} series={series} type="treemap" height={350} />
               </div>
+
               {selectedSeries.length > 0 && (
                 <div className="col-md-6  mt-4" data-aos="fade-right">
                   <div className=" align-items-start ">
                     <div className="d-flex w-100 px-2">
                       <div className="movingRadius"></div>
-                      <h1 className="mb-4 mt-2 position-relative fw-bold">
-                        {selectedStack}
-                      </h1>
+                      <h1 className="mb-4 mt-2 position-relative fw-bold">{selectedStack}</h1>
                     </div>
                   </div>
-                  <Chart
-                    options={selectedOptions}
-                    series={selectedSeries}
-                    type="polarArea"
-                    height={350}
-                  />
+                  <Chart options={selectedOptions} series={selectedSeries} type="polarArea" height={350} />
                   {user.windownView === 0 && (
                     <ul>
-                      {selected.map((ele, ind) => {
-                        return (
-                          <li className="px-4" key={ind}>
-                            {ele}
-                          </li>
-                        );
-                      })}
+                      {selected.map((ele, ind) => (
+                        <li className="px-4" key={ind}>
+                          {ele}
+                        </li>
+                      ))}
                     </ul>
                   )}
                 </div>
@@ -880,31 +782,26 @@ function HomePage() {
                   }
                 >
                   <div className="movingRadius"></div>
-                  <h1 className="mb-5 position-relative fw-bold">
-                    Career Objective
-                  </h1>
-                  {myPortfolio?.map((ele, ind) => {
-                    return (
+                  <h1 className="mb-5 position-relative fw-bold">Career Objective</h1>
+                  {myPortfolio?.map((ele, ind) => (
+                    <div
+                      data-aos-duration="750"
+                      data-aos={ind % 2 === 0 ? "fade-up" : "fade-down"}
+                      className="col-md-3"
+                      key={ind}
+                    >
                       <div
-                        data-aos-duration="750"
-                        data-aos={ind % 2 === 0 ? "fade-up" : "fade-down"}
-                        className="col-md-3"
-                        key={ind}
+                        className={
+                          ind % 2 === 0
+                            ? "box_shadow p-3 my_section"
+                            : "box_shadow p-3 mt-5 my_section"
+                        }
                       >
-                        <div
-                          className={
-                            ind % 2 === 0
-                              ? "box_shadow p-3 my_section"
-                              : "box_shadow p-3 mt-5 my_section"
-                          }
-                          key={ind}
-                        >
-                          <h1 className="gradient_headdng">{ele.name}</h1>
-                          <p>{ele.description}</p>
-                        </div>
+                        <h1 className="gradient_headdng">{ele.name}</h1>
+                        <p>{ele.description}</p>
                       </div>
-                    );
-                  })}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

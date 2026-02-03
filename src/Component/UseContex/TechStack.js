@@ -13,8 +13,8 @@ function TechStack() {
   const user = useContext(UserContext);
   const [tabs, setTabs] = useState(0);
   const [tabsOption] = useState([
-    { tabName: "React JS" },
     { tabName: "Projects" },
+    { tabName: "React JS" },
     { tabName: "HTML" },
     { tabName: "CSS & Animations" },
     { tabName: "Java Script" },
@@ -112,9 +112,9 @@ function TechStack() {
           </div>
         </div>
         {tabs === 0 ? (
-          <ReactJS />
-        ) : tabs === 1 ? (
           <Projects />
+        ) : tabs === 1 ? (
+          <ReactJS />
         ) : tabs === 2 ? (
           <HTML />
         ) : tabs === 3 ? (

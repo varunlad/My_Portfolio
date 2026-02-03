@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import UserContext from '../Contex/UserContext';
-import profileFav from "../Assets/Images/favicon-32.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Pagination, Autoplay } from "swiper/modules";
@@ -25,9 +24,9 @@ function Footer() {
                 </a>
             </div>
             <div className={user.windownView === 1 ? 'gradient_bg w-100' : 'gradient_bg w-100 flex-column'} >
-                <div className={user.windownView === 1 ? 'footer_left' : 'mt-4 footer_left'}>
+                {/* <div className={user.windownView === 1 ? 'footer_left' : 'mt-4 footer_left'}>
                     <h6 className='m-0' style={user.windownView === 0 ? {} : { fontWeight: 700 }}>{user.myUser.username}'s Portfolio</h6> <img src={profileFav} className='mx-1' alt='profile' />
-                </div>
+                </div> */}
                 <div className={user.windownView === 1 ? 'footer_right d-flex align-items-center' : 'footer_right d-flex mt-3 align-items-center'}>
                     <div className=' d-flex ms-3 mb-0'> <h6 style={user.windownView === 0 ? {} : { fontWeight: 700 }}>Happy Coding</h6>  <i className=" mx-2 bi bi-code-square"></i></div>
                 </div>

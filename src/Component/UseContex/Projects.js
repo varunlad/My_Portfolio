@@ -1,4 +1,4 @@
-import  { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import "./Common.scss";
 import * as icon from "../../Assets/Images/index";
 import UserContext from "../../Contex/UserContext";
@@ -39,11 +39,20 @@ function Projects() {
   ]);
   const [personalProjects] = useState([
     {
+      name: "Personal Finance Tracker",
+      description:
+        "A web application to track expenses, and budget with data visualization.",
+      link: "https://personal-finance-tracker-bul7.vercel.app/",
+      github: "https://github.com/varunlad/Personal-Finance-Tracker",
+      github2:"https://github.com/varunlad/Personal-Finance-Tracker-Backend"
+    },
+    {
       name: "Typing Speed Test",
       description:
         "Check your typing speed test measures typing speed and accuracy",
       link: "https://varun-typing-speed-test.vercel.app",
       github: "https://github.com/varunlad/TypingSpeedTest",
+      github2:""
     },
     {
       name: "User Data Management System",
@@ -51,6 +60,7 @@ function Projects() {
         "Allows efficient searching, editing and deleting with user information.",
       link: "https://factwiseassignment-sage.vercel.app",
       github: "https://github.com/varunlad/FE-Assignment/tree/main/assignment",
+      github2:""
     },
   ]);
   const [activeProject, setActiveProject] = useState(0);
@@ -60,7 +70,7 @@ function Projects() {
   return (
     <div className="container my_smooth_animation">
       <div className="row box_shadow">
-        <h3 style={{ color: "#1ed760" }}>Highlighting my key projects</h3>
+        <h3 style={{ color: "#1ed760", marginBottom:20 }}>Highlighting my key projects</h3>
         {myProject.map((ele, ind) => {
           return (
             <div className="col-md-12" key={ind}>
@@ -163,6 +173,7 @@ function Projects() {
                       fontSize: "18px",
                       flex: "1",
                       marginBottom: 10,
+                      color: "#1ed760",
                     }}
                   >
                     {ele.name} {" -"}
@@ -212,6 +223,26 @@ function Projects() {
                     >
                       Github
                     </a>
+                    {ele.github2 && (
+                      <a
+                        href={ele.github}
+                        target="_blank"
+                        style={{
+                          textDecoration: "none",
+                          color: "#1ed760",
+                          fontWeight: "bold",
+                          padding: "5px 10px",
+                          borderRadius: "4px",
+                          border: "1px solid #1ed760",
+                          transition: "background-color 0.3s",
+                          textAlign: "center",
+                        }}
+                        rel="noreferrer"
+                        alt="link"
+                      >
+                        Github
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
