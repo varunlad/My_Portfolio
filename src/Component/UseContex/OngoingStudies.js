@@ -23,7 +23,10 @@ function OngoingStudies() {
     },
   ]);
   return (
-    <div className="container my_smooth_animation">
+    <div
+      className="container my_smooth_animation"
+      style={{ minHeight: "60vh" }}
+    >
       <p>
         In my Ongoing Studies, I am actively engaging in a variety of coding
         technologies to broaden my knowledge and skills. This section highlights

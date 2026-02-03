@@ -16,6 +16,14 @@ function Projects() {
         "React JS ,Fusion charts, High charts, Apex charts, Material UI, Bootstrap",
     },
     {
+      name: "Fruit of the Loom (E-commerce)",
+      description:
+        "Built a headless, component-driven storefront using Next.js with Frontastic schemas for content modeling and page composition. Implemented reusable UI components mapped to Frontastic schema fields (sections, slots, and dynamic content), enabling merchandisers to configure pages without code. Leveraged SSR/ISR for fast, SEO-friendly pages, optimized images and routing, and ensured clean integration between schema-driven content and UI components.",
+      icon: icon.fotl.src, 
+      technologyUsed:
+        "Next.js, React, Frontastic (Schemas & Page Composer), TypeScript, Material UI, Bootstrap",
+    },
+    {
       name: "Credit Monitoring (Financial analysis)",
       description:
         "Credit Monitoring is a comprehensive project designed to provide detailed financial insights into various brands, encompassing critical aspects such as sales, profits, losses, credit amounts, and more. Leveraging advanced data analysis techniques, the system offers daily monitoring and reporting capabilities, allowing stakeholders to make informed decisions based on accurate financial data. Through intuitive dashboards and customizable reports, Credit Monitoring empowers users to gain a deeper understanding of brand performance, identify potential risks, and optimize financial strategies for sustainable growth.",
@@ -44,7 +52,7 @@ function Projects() {
         "A web application to track expenses, and budget with data visualization.",
       link: "https://personal-finance-tracker-bul7.vercel.app/",
       github: "https://github.com/varunlad/Personal-Finance-Tracker",
-      github2:"https://github.com/varunlad/Personal-Finance-Tracker-Backend"
+      github2: "https://github.com/varunlad/Personal-Finance-Tracker-Backend",
     },
     {
       name: "Typing Speed Test",
@@ -52,7 +60,7 @@ function Projects() {
         "Check your typing speed test measures typing speed and accuracy",
       link: "https://varun-typing-speed-test.vercel.app",
       github: "https://github.com/varunlad/TypingSpeedTest",
-      github2:""
+      github2: "",
     },
     {
       name: "User Data Management System",
@@ -60,7 +68,7 @@ function Projects() {
         "Allows efficient searching, editing and deleting with user information.",
       link: "https://factwiseassignment-sage.vercel.app",
       github: "https://github.com/varunlad/FE-Assignment/tree/main/assignment",
-      github2:""
+      github2: "",
     },
   ]);
   const [activeProject, setActiveProject] = useState(0);
@@ -70,7 +78,9 @@ function Projects() {
   return (
     <div className="container my_smooth_animation">
       <div className="row box_shadow">
-        <h3 style={{ color: "#1ed760", marginBottom:20 }}>Highlighting my key projects</h3>
+        <h3 style={{ color: "#1ed760", marginBottom: 20 }}>
+          Highlighting my key projects
+        </h3>
         {myProject.map((ele, ind) => {
           return (
             <div className="col-md-12" key={ind}>
@@ -104,7 +114,7 @@ function Projects() {
                             ? "mx-2 selected_project"
                             : "mx-2"
                         }
-                        style={{ maxWidth: "60px", maxHeight: "40px" }}
+                        style={{ maxWidth: "50px", maxHeight: "40px" }}
                         src={ele.icon}
                         alt="project"
                       />
@@ -163,7 +173,7 @@ function Projects() {
                     alignItems: "center",
                     flexWrap: "wrap",
                     padding: "10px 0",
-                    borderBottom: "1px solid #ccc",
+                    borderBottom: "1px solid rgb(43 43 43)",
                     marginBottom: "10px",
                   }}
                 >

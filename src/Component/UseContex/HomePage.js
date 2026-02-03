@@ -124,7 +124,7 @@ function HomePage() {
               return;
             }
             const clicked = w.config.series[seriesIndex].data[dataPointIndex];
-            const label = clicked.x; 
+            const label = clicked.x;
             handleStrock(label);
           } catch (err) {
             console.error("Treemap selection handler error:", err);
@@ -379,7 +379,12 @@ function HomePage() {
   }, []);
 
   const handelTechStack = (techVal) => {
-    window._paq?.push?.(["trackEvent", "Tech_Stack_Click", "Click", "Tech_Stack_Click"]);
+    window._paq?.push?.([
+      "trackEvent",
+      "Tech_Stack_Click",
+      "Click",
+      "Tech_Stack_Click",
+    ]);
     user.updateTechStack(techVal);
   };
 
@@ -440,16 +445,21 @@ function HomePage() {
               </div>
               <h1 className="developer_headding">
                 <br />
-                <span style={{ whiteSpace: "nowrap" }}>I'm a Software</span>{" "}
+                <span style={{ whiteSpace: "nowrap" }}>
+                  I'm a Software
+                </span>{" "}
                 <strong className="gradient_headdng">Developer</strong>
               </h1>
               <p className="developer_description ">
-                As software development expert I possesses in-depth knowledge
+                As a software development expert, I possess in-depth knowledge
                 and experience in creating and maintaining websites and web
-                applications. My expertise extends to various web technologies
-                such as HTML, CSS &amp; Animations, JavaScript, Jquery, Typescript,
-                React Js &amp; Next JS. I excel in designing user-friendly, responsive, and
-                secure web solutions, ensuring optimal performance and user
+                applications. My expertise spans a wide range of web
+                technologies, including HTML, CSS & Animations, JavaScript,
+                jQuery, TypeScript, React JS, and Next JS, along with seamless
+                API integration. I specialize in consuming and integrating
+                RESTful APIs to build dynamic, data-driven applications. I excel
+                in designing user‑friendly, responsive, secure, and
+                high‑performance web solutions that deliver an exceptional user
                 experience.
               </p>
             </div>
@@ -496,7 +506,9 @@ function HomePage() {
                         <Tilt options={defaultOptions}>
                           <div className="img_cover">
                             <img
-                              src={profileToggel ? my_profilePic : my_profilePic2}
+                              src={
+                                profileToggel ? my_profilePic : my_profilePic2
+                              }
                               alt="profile"
                             />
                           </div>
@@ -526,12 +538,19 @@ function HomePage() {
                             </h6>
                           </div>
                           <div>
-                            <h6 style={{ fontSize: "14px" }} className="text-secondary">
-                              Panvel | Maharashtra <i className="bi bi-geo-alt"></i>
+                            <h6
+                              style={{ fontSize: "14px" }}
+                              className="text-secondary"
+                            >
+                              Panvel | Maharashtra{" "}
+                              <i className="bi bi-geo-alt"></i>
                             </h6>
                           </div>
                           <div>
-                            <h6 style={{ fontSize: "14px" }} className="text-secondary">
+                            <h6
+                              style={{ fontSize: "14px" }}
+                              className="text-secondary"
+                            >
                               <a
                                 className="text-secondary"
                                 href="mailto:varunlad5@gmail.com"
@@ -542,12 +561,18 @@ function HomePage() {
                             </h6>
                           </div>
                           <div>
-                            <h6 style={{ fontSize: "14px" }} className="text-secondary">
+                            <h6
+                              style={{ fontSize: "14px" }}
+                              className="text-secondary"
+                            >
                               +91 9834978189 <i className="bi bi-phone"></i>
                             </h6>
                           </div>
                           <div>
-                            <h6 style={{ fontSize: "14px" }} className="text-secondary d-flex">
+                            <h6
+                              style={{ fontSize: "14px" }}
+                              className="text-secondary d-flex"
+                            >
                               <a
                                 target="_blank"
                                 href="https://www.linkedin.com/in/varun-lad-6b34b3215"
@@ -555,7 +580,8 @@ function HomePage() {
                                 className="text-secondary d-flex"
                                 rel="noreferrer"
                               >
-                                Linkedin <i className=" mx-1 bi bi-linkedin"></i>
+                                Linkedin{" "}
+                                <i className=" mx-1 bi bi-linkedin"></i>
                               </a>
                               &nbsp;&amp;&nbsp;
                               <a
@@ -573,7 +599,10 @@ function HomePage() {
                       ) : (
                         <div className="d-flex flex-column justify-content-center align-items-center ">
                           <div>
-                            <h6 style={{ fontSize: "14px" }} className="text-secondary">
+                            <h6
+                              style={{ fontSize: "14px" }}
+                              className="text-secondary"
+                            >
                               Currently working at
                             </h6>
                           </div>
@@ -591,7 +620,10 @@ function HomePage() {
                             </h6>
                           </div>
                           <div>
-                            <h6 style={{ fontSize: "14px" }} className="text-secondary">
+                            <h6
+                              style={{ fontSize: "14px" }}
+                              className="text-secondary"
+                            >
                               Designation
                             </h6>
                           </div>
@@ -609,7 +641,10 @@ function HomePage() {
                             </h6>
                           </div>
                           <div>
-                            <h6 style={{ fontSize: "14px" }} className="text-secondary d-flex">
+                            <h6
+                              style={{ fontSize: "14px" }}
+                              className="text-secondary d-flex"
+                            >
                               <a
                                 target="_blank"
                                 href="https://www.linkedin.com/in/varun-lad-6b34b3215"
@@ -617,7 +652,8 @@ function HomePage() {
                                 className="text-secondary d-flex"
                                 rel="noreferrer"
                               >
-                                Linkedin <i className=" mx-1 bi bi-linkedin"></i>
+                                Linkedin{" "}
+                                <i className=" mx-1 bi bi-linkedin"></i>
                               </a>
                               &nbsp;&amp;&nbsp;
                               <a
@@ -640,7 +676,9 @@ function HomePage() {
                     <div className="d-flex mt-3  about_section p-3 align-items-center flex-column box_shadow ">
                       <Swiper
                         autoplay={{ delay: 3000 }}
-                        pagination={({ dynamicBullets: false }, { clickable: true })}
+                        pagination={
+                          ({ dynamicBullets: false }, { clickable: true })
+                        }
                         navigation={false}
                         modules={[Autoplay, Pagination]}
                         spaceBetween={50}
@@ -652,7 +690,11 @@ function HomePage() {
                         {aboutMe?.map((ele, ind) => (
                           <SwiperSlide
                             key={ind}
-                            style={{ backgroundImage: `url(${currentURl + "/" + ele.backgrounImg})` }}
+                            style={{
+                              backgroundImage: `url(${
+                                currentURl + "/" + ele.backgrounImg
+                              })`,
+                            }}
                             className="mySwiper"
                           >
                             <h1 className="myColor">{ele.heading}</h1>
@@ -669,7 +711,11 @@ function HomePage() {
 
           <div className="container mt-5 mb-5">
             <div className="my_laptop row">
-              <div className="col-md-3" data-aos-duration="750" data-aos="fade-right">
+              <div
+                className="col-md-3"
+                data-aos-duration="750"
+                data-aos="fade-right"
+              >
                 <div className="photo" style={{ transitionDelay: "200ms" }}>
                   <img src={laptop} alt="skills" />
                   <h1 className="headding">Skills</h1>
@@ -685,13 +731,18 @@ function HomePage() {
                 </div>
               </div>
 
-              <div className="col-md-3" data-aos-duration="750" data-aos="fade-left">
+              <div
+                className="col-md-3"
+                data-aos-duration="750"
+                data-aos="fade-left"
+              >
                 <div className="photo ">
                   <img src={project} alt="project" />
                   <h1 className="headding">Projects</h1>
                   <div className="photo-overlay">
                     <p>My Projects</p>
                     <p>Atlantis (Data Analysis)</p>
+                    <p>Fruit of the Loom (E-commerce)</p>
                     <p>Credit Monitoring (Finance Analysis)</p>
                     <p>Clix (Business Analysis)</p>
                     <p>Digital Receipt (Billing system)</p>
@@ -699,7 +750,11 @@ function HomePage() {
                 </div>
               </div>
 
-              <div className="col-md-3" data-aos-duration="750" data-aos="fade-right">
+              <div
+                className="col-md-3"
+                data-aos-duration="750"
+                data-aos="fade-right"
+              >
                 <div className="photo ">
                   <img src={vision} alt="vision" />
                   <h1 className="headding">Vision</h1>
@@ -713,7 +768,11 @@ function HomePage() {
                 </div>
               </div>
 
-              <div className="col-md-3" data-aos-duration="750" data-aos="fade-left">
+              <div
+                className="col-md-3"
+                data-aos-duration="750"
+                data-aos="fade-left"
+              >
                 <div className="photo ">
                   <img src={hobby} alt="hobby" />
                   <h1 className="headding">Hobby</h1>
@@ -729,7 +788,11 @@ function HomePage() {
               <div
                 data-aos-duration="750"
                 data-aos={selectedSeries.length > 0 ? "zoom-in" : "fade-left"}
-                className={selectedSeries.length > 0 ? "col-md-6 mt-4 " : "col-md-12 mt-4"}
+                className={
+                  selectedSeries.length > 0
+                    ? "col-md-6 mt-4 "
+                    : "col-md-12 mt-4"
+                }
               >
                 <div className=" align-items-start">
                   <div
@@ -745,7 +808,12 @@ function HomePage() {
                     </h1>
                   </div>
                 </div>
-                <Chart options={options} series={series} type="treemap" height={350} />
+                <Chart
+                  options={options}
+                  series={series}
+                  type="treemap"
+                  height={350}
+                />
               </div>
 
               {selectedSeries.length > 0 && (
@@ -753,10 +821,17 @@ function HomePage() {
                   <div className=" align-items-start ">
                     <div className="d-flex w-100 px-2">
                       <div className="movingRadius"></div>
-                      <h1 className="mb-4 mt-2 position-relative fw-bold">{selectedStack}</h1>
+                      <h1 className="mb-4 mt-2 position-relative fw-bold">
+                        {selectedStack}
+                      </h1>
                     </div>
                   </div>
-                  <Chart options={selectedOptions} series={selectedSeries} type="polarArea" height={350} />
+                  <Chart
+                    options={selectedOptions}
+                    series={selectedSeries}
+                    type="polarArea"
+                    height={350}
+                  />
                   {user.windownView === 0 && (
                     <ul>
                       {selected.map((ele, ind) => (
@@ -782,7 +857,9 @@ function HomePage() {
                   }
                 >
                   <div className="movingRadius"></div>
-                  <h1 className="mb-5 position-relative fw-bold">Career Objective</h1>
+                  <h1 className="mb-5 position-relative fw-bold">
+                    Career Objective
+                  </h1>
                   {myPortfolio?.map((ele, ind) => (
                     <div
                       data-aos-duration="750"

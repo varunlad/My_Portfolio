@@ -10,6 +10,7 @@ export const Arrow = { src: require('./Arrow-01.svg').default };
 export const send = { src: require('./white_send.svg').default };
 export const popinsLogo = { src: require('./popinlogo.svg').default };
 export const atlantis = { src: require('./logo_white.svg').default };
+export const fotl = { src: require('./fotl.svg').default };
 export const facebook = { src: require('./facebook-f.svg').default };
 export const twitter = { src: require('./twitter.svg').default };
 export const insta = { src: require('./square-instagram.svg').default };
