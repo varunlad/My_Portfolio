@@ -14,7 +14,7 @@ function JavaScript() {
         <div className="col-md-12">
           <h3 style={{ color: "#1ed760" }}>
             {" "}
-            Javascript Skills
+            Javascript
             <img
               className={user.windownView === 0 && "my_icons"}
               src={icon.javascripticon.src}

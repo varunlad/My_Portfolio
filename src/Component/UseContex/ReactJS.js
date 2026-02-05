@@ -46,7 +46,7 @@ function ReactJS() {
         <div className="col-md-12">
           <h3 style={{ color: "#1ed760" }}>
             {" "}
-            React JS Skills
+            React JS
             <img
               className={user.windownView === 0 && "my_icons"}
               src={icon.react.src}

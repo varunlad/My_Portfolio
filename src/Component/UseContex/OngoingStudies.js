@@ -27,19 +27,25 @@ function OngoingStudies() {
       className="container my_smooth_animation"
       style={{ minHeight: "60vh" }}
     >
-      <p>
-        In my Ongoing Studies, I am actively engaging in a variety of coding
-        technologies to broaden my knowledge and skills. This section highlights
-        the current courses and self-directed learning projects I am involved
-        in. By continuously updating my expertise in various subjects, I aim to
-        stay at the forefront of my field and ensure my professional growth
-        remains dynamic and informed.
-      </p>
-      <div className="row justify-content-around">
+      <div className="row box_shadow justify-content-around">
+        <p>
+          In my Ongoing Studies, I am actively engaging in a variety of coding
+          technologies to broaden my knowledge and skills. This section
+          highlights the current courses and self-directed learning projects I
+          am involved in. By continuously updating my expertise in various
+          subjects, I aim to stay at the forefront of my field and ensure my
+          professional growth remains dynamic and informed.
+        </p>
         {ongoingStudy?.map((ele, ind) => {
           return (
             <div key={ind} className="col-md-3 box_shadow mb-2 mt-2">
-              <h1 style={{ color: "#1ed760" }}>{ele.headdind}</h1>
+              <div className="d-flex align-items-baseline">
+                <h1 style={{ color: "#1ed760" }}>{ele.headdind}</h1>
+                <i
+                  className="bi bi-journal-code mx-2"
+                  style={{ color: "#1ed760", fontSize: 30 }}
+                ></i>
+              </div>
               <p>{ele.description}</p>
               {ele.link !== "" ? (
                 <a
