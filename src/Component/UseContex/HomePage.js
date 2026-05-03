@@ -615,7 +615,7 @@ function HomePage() {
                                 className="mx-1 myColor"
                                 style={{ fontSize: "12px", fontWeight: 700 }}
                               >
-                                SourceMash Technologies
+                                Tata Consultancy Services (TCS)
                               </span>
                             </h6>
                           </div>
