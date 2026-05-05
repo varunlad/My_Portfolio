@@ -1,7 +1,7 @@
 // UserProfile.js
 import { useContext, useEffect, useState } from 'react';
 import UserContext from '../../Contex/UserContext';
-import MyLogin from './MyLogin';
+import HomeStart from './HomeStart';
 
 function UserProfile() {
   const user = useContext(UserContext);
@@ -39,7 +39,7 @@ function UserProfile() {
       {user ?
         <div style={{ textAlign: "center" }}>
           <div className={user.windownView === 0 ? 'd-flex flex-column w-100  mb-2':'d-flex align-items-center w-100  mb-2'}><h6 className={user.windownView === 0 ? 'w-100 mb-2 m-0 mx-2':'w-50 m-0 mx-2'}>Hello my name is</h6> <input onChange={(e) => handelUpdateName(e)}  value={updateName} type='text' /></div>
-          <MyLogin newUpdateStudy={newUpdateStudy} handelUpdateStudy={handelUpdateStudy} />
+          <HomeStart newUpdateStudy={newUpdateStudy} handelUpdateStudy={handelUpdateStudy} />
           <button className="btn btn-outline-primary mt-2" onClick={()=>{handelUpdate(updateName, newUpdateStudy)}}>Update</button>
          {showElement && <p className='vanish_msg'>{isErrorMsg}</p> }
         </div> : null

@@ -1,7 +1,7 @@
 import {useContext } from 'react';
 import UserContext from '../../Contex/UserContext';
 
-function MyLogin({newUpdateStudy,handelUpdateStudy}) {
+function HomeStart({newUpdateStudy,handelUpdateStudy}) {
   const user = useContext(UserContext);
 
     const handelUpdateStudyChange = (e) =>{
@@ -15,4 +15,4 @@ function MyLogin({newUpdateStudy,handelUpdateStudy}) {
   )
 }
 
-export default MyLogin
+export default HomeStart
